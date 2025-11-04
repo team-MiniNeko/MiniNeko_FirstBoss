@@ -12,7 +12,7 @@ public class ChainDestroy : MonoBehaviour
     }
     private void Start()
     {
-        Invoke("Destroy", 1f);
+        Invoke("Destroy", 0.5f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

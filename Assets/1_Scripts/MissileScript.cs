@@ -46,7 +46,6 @@ public class MissileScript : MonoBehaviour
             ); 
         }
 
-        // 4. 전진 이동 (오브젝트의 현재 '앞' 방향으로 이동)
         float speed = 50f;
         // transform.up은 현재 회전된 오브젝트의 로컬 Y축(위쪽), 즉 '앞' 방향입니다.
         transform.Translate(transform.up * speed * Time.deltaTime, Space.World);

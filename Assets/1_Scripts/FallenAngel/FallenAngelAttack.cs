@@ -40,9 +40,14 @@ public class FallenAngelAttack : MonoBehaviour
     {
         var firstGate = Instantiate(swordGate, player.transform.position + new Vector3(9, -1, 0), Quaternion.identity);
         var secondGate = Instantiate(swordGate, player.transform.position + new Vector3(6, 9, 0), Quaternion.identity);
+        secondGate.transform.Rotate(0, 0, 45);
         var thirdGate = Instantiate(swordGate, player.transform.position + new Vector3(0, 12, 0), Quaternion.identity);
+        thirdGate.transform.Rotate(0,0,90);
         var fourthGate = Instantiate(swordGate, player.transform.position + new Vector3(-6, 9, 0), Quaternion.identity);
+        fourthGate.transform.Rotate(0, 0, - 45);
+        fourthGate.GetComponent<SpriteRenderer>().flipX = true;
         var fifthGate = Instantiate(swordGate, player.transform.position + new Vector3(-9, -1, 0), Quaternion.identity);
+        fifthGate.GetComponent<SpriteRenderer>().flipX = true;
 
     }
 }
