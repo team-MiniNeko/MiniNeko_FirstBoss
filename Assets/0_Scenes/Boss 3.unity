@@ -222,14 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chain
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
-  isStay: 0
   isTrigger: 0
-  portal:
-  - {fileID: 190804560}
-  - {fileID: 194200210}
-  - {fileID: 505412711}
-  - {fileID: 1270951393}
-  - {fileID: 1361428801}
+  portal: {fileID: 194200210}
 --- !u!61 &13093958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1108,6 +1102,7 @@ MonoBehaviour:
   - {fileID: 13093954}
   - {fileID: 1939698508}
   - {fileID: 323398593}
+  ghoulObj: []
 --- !u!95 &265867411
 Animator:
   serializedVersion: 5
@@ -1335,14 +1330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chain
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
-  isStay: 0
   isTrigger: 0
-  portal:
-  - {fileID: 190804560}
-  - {fileID: 194200210}
-  - {fileID: 505412711}
-  - {fileID: 1270951393}
-  - {fileID: 1361428801}
+  portal: {fileID: 1361428801}
 --- !u!61 &323398597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2068,6 +2057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  invisibleTime: 0.01
 --- !u!1 &589997534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,6 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  invisibleTime: 0.01
 --- !u!61 &678405449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2872,14 +2863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chain
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
-  isStay: 0
   isTrigger: 0
-  portal:
-  - {fileID: 190804560}
-  - {fileID: 194200210}
-  - {fileID: 505412711}
-  - {fileID: 1270951393}
-  - {fileID: 1361428801}
+  portal: {fileID: 505412711}
 --- !u!61 &1330972030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3425,6 +3410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
+  invisibleTime: 0.01
 --- !u!1 &1591815445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,14 +3624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chain
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
-  isStay: 0
   isTrigger: 0
-  portal:
-  - {fileID: 190804560}
-  - {fileID: 194200210}
-  - {fileID: 505412711}
-  - {fileID: 1270951393}
-  - {fileID: 1361428801}
+  portal: {fileID: 190804560}
 --- !u!61 &1777051638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3846,6 +3826,7 @@ MonoBehaviour:
   colider2d: {fileID: 1843842201}
   atk: {fileID: 7096505069737248528, guid: 8971ac57f21664aeca89b04c2f253109, type: 3}
   Anims: {fileID: 0}
+  isStop: 0
 --- !u!50 &1826793354
 Rigidbody2D:
   serializedVersion: 4
@@ -3885,11 +3866,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17233f96396d41e0a77825ad4ea6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHP: 100000
-  playerHP: 100
-  HPBar: {fileID: 115238414}
-  HealthText: {fileID: 516334749}
-  DiedUI: {fileID: 367699701}
+  maxHp: 1000
+  hpBar: {fileID: 115238415}
+  healthText: {fileID: 516334749}
+  diedUI: {fileID: 0}
+  invisibleTime: 0
 --- !u!95 &1826793356
 Animator:
   serializedVersion: 5
@@ -3959,6 +3940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  invisibleTime: 0.01
 --- !u!61 &1830352253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4278,6 +4260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
+  invisibleTime: 0.01
 --- !u!1 &1853631293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,6 +4406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
+  invisibleTime: 0.01
 --- !u!1 &1939698508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,14 +4507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chain
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
-  isStay: 0
   isTrigger: 0
-  portal:
-  - {fileID: 190804560}
-  - {fileID: 194200210}
-  - {fileID: 505412711}
-  - {fileID: 1270951393}
-  - {fileID: 1361428801}
+  portal: {fileID: 1270951393}
 --- !u!61 &1939698512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4855,6 +4833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
+  invisibleTime: 0.01
 --- !u!1 &2084465415
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,6 +4882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  invisibleTime: 0.01
 --- !u!61 &2084465418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5039,6 +5019,9 @@ MonoBehaviour:
   - {fileID: 13093957}
   - {fileID: 1939698511}
   - {fileID: 323398596}
+  isCheck: 0
+  isStay: 0
+  canShrinkChain: 0
 --- !u!114 &2084633153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5053,6 +5036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 10
   Type: Enter
+  invisibleTime: 0.01
 --- !u!61 &2084633154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5431,6 +5415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Type: Stay
+  invisibleTime: 0.01
 --- !u!61 &8068589429916244334
 BoxCollider2D:
   m_ObjectHideFlags: 0
