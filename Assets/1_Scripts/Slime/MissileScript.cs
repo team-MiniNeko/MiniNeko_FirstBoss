@@ -28,7 +28,6 @@ public class MissileScript : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x,transform.position.y,Target.transform.position.z);
         life = Time.time - Startlife;
-        Debug.Log("Life:" + life);
         if (life > 30)
             Destroy(gameObject);
         if (life > 0.5 && life < 1){

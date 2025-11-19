@@ -8,7 +8,7 @@ public class AttackEffectScript : MonoBehaviour
     // Start is called before the first frame update
     public int Damage;
     public string Type;
-    public float invisibleTime = 0.01f;
+    public float invisibleTime = 0.03f;
     void OnTriggerStay2D(Collider2D collision)
     {
         if(Type == "Stay"){

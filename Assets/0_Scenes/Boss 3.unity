@@ -223,7 +223,11 @@ MonoBehaviour:
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
   isTrigger: 0
+<<<<<<< HEAD
   portal: {fileID: 194200210}
+=======
+  portal: {fileID: 0}
+>>>>>>> main
 --- !u!61 &13093958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1331,7 +1335,11 @@ MonoBehaviour:
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
   isTrigger: 0
+<<<<<<< HEAD
   portal: {fileID: 1361428801}
+=======
+  portal: {fileID: 0}
+>>>>>>> main
 --- !u!61 &323398597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1505,11 +1513,16 @@ Transform:
   m_GameObject: {fileID: 415955601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0.0324, y: -0.1646, z: 10}
   m_LocalScale: {x: 2.6, y: 2.7, z: 1}
+=======
+  m_LocalPosition: {x: -0.1484, y: 12.9, z: 0}
+  m_LocalScale: {x: 10, y: 5, z: 1}
+>>>>>>> main
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &415955603
 SpriteRenderer:
@@ -1556,10 +1569,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_DrawMode: 2
+  m_Size: {x: 15, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1893,8 +1906,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 415955602}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -2864,7 +2876,11 @@ MonoBehaviour:
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
   isTrigger: 0
+<<<<<<< HEAD
   portal: {fileID: 505412711}
+=======
+  portal: {fileID: 0}
+>>>>>>> main
 --- !u!61 &1330972030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3410,7 +3426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
-  invisibleTime: 0.01
+  invisibleTime: 0.03
 --- !u!1 &1591815445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3641,11 @@ MonoBehaviour:
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
   isTrigger: 0
+<<<<<<< HEAD
   portal: {fileID: 190804560}
+=======
+  portal: {fileID: 0}
+>>>>>>> main
 --- !u!61 &1777051638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3871,6 +3891,8 @@ MonoBehaviour:
   healthText: {fileID: 516334749}
   diedUI: {fileID: 0}
   invisibleTime: 0
+  DamageText: {fileID: 1487416769882642056, guid: edcc3b94bf3614596a7771fbbd9d73d4, type: 3}
+  CameraCanvas: {fileID: 7183246942121871575, guid: 491c4a248d2d34bd8bfe8d383d6774dc, type: 3}
 --- !u!95 &1826793356
 Animator:
   serializedVersion: 5
@@ -4260,7 +4282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
-  invisibleTime: 0.01
+  invisibleTime: 0.03
 --- !u!1 &1853631293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,7 +4428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
-  invisibleTime: 0.01
+  invisibleTime: 0.03
 --- !u!1 &1939698508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,7 +4530,11 @@ MonoBehaviour:
   target: {fileID: 1826793348}
   Flooring: {fileID: 2084633151}
   isTrigger: 0
+<<<<<<< HEAD
   portal: {fileID: 1270951393}
+=======
+  portal: {fileID: 0}
+>>>>>>> main
 --- !u!61 &1939698512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4833,7 +4859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 20
   Type: Stay
-  invisibleTime: 0.01
+  invisibleTime: 0.03
 --- !u!1 &2084465415
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +5062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 10
   Type: Enter
-  invisibleTime: 0.01
+  invisibleTime: 0.03
 --- !u!61 &2084633154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5393,7 +5419,6 @@ GameObject:
   - component: {fileID: 8068589429916244329}
   - component: {fileID: 8068589429916244330}
   - component: {fileID: 8068589429916244334}
-  - component: {fileID: 8068589429916244333}
   m_Layer: 7
   m_Name: Green Idle
   m_TagString: Untagged
@@ -5401,21 +5426,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8068589429916244333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068589429916244332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
-  Type: Stay
-  invisibleTime: 0.01
 --- !u!61 &8068589429916244334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5465,6 +5475,7 @@ BoxCollider2D:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 415955602}
   - {fileID: 519420032}
   - {fileID: 589997537}
   - {fileID: 2115988723}

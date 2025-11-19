@@ -13,7 +13,7 @@ public class LightAttack : MonoBehaviour
     }
     private void Start()
     {
-        //DOTween.To(() => box.size, x => box.size = x, new Vector2(17f, 30f), 1f);
+        DOTween.To(() => box.size, x => box.size = x, new Vector2(17f, 30f), 0.1f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

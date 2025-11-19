@@ -6,6 +6,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerHealth : MonoBehaviour
 {  
@@ -18,10 +19,13 @@ public class PlayerHealth : MonoBehaviour
     public GameObject diedUI;
     float nuckback = 0f;
     public float invisibleTime;
+    public GameObject DamageText;
+    public GameObject CameraCanvas;
     Vector2 lF;
     float mvs;
     void Start()
     {
+        CameraCanvas = Instantiate(CameraCanvas);
         invisibleTime = Time.time;
         CurHp = maxHp;
         mvs = gameObject.GetComponent<PlayerMove>().moveSpeed;
@@ -52,6 +56,11 @@ public class PlayerHealth : MonoBehaviour
         if (invisibleTime < Time.time){
             CurHp -= num;
             invisibleTime = Time.time + addInv;
+            GameObject dmgText = Instantiate(DamageText);
+            dmgText.transform.SetParent(CameraCanvas.transform);
+            dmgText.GetComponent<DamageTextScript>().SetText(num);
+            dmgText.transform.position = transform.position;
+            Destroy(dmgText,0.5f);
         }
     }
     void Update()

@@ -77,12 +77,11 @@ public class PlayerMove : MonoBehaviour
         if (isDashing)
         {
             sumdash = sumdash + Dashing.x;
-            Debug.Log($"Dash :{sumdash}");
             transform.Translate(Dashing * Time.deltaTime * moveSpeed);
             Dashing /= 1.01f;
             if (Math.Abs(Dashing.x) <= 0.5f)
             {
-                Debug.Log("Dash Value Reseted");
+                Debug.Log("Dash Charged");
                 sumdash = 0f;
                 Dashing = new Vector2(0, 0);
                 isDashing = false;

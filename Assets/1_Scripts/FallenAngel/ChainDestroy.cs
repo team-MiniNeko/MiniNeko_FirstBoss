@@ -38,7 +38,7 @@ public class ChainDestroy : MonoBehaviour
         if (isFirst)
         {
             Collider2D player = collision;
-            Debug.Log("Fir");//이거 두번 호출하는듯 ㅇㅇ.... 내일 고치자
+            Debug.Log("Fir");
             player.gameObject.GetComponent<PlayerMove>().isStop = true;
             isFirst = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

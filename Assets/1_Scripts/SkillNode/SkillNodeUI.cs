@@ -12,6 +12,7 @@ public class SkillNodeUI : MonoBehaviour
 
     public SkillData skillData;
     public int currentRank = 0;
+    public ParticleSystem clickParticle;
 
     public event Action<SkillNodeUI> onClicked;
     private void Start()
@@ -38,6 +39,10 @@ public class SkillNodeUI : MonoBehaviour
 
     public void SetRank(int r)
     {
+        if(currentRank < r && currentRank > 0){
+            clickParticle.Play();
+            Debug.Log($"{skillData.name}:play clickparticle");
+        }
         currentRank = Math.Clamp(r, 0, skillData.maxRank);
         ReFresh();
     }

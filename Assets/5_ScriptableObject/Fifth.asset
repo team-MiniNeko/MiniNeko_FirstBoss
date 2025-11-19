@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Fifth
   m_EditorClassIdentifier: 
   skillName: 
-  icon: {fileID: 0}
-  maxRank: 1
+  icon: {fileID: 21300000, guid: 3ed47330ed3fceb47a33fde05e94d392, type: 3}
   cost: 1
+  maxRank: 1
+  requiredLevel: 0
   preRequisites:
   - {fileID: 11400000, guid: 45df31146545e92459f578bc5d154370, type: 2}
+  nextSkills: []
   description: 

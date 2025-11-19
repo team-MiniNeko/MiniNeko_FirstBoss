@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: First
   m_EditorClassIdentifier: 
   skillName: First
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0de989b29ccd65b4abc5e15f2c0d323a, type: 3}
   cost: 1
   maxRank: 5
   requiredLevel: 0

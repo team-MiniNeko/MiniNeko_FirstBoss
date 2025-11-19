@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SkillTreeManager : MonoBehaviour
 {
+    public static SkillTreeManager Instance;
     [SerializeField]
     public RectTransform contentRoot;
     public GameObject nodePrefab;
@@ -16,13 +17,25 @@ public class SkillTreeManager : MonoBehaviour
 
     public List<SkillData> nextSkills = new List<SkillData>();
 
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)
     {
-        // ÇöÀç ³ëµå »ý¼º
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         SkillNodeUI ui = CreateNode(current, position);
 
         if (current.nextSkills == null || current.nextSkills.Count == 0)
@@ -130,7 +143,7 @@ public class SkillTreeManager : MonoBehaviour
         {
             if (pre == null)
             {
-                Debug.LogError($"[ERROR] ½ºÅ³ µ¥ÀÌÅÍ '{node.skillData.skillName}'ÀÇ ¼±Çà ½ºÅ³ ¹è¿­¿¡ NULL ÂüÁ¶°¡ ÀÖ½À´Ï´Ù. ¿¡µðÅÍ¿¡¼­ È®ÀÎÇÏ¼¼¿ä!!", node.skillData);
+                Debug.LogError($"[ERROR] ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ '{node.skillData.skillName}'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½è¿­ï¿½ï¿½ NULL ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½!!", node.skillData);
                 canUnlock = false;
                 break;
             }
@@ -143,11 +156,11 @@ public class SkillTreeManager : MonoBehaviour
         if (canUnlock && node.currentRank < node.skillData.maxRank)
         {
             node.SetRank(node.currentRank + 1);
-            Debug.Log($"½ºÅ³ È¹µæ: {node.skillData.skillName}");
+            Debug.Log($"skill name: {node.skillData.skillName}");
         }
         else
         {
-            Debug.Log("¼±Çà Á¶°Ç ºÎÁ· ¶Ç´Â ÀÌ¹Ì ÃÖ´ë ·¹º§ÀÔ´Ï´Ù.");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Ì¹ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
         }
     }
     public void SaveProgress()
