@@ -31,7 +31,8 @@ public class ghoul : MonoBehaviour
     void Update()
     {
         myDir = targetDir.transform.position - transform.position;
-        
+        dir = myDir.normalized;
+        rb.velocity = new Vector2(dir.x * 7f, 0);
         if (targetDir.transform.position.x > transform.position.x)
         {
             sr.flipX = false;
@@ -39,15 +40,6 @@ public class ghoul : MonoBehaviour
         else
         {
             sr.flipX = true;
-        }
-
-        foreach (GameObject g in otherG)
-        {
-            if (g.transform.position.x == transform.position.x)
-            {
-                dir = myDir.normalized;
-                rb.velocity = new Vector2(dir.x * 7f, 0);
-            }
         }
     }
 }
