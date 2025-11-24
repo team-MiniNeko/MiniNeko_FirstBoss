@@ -53,7 +53,7 @@ public class EnemyHealthScript : MonoBehaviour
             }
             else{HPBarEF.localScale = new Vector3(HPBarEF.localScale.x + (HPBar.localScale.x - HPBarEF.localScale.x) * Time.deltaTime / 10, 1f, 1f);}
         }
-        if (Health <= 0){Health = 0; gameObject.SetActive(false); }
+        if (Health <= 0){Health = 0; Destroy(gameObject); }
 
     }
     
