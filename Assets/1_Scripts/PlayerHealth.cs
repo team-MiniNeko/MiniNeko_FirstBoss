@@ -70,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = $"{Math.Round(CurHp)}/{maxHp}";
         if (transform.position.y < -50)
         {
-            transform.position = new Vector2(0, 10);
+            // transform.position = new Vector2(0, );
             GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             Damage(100);
         }
