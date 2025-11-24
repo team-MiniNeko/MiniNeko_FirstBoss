@@ -56,11 +56,18 @@ public class Floor : MonoBehaviour
         canShrinkChain = true;
         isStay = true;
         isCheck = true;
+        float t = 0;
         if (!sr.enabled && !cor.enabled)
         {
                     transform.position = new Vector2(target.transform.position.x, transform.position.y);
                     sr.enabled = true;
                     cor.enabled = true;
+                    while (transform.localScale.x < 20)
+                    {
+                        transform.localScale = new Vector3(Mathf.Lerp(transform.localScale.x, 20, t), transform.localScale.y, transform.localScale.z);
+                        t += Time.deltaTime;
+                        yield return null;
+                    }
         }
     }
     private void OnTriggerExit2D(Collider2D a)
@@ -72,6 +79,7 @@ public class Floor : MonoBehaviour
             target.GetComponent<PlayerMove>().JumpPower = 5;
             target.GetComponent<PlayerMove>().DashForce = 5;
             StartCoroutine( ShrinkChain());
+            StartCoroutine( ReduceFloor());
         }
     }
 
@@ -84,7 +92,7 @@ public class Floor : MonoBehaviour
         cor.enabled = false;
         sr.enabled = false;
         t = 0;
-
+        
         bool anyChainLeft = true;
         
         // 최소 하나라도 줄일 체인이 있을 때 반복
@@ -127,6 +135,17 @@ public class Floor : MonoBehaviour
             {
                 _chain.isTrigger = false;
             }
+        }
+    }
+
+    IEnumerator ReduceFloor()
+    {
+        float t = 0;
+        while (transform.localScale.x > 0)
+        {
+            transform.localScale = new Vector3(Mathf.Lerp(transform.localScale.x, 0, t), 1, 1);
+            t += Time.deltaTime;
+            yield return null;
         }
     }
 }

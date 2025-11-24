@@ -11,6 +11,7 @@ public class Chain : MonoBehaviour
     public GameObject portal;
     private Vector2 a;
     private Collider2D col;
+    private float t;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class Chain : MonoBehaviour
         a = GetComponent<BoxCollider2D>().offset;
         floor = Flooring.GetComponent<Floor>();
         col = GetComponent<Collider2D>();
+        portal.transform.localScale = Vector3.zero;
     }
     private void Update()
     {
@@ -28,11 +30,21 @@ public class Chain : MonoBehaviour
         }
         if (transform.localScale.y > 0)
         {
-                portal.transform.localScale = new Vector3(0.1f, 0.1f, 1);
+                portal.transform.localScale = new Vector3(Mathf.Lerp(portal.transform.localScale.x, 0.1f, t), Mathf.Lerp(portal.transform.localScale.y, 0.1f, t), 1);
+                t += Time.deltaTime;
+                if (portal.transform.localScale.x == 0.1f)
+                {
+                    t = 0;
+                }
         }
         else
         {
-                portal.transform.localScale = new Vector3(0f, 0f, 1);
+                portal.transform.localScale = new Vector3(Mathf.Lerp(portal.transform.localScale.x, 0, t), Mathf.Lerp(portal.transform.localScale.y, 0, t), 1);
+                t += Time.deltaTime;
+                if (portal.transform.localScale.x == 0)
+                {
+                    t = 0;
+                }
         }
     }
 

@@ -15,10 +15,12 @@ public class LichKingAttack : MonoBehaviour
     Rigidbody2D rb;
     public Transform sword;
     public Transform crack;
+    public PlayerMove playerMove;
 
     public int speed;
-    bool page2 = true;
+    public bool page2;
     bool isCrecked;
+    private bool isSkill;
     public Sprite[] Attack;
     public GameObject[] chain;
     private Chain[] ChainScript;
@@ -35,6 +37,8 @@ public class LichKingAttack : MonoBehaviour
 
     public GameObject[] voidBall;
 
+    private EnemyHealthScript LichHp;
+    
     void Awake()
     {
         flipx = transform.localScale;
@@ -44,6 +48,7 @@ public class LichKingAttack : MonoBehaviour
         chainCollider = new Collider2D[chain.Length];
         ChainScript = new Chain[chain.Length];
         ghoulHp = new EnemyHealthScript[ghoulObj.Length];
+        LichHp = GetComponent<EnemyHealthScript>();
         for (int i = 0; i < chain.Length; i++)
         {
             chainCollider[i] = chain[i].GetComponent<Collider2D>();
@@ -63,35 +68,42 @@ public class LichKingAttack : MonoBehaviour
 
     private void Update()
     {
+        if (LichHp.Health < 30 && !page2)
+        {
+            page2 = true;
+            StopAllCoroutines();
+            StartCoroutine(BossHp());
+        }
         if (isCrecked)
             return;
-        if (transform.transform.position.x > Target.transform.position.x)
+        if (transform.transform.position.x > Target.transform.position.x && !isSkill)
         {
             flipx.x = Mathf.Abs(flipx.x); 
             transform.localScale = flipx;
             rb.velocity = Vector2.left * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-        else
+        else if(transform.transform.position.x < Target.transform.position.x && !isSkill)
         {
             flipx.x = -Mathf.Abs(flipx.x);
             transform.localScale = flipx;
             rb.velocity = Vector2.right * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-            }
+    }
 
     IEnumerator BossAttackLoop()
     {
         int lastPettenSycle = -1;
-        int pettenSycle = Random.Range(0, 5);
+        int pettenSycle = Random.Range(0, 2);
         while (true)
         {
             if (cor == null)
             {
 
                 
+                if(!page2)
                 while (pettenSycle == lastPettenSycle)
                 {
-                   pettenSycle = Random.Range(0, 5);
+                   pettenSycle = Random.Range(0, 2);
                 }
 
                 
@@ -111,7 +123,11 @@ public class LichKingAttack : MonoBehaviour
                 }
 
                 if (page2)
-                {
+                    while (pettenSycle == lastPettenSycle)
+                    {
+                        pettenSycle = Random.Range(0, 5);
+                    }
+                    lastPettenSycle = pettenSycle;
                     switch (pettenSycle)
                     {
                         case 2:
@@ -126,9 +142,9 @@ public class LichKingAttack : MonoBehaviour
                             cor = VoidBall();
                             yield return cor;
                             break;
-                    }
                 }
             }
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -146,7 +162,8 @@ public class LichKingAttack : MonoBehaviour
     }
     IEnumerator SwordMoveDown(Action onDown = null)
     {
-        var swordMoveDown = new Vector3();
+        Vector3 swordMoveDown = new Vector3();
+        bool isDown = false;
         float t = 0f;
         while (t < 1f)
         {
@@ -157,6 +174,11 @@ public class LichKingAttack : MonoBehaviour
                 onDown?.Invoke();
 
             yield return null;
+            if (t > 0.2f && !isDown)
+            {
+                isDown = true;
+                yield return CrackScaleUp();
+            }
         }
     }
 
@@ -192,7 +214,7 @@ public class LichKingAttack : MonoBehaviour
                     sword.transform.GetChild(0).gameObject.SetActive(true);
                     sword.transform.GetChild(1).gameObject.SetActive(false);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
-                    
+                    isSkill = true;
                     if (transform.transform.position.x > Target.transform.position.x)
                     {
                         anim.SetTrigger("Attack1Left");
@@ -230,7 +252,7 @@ public class LichKingAttack : MonoBehaviour
                         
                         yield return null;
                     }
-
+                    isSkill = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -243,10 +265,11 @@ public class LichKingAttack : MonoBehaviour
                     sword.transform.GetChild(1).gameObject.SetActive(true);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
                     sword.transform.GetChild(3).gameObject.SetActive(false);
-                    
+                    isSkill = true;
                     anim.SetTrigger("Attack2");
                     
                     yield return new WaitForSeconds(2);
+                    isSkill = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -262,7 +285,7 @@ public class LichKingAttack : MonoBehaviour
                     sword.transform.GetChild(0).gameObject.SetActive(false);
                     sword.transform.GetChild(1).gameObject.SetActive(false);
                     sword.transform.GetChild(2).gameObject.SetActive(true);
-                    
+                    isSkill = true;
                     if (transform.transform.position.x > Target.transform.position.x)
                     {
                         anim.SetTrigger("Attack1Left");
@@ -308,6 +331,7 @@ public class LichKingAttack : MonoBehaviour
                         );
                         yield return null;
                     }
+                    isSkill = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -334,7 +358,7 @@ public class LichKingAttack : MonoBehaviour
         sword.transform.GetChild(1).gameObject.SetActive(false);
         sword.transform.GetChild(2).gameObject.SetActive(false);
         sword.transform.GetChild(3).gameObject.SetActive(true);
-
+        sword.transform.GetChild(3).gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
         switch (ran)
 {
     case 0:
@@ -343,14 +367,10 @@ public class LichKingAttack : MonoBehaviour
         yield return SwordMoveDown(() => crack.transform.GetChild(0).gameObject.SetActive(true));
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(1).gameObject.SetActive(true);  // 다음 crack 켜기
-        crack.transform.GetChild(0).gameObject.SetActive(false); // 이전 crack 끄기
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(1).gameObject.SetActive(true); // 내려올 때 유지
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(1).gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
         break;
@@ -361,21 +381,14 @@ public class LichKingAttack : MonoBehaviour
         yield return SwordMoveDown(() => crack.transform.GetChild(0).gameObject.SetActive(true));
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(1).gameObject.SetActive(true);
-        crack.transform.GetChild(0).gameObject.SetActive(false);
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(1).gameObject.SetActive(true);
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(2).gameObject.SetActive(true);
-        crack.transform.GetChild(1).gameObject.SetActive(false);
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(2).gameObject.SetActive(true);
-
+        
         yield return SwordMoveUp();
-        crack.transform.GetChild(2).gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
         break;
@@ -386,28 +399,18 @@ public class LichKingAttack : MonoBehaviour
         yield return SwordMoveDown(() => crack.transform.GetChild(0).gameObject.SetActive(true));
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(1).gameObject.SetActive(true);
-        crack.transform.GetChild(0).gameObject.SetActive(false);
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(1).gameObject.SetActive(true);
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(2).gameObject.SetActive(true);
-        crack.transform.GetChild(1).gameObject.SetActive(false);
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(2).gameObject.SetActive(true);
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(3).gameObject.SetActive(true);
-        crack.transform.GetChild(2).gameObject.SetActive(false);
 
         yield return SwordMoveDown();
-        crack.transform.GetChild(3).gameObject.SetActive(true);
 
         yield return SwordMoveUp();
-        crack.transform.GetChild(3).gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
         break;
@@ -417,19 +420,14 @@ public class LichKingAttack : MonoBehaviour
 
     sr.sprite = Attack[0];
     isCrecked = false;
-
-    // 모든 crack 초기화
-    for (int i = 0; i < 4; i++){
-        crack.transform.GetChild(i).gameObject.SetActive(false);
-    }
+    
+    crack.transform.GetChild(0).gameObject.SetActive(false);
+    crack.transform.GetChild(0).transform.localScale = new Vector3(0f, 0.15f, 1f);
+    
     sword.transform.GetChild(3).gameObject.SetActive(false);
     sr.sprite = Attack[0];
     isCrecked = false;
-    crack.transform.GetChild(0).gameObject.SetActive(false);
-    crack.transform.GetChild(1).gameObject.SetActive(false);
-    crack.transform.GetChild(2).gameObject.SetActive(false);
-    crack.transform.GetChild(3).gameObject.SetActive(false);   
-    sword.transform.GetChild(3).gameObject.SetActive(false);
+
     cor = null;
 }
 
@@ -510,25 +508,27 @@ IEnumerator Chain()
 
         yield return null;
     }
-    yield return new WaitForSeconds(6f);
+    yield return new WaitForSeconds(1f);
 
-    cor = null;
+    cor = Coroutine_Creck();
+    yield return cor;
 }
 
 IEnumerator Ghoul()
 {
     for (int i = 0; i < ghoulObj.Length; i++)
     {
-        ghoulHp[i].StartHealth = 10;
-        ghoulHp[i].Health = 10;
+        ghoulHp[i].StartHealth = 40;
+        ghoulHp[i].Health = 40;
         ghoulObj[i].SetActive(true);
     }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         cor = null;
 }
 
 IEnumerator VoidBall()
 {
+    isSkill = true;
     rb.velocity = Vector2.zero;
     int i;
     for (i = 0; i < voidBall.Length; i++)
@@ -538,8 +538,9 @@ IEnumerator VoidBall()
         yield return new WaitForSeconds(0.5f);
     }
 
-    yield return new WaitForSeconds(8f);
+    yield return new WaitForSeconds(1f);
     rb.velocity = Vector2.one;
+    isSkill = false;
     cor = null;
 }
 
@@ -554,4 +555,35 @@ public void EndPoint()
     sword.transform.GetChild(1).gameObject.SetActive(false);
 }
 
+IEnumerator CrackScaleUp()
+{
+    Vector3 crackScale = crack.transform.GetChild(0).localScale;
+    Vector3 nextScale = new Vector3(crackScale.x + 3, crackScale.y, crackScale.z);
+    float time = 0;
+    while (crack.transform.GetChild(0).transform.localScale.x < nextScale.x)
+    {
+        crack.transform.GetChild(0).localScale = new Vector3(Mathf.Lerp(crackScale.x, nextScale.x, time), crackScale.y, crackScale.z);
+        time += Time.deltaTime * 4;
+        yield return null;
+    }
+}
+
+IEnumerator BossHp()
+{
+    cor = null;
+    while (LichHp.Health < 1000)
+    {
+        playerMove.isStop = true;
+        rb.velocity = Vector2.zero;
+        LichHp.Health += 5;
+        yield return null;
+    }
+
+    if (page2 && LichHp.Health > 999)
+    {
+        rb.velocity = Vector2.one;
+        playerMove.isStop = false;
+        StartCoroutine(BossAttackLoop());
+    }
+}
 }

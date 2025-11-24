@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: 2dfed0f75e2b042a5bdf3f6234737e86
+guid: 83ad54273ccccaf4783ba619deac6208
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2230076236431582176
-    second: "ChatGPT Image 2025\u1102\u1167\u11AB 11\u110B\u116F\u11AF 3\u110B\u1175\u11AF
-      \u110B\u1169\u1112\u116E 12_20_06 (2)_0"
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -47,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +80,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -97,8 +93,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -112,45 +108,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: "ChatGPT Image 2025\u1102\u1167\u11AB 11\u110B\u116F\u11AF 3\u110B\u1175\u11AF
-        \u110B\u1169\u1112\u116E 12_20_06 (2)_0"
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 341
-        width: 492
-        height: 465
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e36b868582d2fe10800000000000000
-      internalID: 2230076236431582176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries: []
-    nameFileIdTable:
-      "ChatGPT Image 2025\u1102\u1167\u11AB 11\u110B\u116F\u11AF 3\u110B\u1175\u11AF \u110B\u1169\u1112\u116E 12_20_06 (2)_0": 2230076236431582176
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

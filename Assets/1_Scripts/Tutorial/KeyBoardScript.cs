@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KeyBoardScript : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class KeyBoardScript : MonoBehaviour
     {
         if (Input.GetKeyDown(Key))
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = changeSprite;
+            gameObject.GetComponent<Image>().sprite = changeSprite;
             return;
         } 
     }

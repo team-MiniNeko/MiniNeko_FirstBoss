@@ -9,6 +9,7 @@ public class VoidBall : MonoBehaviour
     // Start is called before the first frame update
     public GameObject target;
     public Material material;
+    public GameObject Light;
     void OnEnable()
     {
         float angle = transform.position.x < target.transform.position.x
@@ -19,7 +20,7 @@ public class VoidBall : MonoBehaviour
     IEnumerator VoidMove (float angle)
     {
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        while (Mathf.Abs(transform.position.x) < 60)
+        while (Mathf.Abs(transform.position.x) < 200)
         {
             transform.position += transform.right * Time.deltaTime * 20;        
             yield return null;
@@ -33,13 +34,15 @@ public class VoidBall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             material.color = new Color(0.2392f, 0.2392f, 0.2392f, 1f);
+            Light.SetActive(true);
             StartCoroutine(LightUp());
         }
     }
 
     IEnumerator LightUp()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
+        Light.SetActive(false);
         material.color = new Color(1, 1, 1, 1f);
     }
 }
