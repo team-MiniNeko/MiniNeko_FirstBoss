@@ -12,7 +12,6 @@ public class Chain : MonoBehaviour
     private Vector2 a;
     private Collider2D col;
     private float t;
-    private PlayerHealth playerHealth;
     private PlayerMove playerMove;
 
     void Awake()
@@ -23,7 +22,6 @@ public class Chain : MonoBehaviour
         floor = Flooring.GetComponent<Floor>();
         col = GetComponent<Collider2D>();
         portal.transform.localScale = Vector3.zero;
-        playerHealth = target.GetComponent<PlayerHealth>();
         playerMove = target.GetComponent<PlayerMove>();
     }
     private void Update()
@@ -37,7 +35,7 @@ public class Chain : MonoBehaviour
         {
                 portal.transform.localScale = new Vector3(Mathf.Lerp(portal.transform.localScale.x, 0.1f, t), Mathf.Lerp(portal.transform.localScale.y, 0.1f, t), 1);
                 t += Time.deltaTime;
-                if (portal.transform.localScale.x == 0.1f)
+                if (portal.transform.localScale.x >= 0.1f)
                 {
                     t = 0;
                 }
@@ -56,10 +54,10 @@ public class Chain : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player")){
-            Debuff();
             if (!floor.isStay)
             {
                 StartCoroutine(floor.LocalScale());
+                Debuff();
             }
 
             if (floor.isCheck){
@@ -85,11 +83,9 @@ public class Chain : MonoBehaviour
             yield return null; // 매 프레임 갱신
         }
     }
-    IEnumerator Debuff()
+    void Debuff()
     {
         Debug.Log("Test");
-        playerMove.moveSpeed -= 2f;
-        yield return new WaitForSeconds(3f);
-        playerMove.moveSpeed += 2f;
+        playerMove.moveSpeed -= 1f;
     }
 }

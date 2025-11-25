@@ -284,6 +284,8 @@ MonoBehaviour:
   Damage: 20
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &21709738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1220,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &265867402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1374,7 @@ MonoBehaviour:
   crack: {fileID: 1637583164}
   playerMove: {fileID: 642462487}
   speed: 300
-  page2: 1
+  page2: 0
   Attack:
   - {fileID: -1876575632989397844, guid: 403fd20c03d6449e8af0d04346350052, type: 3}
   - {fileID: 1259095790213493357, guid: 2dcc548dda1a5446aabe8cd26136c9a9, type: 3}
@@ -1640,6 +1644,8 @@ MonoBehaviour:
   Damage: 20
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &363492033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2152,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0
+  m_fontSize: 100
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2456,6 +2462,8 @@ MonoBehaviour:
   Damage: 40
   Type: Enter
   invisibleTime: 0.01
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!114 &536441773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,6 +2778,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &642462480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8406327759789480898, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
@@ -2841,6 +2851,8 @@ MonoBehaviour:
   Damage: 40
   Type: Enter
   invisibleTime: 0.01
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!61 &678405449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3158,6 +3170,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!212 &796734926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3806,6 +3820,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!212 &990858424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4114,6 +4130,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!212 &1188474079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4694,6 +4712,8 @@ MonoBehaviour:
   Damage: 20
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &1361428801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,6 +5995,8 @@ MonoBehaviour:
   Damage: 20
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &1779577527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,6 +6190,8 @@ MonoBehaviour:
   Damage: 40
   Type: Enter
   invisibleTime: 0.01
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!61 &1830352253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6500,6 +6524,8 @@ MonoBehaviour:
   Damage: 15
   Type: Stay
   invisibleTime: 0.1
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &1939698508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6662,6 +6688,8 @@ MonoBehaviour:
   Damage: 20
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &1956701556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7036,6 +7064,8 @@ MonoBehaviour:
   Damage: 10
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!61 &2084633154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7320,6 +7350,8 @@ MonoBehaviour:
   Damage: 50
   Type: Enter
   invisibleTime: 0.03
+  EffectType: 0
+  EffectRate: 0.1
 --- !u!1 &2115988720
 GameObject:
   m_ObjectHideFlags: 0
