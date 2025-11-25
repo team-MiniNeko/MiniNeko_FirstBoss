@@ -12,10 +12,11 @@ public class Boss3Audiomanager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioClips == null || audioClips.Length == 0)
         {
-            audioClips = new AudioClip[3];
+            audioClips = new AudioClip[4];
             audioClips[0] = Resources.Load<AudioClip>("1 3 patten");
             audioClips[1] = Resources.Load<AudioClip>("2 patten");
             audioClips[2] = Resources.Load<AudioClip>("5 patten");
+            audioClips[2] = Resources.Load<AudioClip>("2 2 patten");
         }
 
         if (instance == null)
