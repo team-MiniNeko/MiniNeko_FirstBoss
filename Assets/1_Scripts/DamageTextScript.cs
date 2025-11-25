@@ -18,11 +18,20 @@ public class DamageTextScript : MonoBehaviour
             GetComponent<TextMeshProUGUI>().color = new Color(0,0.8f,0);
             Damage = Math.Abs(Damage);
         }
-        gameObject.GetComponent<TextMeshProUGUI>().SetText(Convert.ToString(Damage));
+        GetComponent<TextMeshProUGUI>().SetText(Convert.ToString(Damage));
     }
+    public void SetText(float Damage)
+    {
+        if(Damage < 0f){
+            GetComponent<TextMeshProUGUI>().color = new Color(0,0.8f,0);
+            Damage = Math.Abs(Damage);
+        }
+        GetComponent<TextMeshProUGUI>().SetText(Convert.ToString(Damage));
+    }
+    public void SetTextColor(Color color){GetComponent<TextMeshProUGUI>().color = color;}
     void Start()
     {   
-         RTF = gameObject.GetComponent<RectTransform>();
+         RTF = GetComponent<RectTransform>();//Rect Transform 준말
          GravityY = UnityEngine.Random.Range(50,50);
          Speed = UnityEngine.Random.Range(-5f,5f);
     }

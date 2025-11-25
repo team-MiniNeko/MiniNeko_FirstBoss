@@ -46,12 +46,26 @@ public class PlayerHealth : MonoBehaviour
     }
     
     public void Damage(int num,float addInv = 0.1f){
-        if (invisibleTime < Time.time){
+        if (invisibleTime < Time.time || addInv == 0f){
             CurHp -= num;
             invisibleTime = Time.time + addInv;
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(CameraCanvas.transform);
             dmgText.GetComponent<DamageTextScript>().SetText(num);
+            dmgText.transform.position = transform.position;
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
+            Destroy(dmgText,0.5f);
+        }
+    }
+    
+    public void Damage(int num,Color color,float addInv = 0.1f){//effect damage 용 색 바꿔서 텍스트 띄우기
+        if (invisibleTime < Time.time|| addInv == 0f){
+            CurHp -= num;
+            invisibleTime = Time.time + addInv;
+            GameObject dmgText = Instantiate(DamageText);
+            dmgText.transform.SetParent(CameraCanvas.transform);
+            dmgText.GetComponent<DamageTextScript>().SetText(num);
+            dmgText.GetComponent<DamageTextScript>().SetTextColor(color);
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
             Destroy(dmgText,0.5f);
