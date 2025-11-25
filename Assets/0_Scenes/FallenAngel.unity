@@ -515,6 +515,18 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1805956562}
+    - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 443593987}
+    - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: diedUI
+      value: 
+      objectReference: {fileID: 1224410305}
+    - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1805956562}
     - target: {fileID: 8406327759789480898, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_Name
       value: Neko
@@ -1987,6 +1999,8 @@ MonoBehaviour:
   HPBar: {fileID: 914648504}
   HPBarEF: {fileID: 1325780410}
   HealthText: {fileID: 2017480028}
+  HitSound: {fileID: 0}
+  DamageText: {fileID: 0}
 --- !u!61 &2023414149
 BoxCollider2D:
   m_ObjectHideFlags: 0
