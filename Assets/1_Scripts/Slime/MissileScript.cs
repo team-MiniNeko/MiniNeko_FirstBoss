@@ -22,6 +22,7 @@ public class MissileScript : MonoBehaviour
     void Start()
     {
         Startlife = Time.time;
+        transform.rotation = Quaternion.Euler(0,0,0+Random.Range(-20f,20f));
         life = 0f;
     }
     void Update()

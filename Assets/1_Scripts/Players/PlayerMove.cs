@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
             }
             
             // --- 공격 입력 (대쉬 중에도 공격 가능하도록 Update에 유지) ---
-            if (Input.GetMouseButton(0) && Time.time - atkTime > 0.5)
+            if (Input.GetMouseButton(0) && Time.time - atkTime > 0.2f)
             {
                 atkTime = Time.time;
                 GameObject ins = Instantiate(atk);
