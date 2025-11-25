@@ -2597,6 +2597,7 @@ MonoBehaviour:
   Type: Stay
   invisibleTime: 0
   EffectType: 0
+  EffectType: 1
   EffectRate: 0.1
 --- !u!61 &8068589429916244334
 BoxCollider2D:
