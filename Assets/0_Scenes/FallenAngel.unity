@@ -465,7 +465,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1981,6 +1981,8 @@ MonoBehaviour:
   darkSwordGate: {fileID: 8116457507891045361, guid: 9287c73fb06ce0a4e96367e725d06902, type: 3}
   light: {fileID: 4062427478750402446, guid: a18c6f2cee487ec4fa3a000f25b99dc6, type: 3}
   lightSkillRange: {fileID: 9143175653084453902, guid: d5d036736a0cf664383e3e65cece061a, type: 3}
+  lightDarkLight: {fileID: 5907776585055746836, guid: 85726b9184eed254a8fbaed3ef067778, type: 3}
+  lightDarkLightSkillRange: {fileID: 7794249210078158854, guid: a6bfb79f42c3ba7469edd1705e319f98, type: 3}
 --- !u!114 &2023414148
 MonoBehaviour:
   m_ObjectHideFlags: 0

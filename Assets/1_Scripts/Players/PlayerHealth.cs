@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 
 public class PlayerHealth : MonoBehaviour
 {  
-    public int maxHp;
+    public float maxHp;
     public float _curHp;
     public float invisibleTime;
     public GameObject DamageText;
@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     Vector2 StPos;
     void Start()
     {
+        maxHp = PlayerStatsManager.Instance.playerHp;
         StPos = new Vector2(transform.position.x,transform.position.y);
         _curHp = maxHp;
         CameraCanvas = Instantiate(CameraCanvas);

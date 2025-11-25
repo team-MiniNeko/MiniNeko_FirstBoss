@@ -17,6 +17,7 @@ public class SkillNodeUI : MonoBehaviour
     public event Action<SkillNodeUI> onClicked;
     private void Start()
     {
+        currentRank = skillData.maxRank;
         if (button != null)
         {
             button.onClick.AddListener(() => onClicked?.Invoke(this));
