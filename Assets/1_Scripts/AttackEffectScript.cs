@@ -9,6 +9,8 @@ public class AttackEffectScript : MonoBehaviour
     public int Damage;
     public string Type;
     public float invisibleTime = 0.03f;
+    public int EffectType = 0;//0 물리 1 독 부여 ㄱㄴ
+    public float EffectRate = 0.1f;//0f~1f;
     void OnTriggerStay2D(Collider2D collision)
     {
         if(Type == "Stay"){

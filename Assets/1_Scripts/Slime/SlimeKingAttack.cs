@@ -25,6 +25,13 @@ public class SlimeKingAttack : MonoBehaviour
             CopyMissile.GetComponent<MissileScript>().Target = Target;
         }
     }
+    IEnumerator SummonWave()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject CopyWave = Instantiate(Wave);
+        CopyWave.transform.position = new Vector3(transform.position.x,transform.position.y-1,CopyWave.transform.position.z);
+        Destroy(CopyWave,0.8f);
+    }
     void Start()
     {
         mscooltime = Time.time;
@@ -33,19 +40,22 @@ public class SlimeKingAttack : MonoBehaviour
     void Update()
     {
         //1 phase pattern
-        if (Time.time - atkbftime > 5f)
+        if (Time.time - atkbftime > 2f)
         {
-            atkbftime = Time.time;
-
-            if (transform.transform.position.x > Target.transform.position.x)
-                atksee = Vector2.left * 200f * Math.Abs(transform.transform.position.x - Target.transform.position.x) / 8 + Vector2.up * 1000f;
-            if (transform.transform.position.x < Target.transform.position.x)
-                atksee = Vector2.right * 200f * Math.Abs(transform.transform.position.x - Target.transform.position.x) / 8 + Vector2.up * 1000f;
-            GameObject Wave1 = Instantiate(Wave);
-            Wave1.transform.position = transform.position;
-            Wave1.transform.Translate(Vector2.down * 2f);
-            Destroy(Wave1, 0.8f);
-            gameObject.GetComponent<Rigidbody2D>().AddForce(atksee);
+            if(Math.Abs(transform.position.x-Target.transform.position.x) >= 10){
+                IEnumerator co;
+                co = SummonWave();
+                StartCoroutine(co);
+                atkbftime = Time.time;
+                if (transform.position.x > Target.transform.position.x)
+                    atksee = Vector2.left * 3000f + Vector2.up * 20000f;
+                if (transform.position.x < Target.transform.position.x)
+                    atksee = Vector2.right * 3000f + Vector2.up * 20000f;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(atksee);
+            }
+            else
+            {
+            }
         }
         //2 phase
         if (gameObject.GetComponent<EnemyHealthScript>().Health < gameObject.GetComponent<EnemyHealthScript>().StartHealth / 2)

@@ -23,6 +23,7 @@ public class PlayerHealthDisplayScript : MonoBehaviour
     void Start()
     {
         phs = GetComponent<PlayerHealth>();
+        curPer = 1;
     }
 
     // Update is called once per frame
@@ -35,8 +36,8 @@ public class PlayerHealthDisplayScript : MonoBehaviour
                 phs.enabled = false;
                 this.enabled = false;
         }
-        hpBar.fillAmount = curPer;
+        curPer = curPer + ((CurHp/phs.maxHp)-curPer)*Time.deltaTime*10f;
         healthText.text = $"{Math.Round(CurHp)}/{phs.maxHp}";
-        DOTween.To(() => curPer, x => curPer = x, targetPer, 0.5f).SetEase(Ease.OutQuad);
+        hpBar.fillAmount = curPer;
     }
 }

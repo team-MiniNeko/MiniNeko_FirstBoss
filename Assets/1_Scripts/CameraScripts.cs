@@ -23,7 +23,8 @@ public class CameraScripts : MonoBehaviour
     {
         originSize = Size;
         originYv = yValue;
-        Icon = Instantiate(Icon);
+        if(Icon != null)
+            Icon = Instantiate(Icon);
         debuffTime = Time.time;
     }
     void Update()
