@@ -20,6 +20,9 @@ public class FallenAngelAttack : MonoBehaviour
     public GameObject light;
     public GameObject lightSkillRange;
 
+    public GameObject lightDarkLight;
+    public GameObject lightDarkLightSkillRange;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -43,9 +46,13 @@ public class FallenAngelAttack : MonoBehaviour
         {
             StartCoroutine(LightAttack());
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             StartCoroutine(DarkSwordAttack());
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            StartCoroutine(LightDarkLightAttack());
         }
     }
 
@@ -94,6 +101,21 @@ public class FallenAngelAttack : MonoBehaviour
         var lightAttack = Instantiate(this.light, coo, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
         Destroy(lightAttack);
+    }
+    IEnumerator LightDarkLightAttack()
+    {
+        Vector3 coo = new Vector3(player.transform.position.x, 10, 0);
+        var leftLightAttackRange = Instantiate(this.lightDarkLightSkillRange, coo + new Vector3(-7,0,0), Quaternion.identity);
+        var rightLightAttackRange = Instantiate(this.lightDarkLightSkillRange, coo + new Vector3(7, 0, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(leftLightAttackRange);
+        Destroy(rightLightAttackRange);
+        coo = new Vector3(coo.x, 6.5f, -0.1f);
+        var leftLightAttack = Instantiate(this.lightDarkLight, coo + new Vector3(-7, 0, 0), Quaternion.identity);
+        var rightLightAttack = Instantiate(this.lightDarkLight, coo + new Vector3(7, 0, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(leftLightAttack);
+        Destroy(rightLightAttack);
     }
     IEnumerator FirstPattern()
     {

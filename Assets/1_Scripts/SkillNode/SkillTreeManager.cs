@@ -136,26 +136,53 @@ public class SkillTreeManager : MonoBehaviour
 
         connections.Add(conn);
     }
-    void OnNodeClicked(SkillNodeUI node)
+    //void OnNodeClicked(SkillNodeUI node)//강화ver
+    //{
+    //    bool canUnlock = true;
+    //    foreach (var pre in node.skillData.preRequisites)
+    //    {
+    //        if (pre == null)
+    //        {
+    //            Debug.LogError($"[ERROR] ��ų ������ '{node.skillData.skillName}'�� ���� ��ų �迭�� NULL ������ �ֽ��ϴ�. �����Ϳ��� Ȯ���ϼ���!!", node.skillData);
+    //            canUnlock = false;
+    //            break;
+    //        }
+    //        if (!nodes.ContainsKey(pre) || nodes[pre].currentRank <= 0)
+    //        {
+    //            canUnlock = false;
+    //            break;
+    //        }
+    //    }
+    //    if (canUnlock && node.currentRank < node.skillData.maxRank)
+    //    {
+    //        node.SetRank(node.currentRank + 1);
+    //        Debug.Log($"skill name: {node.skillData.skillName}");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("���� ���� ���� �Ǵ� �̹� �ִ� �����Դϴ�.");
+    //    }
+    //}
+    void OnNodeClicked(SkillNodeUI node)//약화ver
     {
-        bool canUnlock = true;
-        foreach (var pre in node.skillData.preRequisites)
+        bool canLock = true;
+        foreach (var next in node.skillData.nextSkills)
         {
-            if (pre == null)
+            if (next == null)
             {
                 Debug.LogError($"[ERROR] ��ų ������ '{node.skillData.skillName}'�� ���� ��ų �迭�� NULL ������ �ֽ��ϴ�. �����Ϳ��� Ȯ���ϼ���!!", node.skillData);
-                canUnlock = false;
+                canLock = false;
                 break;
             }
-            if (!nodes.ContainsKey(pre) || nodes[pre].currentRank <= 0)
+            if (!nodes.ContainsKey(next) || nodes[next].currentRank > 0)
             {
-                canUnlock = false;
+                canLock = false;
                 break;
             }
         }
-        if (canUnlock && node.currentRank < node.skillData.maxRank)
+        if (canLock && node.currentRank >= 0)
         {
-            node.SetRank(node.currentRank + 1);
+            node.SetRank(node.currentRank - 1);
             Debug.Log($"skill name: {node.skillData.skillName}");
         }
         else
