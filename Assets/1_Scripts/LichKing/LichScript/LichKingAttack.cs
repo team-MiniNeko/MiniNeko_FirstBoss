@@ -76,13 +76,13 @@ public class LichKingAttack : MonoBehaviour
         }
         if (isCrecked)
             return;
-        if (transform.transform.position.x > Target.transform.position.x && !isSkill)
+        if (transform.position.x > Target.transform.position.x && !isSkill)
         {
             flipx.x = Mathf.Abs(flipx.x); 
             transform.localScale = flipx;
             rb.velocity = Vector2.left * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-        else if(transform.transform.position.x < Target.transform.position.x && !isSkill)
+        else if(transform.position.x < Target.transform.position.x && !isSkill)
         {
             flipx.x = -Mathf.Abs(flipx.x);
             transform.localScale = flipx;
@@ -92,21 +92,25 @@ public class LichKingAttack : MonoBehaviour
 
     IEnumerator BossAttackLoop()
     {
-        int lastPettenSycle = -1;
-        int pettenSycle = Random.Range(0, 2);
+        int lastPattenCycle = -1;
+        int pattenCycle = -1;
         while (true)
         {
             if (cor == null)
             {
 
-                
-                if(!page2)
-                while (pettenSycle == lastPettenSycle)
+
+                if (!page2)
                 {
-                   pettenSycle = Random.Range(0, 2);
+                    while (pattenCycle == lastPattenCycle)
+                    {
+                        pattenCycle = Random.Range(0, 2);
+                    }
+
+                    lastPattenCycle = pattenCycle; // 다음 회차를 위해 저장
                 }
-                lastPettenSycle = pettenSycle; // 다음 회차를 위해 저장
-                switch (pettenSycle)
+
+                switch (pattenCycle)
                 {
                     case 0:
                         cor = Coroutine_SwingAttack();
@@ -120,12 +124,16 @@ public class LichKingAttack : MonoBehaviour
                 }
 
                 if (page2)
-                    while (pettenSycle == lastPettenSycle)
+                {
+                    while (pattenCycle == lastPattenCycle)
                     {
-                        pettenSycle = Random.Range(0, 5);
+                        pattenCycle = Random.Range(0, 5);
                     }
-                    lastPettenSycle = pettenSycle;
-                    switch (pettenSycle)
+
+                    lastPattenCycle = pattenCycle;
+                }
+
+                switch (pattenCycle)
                     {
                         case 2:
                             cor = Chain();
@@ -141,18 +149,20 @@ public class LichKingAttack : MonoBehaviour
                             break;
                 }
             }
-            yield return new WaitForSeconds(2f);
+
+            yield return null;
         }
     }
 
     IEnumerator SwordMoveUp()
     {
         float t = 0f;
-        var swordMoveUp = new Vector3();
+        Vector3 swordMoveUp = new Vector3();
+        Vector3 startPos = sword.transform.GetChild(3).position;
         while (t < 1f)
         {
-            t += Time.deltaTime;
-            swordMoveUp = Vector3.Lerp(sword.transform.GetChild(3).gameObject.transform.position, new Vector3(sword.transform.GetChild(3).gameObject.transform.position.x,1.3f,0) , t);
+            t += Time.deltaTime * 1.5f;
+            swordMoveUp = Vector3.Lerp(startPos, new Vector3(startPos.x,1.3f,0) , t);
             sword.transform.GetChild(3).gameObject.transform.position = swordMoveUp;
             yield return null;
         }
@@ -160,21 +170,23 @@ public class LichKingAttack : MonoBehaviour
     IEnumerator SwordMoveDown(Action onDown = null)
     {
         Vector3 swordMoveDown = new Vector3();
+        Vector3 startPos = sword.transform.GetChild(3).position;
         bool isDown = false;
         float t = 0f;
         while (t < 1f)
         {
-            t += Time.deltaTime;
-            swordMoveDown = Vector3.Lerp(sword.transform.GetChild(3).gameObject.transform.position, new Vector3(sword.transform.GetChild(3).gameObject.transform.position.x,0,0) , t);
+            t += Time.deltaTime * 5;
+            swordMoveDown = Vector3.Lerp(startPos, new Vector3(startPos.x,0,0) , t);
             sword.transform.GetChild(3).gameObject.transform.position = swordMoveDown;
             if(sword.transform.GetChild(3).gameObject.transform.position.y <= 0.1f)
                 onDown?.Invoke();
 
             yield return null;
-            if (t > 0.2f && !isDown)
+            if (t > 0.8f && !isDown)
             {
                 isDown = true;
-                yield return CrackScaleUp();
+                Boss3Audiomanager.instance.PlayAudio(3);
+                StartCoroutine(CrackScaleUp());
             }
         }
     }
@@ -462,6 +474,12 @@ IEnumerator Chain()
 
         yield return null;
     }
+    Boss3Audiomanager.instance.PlayAudio(4);
+    yield return new WaitForSeconds(0.001f);
+    Boss3Audiomanager.instance.PlayAudio(4);
+    yield return new WaitForSeconds(0.001f);
+    Boss3Audiomanager.instance.PlayAudio(4);
+
     yield return new WaitForSeconds(0.2f);
     
     while (true)
@@ -505,7 +523,7 @@ IEnumerator Chain()
 
         yield return null;
     }
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(0.5f);
 
     cor = Coroutine_Creck();
     yield return cor;

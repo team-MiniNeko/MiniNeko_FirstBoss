@@ -103,9 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 15
   Type: Enter
+  MultipleSize: 2
   invisibleTime: 0.01
+  EffectType: 1
+  EffectRate: 0.3
 --- !u!1 &6346238164501957759
 GameObject:
   m_ObjectHideFlags: 0
