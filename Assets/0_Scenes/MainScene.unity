@@ -1096,6 +1096,8 @@ MonoBehaviour:
   cameraSpeed: 5
   ylimit: -5
   Size: 14
+  Icon: {fileID: 7212361788515778098, guid: c999fe833fc3f483bbebda25e583bae4, type: 3}
+  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!1 &574015309
 GameObject:
   m_ObjectHideFlags: 0
@@ -6500,6 +6502,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 0}
   HealthText: {fileID: 0}
   HitSound: {fileID: 0}
+  DamageText: {fileID: 0}
 --- !u!50 &761773147
 Rigidbody2D:
   serializedVersion: 4
@@ -7861,6 +7864,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 0}
   HealthText: {fileID: 0}
   HitSound: {fileID: 0}
+  DamageText: {fileID: 0}
 --- !u!50 &1689798609
 Rigidbody2D:
   serializedVersion: 4
