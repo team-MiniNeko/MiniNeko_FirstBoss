@@ -2021,7 +2021,7 @@ RectTransform:
   m_LocalScale: {x: 0.8, y: 6, z: 9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 250128905}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5654,6 +5654,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 93a0e9b08bd4b493e8b79f03ba9b9686, type: 3}
   - {fileID: 8300000, guid: 47f2ff8fb7ead4b82b0d08be4862852c, type: 3}
   - {fileID: 8300000, guid: af9f94d64f94b42599a77871f97af43f, type: 3}
+  - {fileID: 8300000, guid: 54979bc42d2b443ba8039578b74e784a, type: 3}
+  - {fileID: 8300000, guid: c2ee8b31176a849acabe908b778bbbc1, type: 3}
 --- !u!4 &1771969589
 Transform:
   m_ObjectHideFlags: 0
@@ -6502,7 +6504,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 86.95
+  m_fontSize: 0
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7092,7 +7094,6 @@ MonoBehaviour:
   isCheck: 0
   isStay: 0
   canShrinkChain: 0
-  playerHealth: {fileID: 0}
   DebuffIcon: {fileID: 7212361788515778098, guid: 7bfff8c16b4b04cd8b0f057b6619bf19, type: 3}
 --- !u!114 &2084633153
 MonoBehaviour:
@@ -7667,3 +7668,4 @@ SceneRoots:
   - {fileID: 94230485}
   - {fileID: 1843842200}
   - {fileID: 1771969589}
+  - {fileID: 516334748}
