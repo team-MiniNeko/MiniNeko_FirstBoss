@@ -14,9 +14,8 @@ public class Floor : MonoBehaviour
     private Collider2D[] chainCollider;
     private Vector3 targetPos;
     private PlayerMove playerMove;
-    public PlayerHealth playerHealth;
     public GameObject DebuffIcon;
-
+    private float playerSpeed;
     void Awake()
     {
         if(target==null){target=GameObject.FindWithTag("Player");}
@@ -25,7 +24,6 @@ public class Floor : MonoBehaviour
         cor = GetComponent<Collider2D>();
         chainCollider = new Collider2D[chain.Length];
         playerMove = target.GetComponent<PlayerMove>();
-        playerHealth = target.GetComponent<PlayerHealth>();
         for (int i = 0; i < chain.Length; i++)
         {
             chainCollider[i] = chain[i].GetComponent<Collider2D>();
@@ -33,6 +31,7 @@ public class Floor : MonoBehaviour
 
         sr.enabled = false;
         cor.enabled = false;
+        playerSpeed = playerMove.moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,7 +39,7 @@ public class Floor : MonoBehaviour
         Debug.Log("Floor Enter");
         if (collision.CompareTag("Player"))
         {
-            playerMove.moveSpeed -= 2f;    
+            playerMove.moveSpeed -= 3f;    
             playerMove.JumpPower = 0;
             playerMove.DashForce = 0;
             DebuffIcon.transform.parent = GameObject.FindWithTag("DebuffIcon").transform;
@@ -62,7 +61,7 @@ private void OnTriggerStay2D(Collider2D other)
                 StartCoroutine( ShrinkChain());
                 targetPos = new Vector3(transform.position.x, -3f, targetPos.z);
                 target.transform.position = targetPos;
-                playerMove.moveSpeed += 2f;
+                playerMove.moveSpeed = playerSpeed;
                 playerMove.JumpPower = 100f;
                 playerMove.DashForce = 100f;
                 DebuffIcon.transform.parent = transform;
@@ -100,9 +99,6 @@ private void OnTriggerStay2D(Collider2D other)
         if (a.CompareTag("Player") && canShrinkChain)
         {
             canShrinkChain = false;
-            playerMove.moveSpeed += 2f; 
-            playerMove.JumpPower = 100f;
-            playerMove.DashForce = 100f;
             StartCoroutine( ShrinkChain());
             StartCoroutine( ReduceFloor());
             DebuffIcon.transform.parent = transform;
@@ -147,8 +143,10 @@ private void OnTriggerStay2D(Collider2D other)
         // 모든 체인 완전히 0으로 맞춤
         foreach (Chain _chain in chain)
         {
-            if (_chain != null)
+            if (_chain != null && _chain.isTrigger)
+            {
                 _chain.transform.localScale = new Vector3(_chain.transform.localScale.x, 0f, _chain.transform.localScale.z);
+            }
         }
         
         for (int i = 0; i < chain.Length; i++)
@@ -166,6 +164,10 @@ private void OnTriggerStay2D(Collider2D other)
 
     IEnumerator ReduceFloor()
     {
+        Debug.Log("Debuff remove"); 
+        playerMove.moveSpeed = playerSpeed;
+        playerMove.JumpPower = 100f;
+        playerMove.DashForce = 100f;
         float t = 0;
         while (transform.localScale.x > 0)
         {
@@ -176,9 +178,5 @@ private void OnTriggerStay2D(Collider2D other)
         sr.enabled = false;
         cor.enabled = false;
         yield return new WaitForSeconds(2f);
-        Debug.Log("Debuff remove"); 
-        playerMove.moveSpeed += 2f;
-        playerMove.JumpPower = 100f;
-        playerMove.DashForce = 100f;
     }
 }
