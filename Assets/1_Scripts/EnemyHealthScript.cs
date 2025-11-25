@@ -32,7 +32,7 @@ public class EnemyHealthScript : MonoBehaviour
             dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(Damage));
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
-            Destroy(dmgText,0.5f);
+            Destroy(dmgText,2.5f);
         }
     }
     // Update is called once per frame

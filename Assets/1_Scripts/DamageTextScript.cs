@@ -28,6 +28,11 @@ public class DamageTextScript : MonoBehaviour
         }
         GetComponent<TextMeshProUGUI>().SetText(Convert.ToString(Damage));
     }
+    public void SetText(String str)
+    {
+        Debug.Log(str);
+        GetComponent<TextMeshProUGUI>().text = str;
+    }
     public void SetTextColor(Color color){GetComponent<TextMeshProUGUI>().color = color;}
     void Start()
     {   

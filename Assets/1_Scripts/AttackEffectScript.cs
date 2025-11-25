@@ -8,6 +8,7 @@ public class AttackEffectScript : MonoBehaviour
     // Start is called before the first frame update
     public int Damage;
     public string Type;
+    public int MultipleSize = 1;
     public float invisibleTime = 0.03f;
     public int EffectType = 0;//0 물리 1 독 부여 ㄱㄴ
     public float EffectRate = 0.1f;//0f~1f;
@@ -20,12 +21,21 @@ public class AttackEffectScript : MonoBehaviour
         return false;
     }
     void DoDamage()
-    {
+    {   
+        for(int i = 0; i < MultipleSize-1; i++){
+            if(EffectType == 1 && EffectAttack()){
+                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(Damage,new Color(0f,0.5f,0f),0.001f);
+                continue;
+            }
+            if(Damage != 0)
+                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(Damage,0.001f);
+        }
         if(EffectType == 1 && EffectAttack()){
             GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(Damage,new Color(0f,0.5f,0f),invisibleTime);
             return;
         }
-        GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(Damage,invisibleTime);
+        if(Damage != 0)
+            GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(Damage,invisibleTime);
     }
     void OnTriggerStay2D(Collider2D collision)
     {

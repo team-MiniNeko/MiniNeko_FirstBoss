@@ -12,17 +12,26 @@ public class DebuffManage : MonoBehaviour
     public GameObject IconSample;
     public Sprite PosionIconSprite;
     int[] debuffStackList = {0};
-    int[] debuffTickList = {50};
+    int[] debuffTickList = {15};
+    IEnumerator TimeChange(TextMeshProUGUI TimeText, float timer){
+        float thistime = Time.time;
+        TimeText.text = $"{Math.Round(timer-(Time.time - thistime),1)}"; 
+        while(Time.time - thistime <= timer){  
+            yield return new WaitForSeconds(0.1f);
+            TimeText.text = $"{Math.Round(timer-(Time.time - thistime),1)}"; 
+        }
+    }
     IEnumerator DoDebuff(int debuffType,GameObject Icon){
         TextMeshProUGUI time = Icon.transform.Find("Time").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI stack = Icon.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.01f);
-        while(debuffStackList[debuffType] > 0){   
-            for(int i = 0; i < debuffTickList[debuffType]; i++){    
-                time.text = $"{Math.Round(5f - (i*0.1f),1)}";
+        while(debuffStackList[debuffType] > 0){
+            IEnumerator tc = TimeChange(time,3f);
+            StartCoroutine(tc);
+            for(int i = 1; i <= debuffTickList[debuffType]; i++){ 
                 stack.text = $"x{debuffStackList[debuffType]}";
-                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(debuffStackList[debuffType]*1,new Color(0,0.5f,0),0);
-                yield return new WaitForSeconds(0.1f);
+                GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().Damage(debuffStackList[debuffType],new Color(0,0.7f,0),0);
+                yield return new WaitForSeconds(0.2f);
             }
             debuffStackList[debuffType]--;
 

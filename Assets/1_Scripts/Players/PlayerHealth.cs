@@ -37,8 +37,10 @@ public class PlayerHealth : MonoBehaviour
     }
     Vector2 lF;
     Vector2 StPos;
+    float lastAutoHealTime;
     void Start()
     {
+        lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
         _curHp = maxHp;
         CameraCanvas = Instantiate(CameraCanvas);
@@ -48,27 +50,35 @@ public class PlayerHealth : MonoBehaviour
     public void Damage(int num,float addInv = 0.1f){
         if (invisibleTime < Time.time || addInv == 0f){
             CurHp -= num;
-            invisibleTime = Time.time + addInv;
+            if(addInv > 0.001f)
+                invisibleTime = Time.time + addInv;
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(CameraCanvas.transform);
-            dmgText.GetComponent<DamageTextScript>().SetText(num);
+            if(num < 0)
+                dmgText.GetComponent<DamageTextScript>().SetText($"+{Math.Abs(num)}");
+            else;
+                dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
-            Destroy(dmgText,0.5f);
+            Destroy(dmgText,2.5f);
         }
     }
     
     public void Damage(int num,Color color,float addInv = 0.1f){//effect damage 용 색 바꿔서 텍스트 띄우기
         if (invisibleTime < Time.time|| addInv == 0f){
             CurHp -= num;
-            invisibleTime = Time.time + addInv;
+            if(addInv > 0.001f)
+                invisibleTime = Time.time + addInv;
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(CameraCanvas.transform);
-            dmgText.GetComponent<DamageTextScript>().SetText(num);
+            if(num < 0)
+                dmgText.GetComponent<DamageTextScript>().SetText(Math.Abs(num)) ;
+            else;
+                dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.GetComponent<DamageTextScript>().SetTextColor(color);
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
-            Destroy(dmgText,0.5f);
+            Destroy(dmgText,2.5f);
         }
     }
     void Update()
@@ -78,6 +88,17 @@ public class PlayerHealth : MonoBehaviour
             // transform.position = new Vector2(0, );
             GetComponent<Rigidbody2D>().velocity = StPos;
             Damage(100);
+        }
+        PlayerHealth php = GetComponent<PlayerHealth>();
+        if(Time.time-lastAutoHealTime >= 1f && (php.maxHp-php.CurHp) > 0){
+            Damage(-3,new Color(1f,0.6f,0.6f),0);
+            lastAutoHealTime = Time.time;
+        }
+        if(Time.time < invisibleTime){
+            GetComponent<SpriteRenderer>().color = new Color(0,1f,0.8f);
+        }
+        else{
+            GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f);
         }
     }
 }
