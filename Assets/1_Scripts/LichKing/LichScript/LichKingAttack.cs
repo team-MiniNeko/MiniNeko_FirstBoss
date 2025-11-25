@@ -568,6 +568,8 @@ IEnumerator CrackScaleUp()
 IEnumerator BossHp()
 {
     cor = null;
+    crack.transform.GetChild(0).gameObject.SetActive(false);
+    sword.transform.GetChild(3).gameObject.SetActive(false);
     while (LichHp.Health < 1000)
     {
         playerMove.isStop = true;

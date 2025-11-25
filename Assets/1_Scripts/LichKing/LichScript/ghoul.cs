@@ -40,7 +40,7 @@ public class ghoul : MonoBehaviour
         }
         myDir = targetDir.transform.position - transform.position;
         dir = myDir.normalized;
-        rb.velocity = new Vector2(dir.x * 7f, 0);
+        rb.velocity = new Vector2(-dir.x * 2f, 0);
         sr.flipX = targetDir.transform.position.x <= transform.position.x;
         
     }

@@ -20,6 +20,7 @@ public class VoidBall : MonoBehaviour
         float angle = transform.position.x < target.transform.position.x
             ? Random.Range(-30f, 30f)
             : Random.Range(150f, 210f);
+        Boss3Audiomanager.instance.PlayAudio(2);
         StartCoroutine(VoidMove(angle));
     }
     IEnumerator VoidMove (float angle)
