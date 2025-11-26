@@ -23,6 +23,8 @@ public class FallenAngelAttack : MonoBehaviour
     public GameObject lightDarkLight;
     public GameObject lightDarkLightSkillRange;
 
+    public EnemyHealthScript bossHp;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
