@@ -48,7 +48,7 @@ public class CameraScripts : MonoBehaviour
         GetComponent<Camera>().orthographicSize = GetComponent<Camera>().orthographicSize+((Size-GetComponent<Camera>().orthographicSize)*Time.deltaTime*3f);
         if(Time.time <= debuffTime){
             Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
-            Size = 10f;
+            Size = originSize/2f;
             yValue = 0;
             material.color = new Color(0.15f, 0.15f, 0.15f, 1f);
             Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);

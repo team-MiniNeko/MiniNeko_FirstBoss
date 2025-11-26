@@ -71,6 +71,7 @@ public class LichKingAttack : MonoBehaviour
         if (LichHp.Health < 100 && !page2)
         {
             page2 = true;
+            GetComponent<BoxCollider2D>().enabled = false;
             StopAllCoroutines();
             StartCoroutine(BossHp());
         }
@@ -597,12 +598,13 @@ IEnumerator BossHp()
     {
         playerMove.isStop = true;
         rb.velocity = Vector2.zero;
-        LichHp.Health += 10;
-        yield return new WaitForSeconds(0.1f);
+        LichHp.Health += 5;
+        yield return new WaitForSeconds(0.01f);
     }
     CS.CameraShake(200f);
     transform.Find("Green Idle").GetComponent<SpriteRenderer>().color = new Color(1f,0.5f,1f);
     yield return new WaitForSeconds(1f);
+    GetComponent<BoxCollider2D>().enabled = true;
     CS.Target = playerMove.transform;
     CS.Size = 20f;
     CS.originSize = 20f;

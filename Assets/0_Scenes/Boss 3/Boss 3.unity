@@ -1281,7 +1281,7 @@ MonoBehaviour:
   HPBar: {fileID: 21709739}
   HPBarEF: {fileID: 844601359}
   HealthText: {fileID: 1956701558}
-  HitSound: {fileID: 0}
+  HitSound: {fileID: 265867414}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
 --- !u!114 &265867410
@@ -1419,7 +1419,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc9efda75e44a4fba9b01fe0d43b5966, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca85f91a724bd4bb68348285462bec8e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
