@@ -1128,7 +1128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!114 &251861590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1298,7 @@ MonoBehaviour:
   crack: {fileID: 1637583164}
   playerMove: {fileID: 642462487}
   speed: 300
-  page2: 1
+  page2: 0
   Attack:
   - {fileID: -1876575632989397844, guid: 403fd20c03d6449e8af0d04346350052, type: 3}
   - {fileID: 1259095790213493357, guid: 2dcc548dda1a5446aabe8cd26136c9a9, type: 3}
@@ -2689,7 +2688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!114 &642367029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,7 +2972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!95 &796734924
 Animator:
   serializedVersion: 5
@@ -3715,7 +3712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!95 &990858422
 Animator:
   serializedVersion: 5
@@ -4026,7 +4022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!95 &1188474077
 Animator:
   serializedVersion: 5
@@ -6608,7 +6603,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 86.95
+  m_fontSize: 0
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7486,7 +7481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8782e9048e0704e609b0f64c016825f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!114 &2109215705
 MonoBehaviour:
   m_ObjectHideFlags: 0
