@@ -10,9 +10,12 @@ public class TutorialManager : MonoBehaviour
     public static Animator TutoUiAnim;
     public GameObject Stone;
     public CameraScripts CamSc;
+    int uilv = 1;
     public void SetUiLevel(int a)
     {
-        TutoUiAnim.SetInteger("Tutorial Level",a);
+        transform.Find($"TutorialPanel({uilv})").gameObject.SetActive(false);
+        uilv = a;
+        transform.Find($"TutorialPanel({a})").gameObject.SetActive(true);
         GameObject.FindWithTag("Player").GetComponent<PlayerMove>().JumpPower = (a >= 2 ? 100f : 0f);
         if(a == 2)
             DropStone();

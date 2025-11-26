@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyBoardScript : MonoBehaviour
+public class MouseScript : MonoBehaviour
 {
-    public KeyCode Key;
+    public int Mouse;//0 LMB
     public Sprite changeSprite;
     Sprite OriginSprite;
     public bool wasChanged = false;
@@ -15,20 +16,18 @@ public class KeyBoardScript : MonoBehaviour
         OriginSprite = GetComponent<Image>().sprite;
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Key))
+        if (Input.GetMouseButtonDown(Mouse))
         {   
-            wasChanged = true;
             gameObject.GetComponent<Image>().sprite = changeSprite;
             return;
         } 
-        if (Input.GetKeyUp(Key))
-        {
+        if (Input.GetMouseButtonUp(Mouse))
+        {   
             gameObject.GetComponent<Image>().sprite = OriginSprite;
             return;
-        }
+        } 
     }
 }
