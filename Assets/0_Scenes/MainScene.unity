@@ -7982,10 +7982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 0
-  playerHp: 0
-  playerDefence: 0
-  playerSpeed: 0
+  playerAttack: 550
+  playerHp: 1000
+  playerDefence: 300
+  playerSpeed: 14
 --- !u!4 &1766083628
 Transform:
   m_ObjectHideFlags: 0
