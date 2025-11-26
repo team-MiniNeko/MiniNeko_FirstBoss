@@ -548,6 +548,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 72827518}
   HealthText: {fileID: 1051282630}
   HitSound: {fileID: 0}
+  HitEffect: {fileID: 1751417277235054239, guid: 23174ea92b24c47859c4cfb94c82da07, type: 3}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
 --- !u!114 &265867410
 MonoBehaviour:
@@ -989,54 +990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796145476}
   m_CullTransparentMesh: 1
---- !u!1 &1001909030
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1001909032}
-  - component: {fileID: 1001909031}
-  m_Layer: 0
-  m_Name: PlayerStatsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1001909031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001909030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAttack: 550
-  playerHp: 1000
-  playerDefence: 300
-  playerSpeed: 14
---- !u!4 &1001909032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001909030}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9826567, y: -2.044138, z: -0.037739318}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007396928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2059,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 0}
   HealthText: {fileID: 0}
   HitSound: {fileID: 0}
+  HitEffect: {fileID: 0}
   DamageText: {fileID: 0}
 --- !u!50 &1689798609
 Rigidbody2D:
@@ -2748,12 +2702,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 0
   Type: Stay
   MultipleSize: 1
-  invisibleTime: 0.01
+  invisibleTime: 0
   EffectType: 1
-  EffectRate: 0.1
+  EffectRate: 0.05
 --- !u!61 &8068589429916244334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2813,4 +2767,3 @@ SceneRoots:
   - {fileID: 367699705}
   - {fileID: 1007396930}
   - {fileID: 1866471134}
-  - {fileID: 1001909032}

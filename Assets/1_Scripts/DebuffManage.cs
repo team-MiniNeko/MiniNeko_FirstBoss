@@ -18,7 +18,7 @@ public class DebuffManage : MonoBehaviour
         TimeText.text = $"{Math.Round(timer-(Time.time - thistime),1)}"; 
         while(Time.time - thistime <= timer){  
             yield return new WaitForSeconds(0.1f);
-            TimeText.text = $"{Math.Round(timer-(Time.time - thistime),1)}"; 
+            TimeText.text = $"{Math.Round(timer-(Time.time - thistime)+0.1f,1)}"; 
         }
     }
     IEnumerator DoDebuff(int debuffType,GameObject Icon){

@@ -17,9 +17,11 @@ public class PlayerMove : MonoBehaviour
     
     public Collider2D colider2d;
     public GameObject atk;
+    public GameObject Skill1;
     public Animator Anims;
     public ParticleSystem DashParticle;
     double atkTime;
+    double Skill1Cooltime;
 
     public bool isStop = false;
 
@@ -87,11 +89,11 @@ public class PlayerMove : MonoBehaviour
             }
             
             // --- 공격 입력 (대쉬 중에도 공격 가능하도록 Update에 유지) ---
-            if (Input.GetMouseButton(0) && Time.time - atkTime > 0.3f)
+            if (Input.GetMouseButton(0) && Time.time - atkTime > 0f)
             {
 
                 Anims.SetTrigger("NormalAttacking");
-                atkTime = Time.time;
+                atkTime = Time.time+0.3f;
                 GameObject ins = Instantiate(atk);
                 ins.transform.position = transform.position;
                 ins.transform.Translate(lastFace * 2f);
@@ -99,7 +101,20 @@ public class PlayerMove : MonoBehaviour
                     ins.transform.Rotate(0,180,0);
                 Destroy(ins, 0.15f);
             }
-            
+            if (Input.GetKeyDown(KeyCode.Z) && Time.time - Skill1Cooltime > 0f)
+            {
+
+                Anims.SetTrigger("Skill1");
+                Skill1Cooltime = Time.time+5;
+                atkTime = Time.time+1.5f;
+                GameObject ins = Instantiate(Skill1);
+                ins.transform.position = transform.position;
+                ins.transform.Translate(lastFace * 2f);
+                ins.transform.parent = transform;
+                if (lastFace == Vector2.left)
+                    ins.transform.Rotate(0,180,0);
+                Destroy(ins, 1.5f);
+            }
             if (Input.GetKeyDown(KeyCode.S)){
                 // 원래 S 키 기능 유지
             }

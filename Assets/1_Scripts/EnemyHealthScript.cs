@@ -39,8 +39,7 @@ public class EnemyHealthScript : MonoBehaviour
         {
             GameObject hiteffect = Instantiate(HitEffect);
             Vector2 playerLoc = GameObject.FindWithTag("Player").transform.position;
-            Vector2 loc = playerLoc + GameObject.FindWithTag("Player").GetComponent<PlayerMove>().lastFace * 4f;
-            hiteffect.transform.position = loc;
+            hiteffect.transform.position = transform.position;
             hiteffect.transform.rotation = quaternion.Euler(0f,0f,UnityEngine.Random.Range(0f,360f));
             Destroy(hiteffect,0.3f);
         }
