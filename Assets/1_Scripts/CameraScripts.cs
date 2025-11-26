@@ -17,7 +17,7 @@ public class CameraScripts : MonoBehaviour
     public Material material;
     float ShakeForce = 0f;
     float debuffTime = 0f;
-    float originSize;
+    public float originSize;
     float originYv;
     void Awake()
     {
