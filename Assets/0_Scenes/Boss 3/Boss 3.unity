@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -9521,7 +9521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -10810,7 +10810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -11341,7 +11341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
-  Damage: 15
+  Damage: 20
   Type: Stay
   MultipleSize: 1
   invisibleTime: 0.1
@@ -11716,7 +11716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -12092,7 +12092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
-  Damage: 10
+  Damage: 15
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
