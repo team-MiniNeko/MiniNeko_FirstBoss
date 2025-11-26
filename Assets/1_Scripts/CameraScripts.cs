@@ -50,7 +50,7 @@ public class CameraScripts : MonoBehaviour
             Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
             Size = 10f;
             yValue = 0;
-            material.color = new Color(0.2392f, 0.2392f, 0.2392f, 1f);
+            material.color = new Color(0.15f, 0.15f, 0.15f, 1f);
             Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
 
         }else{
