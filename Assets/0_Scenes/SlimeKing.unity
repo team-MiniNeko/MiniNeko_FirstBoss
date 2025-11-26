@@ -564,54 +564,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   Wave: {fileID: 8694496487020488636, guid: 5ca0be1dab63d4f69a673891aa88f6b4, type: 3}
   Missile: {fileID: 8172903023646182730, guid: 7dce77baefb0a43949adfa5a92ea2ba4, type: 3}
---- !u!1 &288002337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 288002339}
-  - component: {fileID: 288002338}
-  m_Layer: 0
-  m_Name: PlayerStatsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &288002338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288002337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAttack: 550
-  playerHp: 1000
-  playerDefence: 300
-  playerSpeed: 14
---- !u!4 &288002339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288002337}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9826567, y: -2.044138, z: -0.037739318}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &366447788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
@@ -2809,4 +2761,3 @@ SceneRoots:
   - {fileID: 367699705}
   - {fileID: 1007396930}
   - {fileID: 1866471134}
-  - {fileID: 288002339}
