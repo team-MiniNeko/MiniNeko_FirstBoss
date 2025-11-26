@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 1441462519837241027}
   - component: {fileID: 2211763335584047665}
   - component: {fileID: 8845188515183505793}
+  - component: {fileID: 5045049408350950234}
   m_Layer: 3
   m_Name: Neko
   m_TagString: Player
@@ -433,6 +434,7 @@ MonoBehaviour:
   GravityScale: 5
   colider2d: {fileID: 2155979873554197295}
   atk: {fileID: 7096505069737248528, guid: 8971ac57f21664aeca89b04c2f253109, type: 3}
+  Skill1: {fileID: 1044083867600511065, guid: 444803448fa28444ba2225450ad109e7, type: 3}
   Anims: {fileID: 1944840601330676073}
   DashParticle: {fileID: 1441462519837241027}
   isStop: 0
@@ -450,7 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1000
-  _curHp: 0
   invisibleTime: 0
   DamageText: {fileID: 1487416769882642056, guid: edcc3b94bf3614596a7771fbbd9d73d4, type: 3}
   CameraCanvas: {fileID: 7183246942121871575, guid: 491c4a248d2d34bd8bfe8d383d6774dc, type: 3}
@@ -5384,3 +5385,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5045049408350950234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406327759789480898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAttack: 0
+  playerHp: 0
+  playerDefence: 0
+  playerSpeed: 0

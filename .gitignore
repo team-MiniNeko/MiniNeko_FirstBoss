@@ -99,3 +99,13 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 .DS_Store
 Assets/.DS_Store
+
+# --- Recommended Additions ---
+# Windows Thumbnail file
+Thumbs.db
+
+# Unity Hub and Local User Settings
+.vspscc
+/[Aa]ssets/Editor/DefaultAsset.meta
+/[Aa]ssets/Editor/DefaultAsset.asset
+.upm/

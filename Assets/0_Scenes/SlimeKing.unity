@@ -548,6 +548,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 72827518}
   HealthText: {fileID: 1051282630}
   HitSound: {fileID: 0}
+  HitEffect: {fileID: 1751417277235054239, guid: 23174ea92b24c47859c4cfb94c82da07, type: 3}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
 --- !u!114 &265867410
 MonoBehaviour:
@@ -887,7 +888,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 198c7fa22e7294c9a8a6633b769993d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1046,7 +1047,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -999
   m_Sprite: {fileID: 21300000, guid: 8e1c8a12f584b46f0932b89a2c9dfcf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2058,6 +2059,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 0}
   HealthText: {fileID: 0}
   HitSound: {fileID: 0}
+  HitEffect: {fileID: 0}
   DamageText: {fileID: 0}
 --- !u!50 &1689798609
 Rigidbody2D:
@@ -2165,6 +2167,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1118792631779097089, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416125916398510285, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: lastFace.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
@@ -2696,12 +2702,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 0
   Type: Stay
-  MultipleSize: 10
-  invisibleTime: 1
+  MultipleSize: 1
+  invisibleTime: 0
   EffectType: 1
-  EffectRate: 0
+  EffectRate: 0.05
 --- !u!61 &8068589429916244334
 BoxCollider2D:
   m_ObjectHideFlags: 0

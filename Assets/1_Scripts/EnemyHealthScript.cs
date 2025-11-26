@@ -17,6 +17,7 @@ public class EnemyHealthScript : MonoBehaviour
     public RectTransform HPBarEF;
     public TextMeshProUGUI HealthText;
     public AudioSource HitSound;
+    public GameObject HitEffect;
     public GameObject DamageText;
     void Start()
     {
@@ -33,6 +34,14 @@ public class EnemyHealthScript : MonoBehaviour
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
             Destroy(dmgText,2.5f);
+        }
+        if(HitEffect != null)
+        {
+            GameObject hiteffect = Instantiate(HitEffect);
+            Vector2 playerLoc = GameObject.FindWithTag("Player").transform.position;
+            hiteffect.transform.position = transform.position;
+            hiteffect.transform.rotation = quaternion.Euler(0f,0f,UnityEngine.Random.Range(0f,360f));
+            Destroy(hiteffect,0.3f);
         }
     }
     // Update is called once per frame
