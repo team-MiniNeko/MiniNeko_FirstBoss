@@ -8,10 +8,12 @@ public class VoidBall : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject target;
+    private CameraScripts camera;
     void Awake()
     {
         if(target == null)
             target = GameObject.FindWithTag("Player");
+        camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
     }
     void OnEnable()
     {
@@ -38,7 +40,7 @@ public class VoidBall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {   
-            GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>().Debuff(3f);
+            camera.Debuff(3f);
         }
     }
 }

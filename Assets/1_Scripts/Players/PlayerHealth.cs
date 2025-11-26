@@ -40,7 +40,6 @@ public class PlayerHealth : MonoBehaviour
     float lastAutoHealTime;
     void Start()
     {
-        maxHp = PlayerStatsManager.Instance.playerHp;
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
         _curHp = maxHp;
