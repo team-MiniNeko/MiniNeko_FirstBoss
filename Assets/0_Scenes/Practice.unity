@@ -7301,7 +7301,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neko
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5045049408350950234, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
