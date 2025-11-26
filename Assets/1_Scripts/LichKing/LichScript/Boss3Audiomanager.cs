@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss3Audiomanager : MonoBehaviour
 {
     public AudioClip[] audioClips;
-    private AudioSource audioSource;
+    private AudioSource[] audioSource;
     public static Boss3Audiomanager instance;
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>();
         if (audioClips == null || audioClips.Length == 0)
         {
             audioClips = new AudioClip[5];
@@ -32,6 +33,15 @@ public class Boss3Audiomanager : MonoBehaviour
     }
     public void PlayAudio(int i)
     {
-        audioSource.PlayOneShot(audioClips[i]);
+        audioSource[0].PlayOneShot(audioClips[i]);
+    }
+
+    public void PlayBGM()
+    {
+        audioSource[0].Stop();
+        audioSource[1].Stop();
+        audioSource[1].clip = Resources.Load<AudioClip>("02 Marching Onwards");
+        audioSource[1].Play();
+        audioSource[1].loop = true;
     }
 }

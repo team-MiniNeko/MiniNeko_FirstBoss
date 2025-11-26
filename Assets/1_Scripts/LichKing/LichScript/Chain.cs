@@ -86,6 +86,6 @@ public class Chain : MonoBehaviour
     void Debuff()
     {
         Debug.Log("Test");
-        playerMove.moveSpeed -= 1f;
+        playerMove.moveSpeed -= 1.5f;
     }
 }

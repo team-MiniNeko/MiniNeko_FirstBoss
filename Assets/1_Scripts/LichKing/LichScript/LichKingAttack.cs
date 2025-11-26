@@ -607,8 +607,8 @@ IEnumerator BossHp()
     CS.Size = 20f;
     CS.originSize = 20f;
     if (page2 && LichHp.Health > 999)
-    {   
-        LichHp.Health = 1000;
+    {
+        Boss3Audiomanager.instance.PlayBGM();
         rb.velocity = Vector2.one;
         playerMove.isStop = false;
         StartCoroutine(BossAttackLoop());
