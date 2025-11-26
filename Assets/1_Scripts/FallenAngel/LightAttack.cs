@@ -6,7 +6,6 @@ using DG.Tweening;
 public class LightAttack : MonoBehaviour
 {
     BoxCollider2D box;
-    int y = 0;
     private void Awake()
     {
         box = GetComponent<BoxCollider2D>();
