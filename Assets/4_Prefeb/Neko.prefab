@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 1441462519837241027}
   - component: {fileID: 2211763335584047665}
   - component: {fileID: 8845188515183505793}
-  - component: {fileID: 5045049408350950234}
   m_Layer: 3
   m_Name: Neko
   m_TagString: Player
@@ -5400,19 +5399,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5045049408350950234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8406327759789480898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAttack: 0
-  playerHp: 0
-  playerDefence: 0
-  playerSpeed: 0
