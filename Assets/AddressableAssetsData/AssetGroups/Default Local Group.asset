@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6584daf2da6371e48b1f44b77f14913e
   m_SerializeEntries:
-  - m_GUID: 3f3b2572e7f59fc4482b1dff452de9cf
-    m_Address: Assets/1_Scripts/FallenAngel
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 65c0199cd5b671c4db07a5884a14eb9d
     m_Address: Assets/4_Prefeb/LightSword.prefab
     m_ReadOnly: 0

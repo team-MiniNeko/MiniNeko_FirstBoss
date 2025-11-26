@@ -35,7 +35,6 @@ public class PlayerHealth : MonoBehaviour
     float lastAutoHealTime;
     void Start()
     {
-        maxHp = PlayerStatsManager.Instance.playerHp;
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
         CurHp = maxHp;
@@ -55,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
             else
                 dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.transform.position = transform.position;
-            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,transform.position.z);
             Destroy(dmgText,2.5f);
         }
     }
@@ -73,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
                 dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.GetComponent<DamageTextScript>().SetTextColor(color);
             dmgText.transform.position = transform.position;
-            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,transform.position.z);
             Destroy(dmgText,2.5f);
         }
     }

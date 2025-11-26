@@ -1299,7 +1299,7 @@ MonoBehaviour:
   crack: {fileID: 1637583164}
   playerMove: {fileID: 642462487}
   speed: 300
-  page2: 0
+  page2: 1
   Attack:
   - {fileID: -1876575632989397844, guid: 403fd20c03d6449e8af0d04346350052, type: 3}
   - {fileID: 1259095790213493357, guid: 2dcc548dda1a5446aabe8cd26136c9a9, type: 3}
