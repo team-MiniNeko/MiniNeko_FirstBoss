@@ -51,7 +51,7 @@ public class CameraScripts : MonoBehaviour
             Size = 10f;
             yValue = 0;
             material.color = new Color(0.2392f, 0.2392f, 0.2392f, 1f);
-            Icon.transform.parent = GameObject.FindWithTag("DebuffIcon").transform;
+            Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
 
         }else{
             Size = originSize;
