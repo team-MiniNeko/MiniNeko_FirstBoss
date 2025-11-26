@@ -89,13 +89,15 @@ public class PlayerMove : MonoBehaviour
             // --- 공격 입력 (대쉬 중에도 공격 가능하도록 Update에 유지) ---
             if (Input.GetMouseButton(0) && Time.time - atkTime > 0.2f)
             {
+
+                Anims.SetTrigger("NormalAttacking");
                 atkTime = Time.time;
                 GameObject ins = Instantiate(atk);
                 ins.transform.position = transform.position;
                 ins.transform.Translate(lastFace * 2f);
                 if (lastFace == Vector2.left)
                     ins.transform.Rotate(0,180,0);
-                Destroy(ins, 0.1f);
+                Destroy(ins, 0.15f);
             }
             
             if (Input.GetKeyDown(KeyCode.S)){
