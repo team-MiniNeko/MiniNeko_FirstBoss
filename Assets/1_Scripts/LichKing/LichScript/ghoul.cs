@@ -11,15 +11,18 @@ public class ghoul : MonoBehaviour
     public GameObject targetDir;
     private Vector3 myDir;
     private SpriteRenderer sr;
-    Animator anim;
     bool isAttacking = false;
     float atkTime;
+    private EnemyHealthScript ghoulHealth;
+    private EnemyHealthScript Boss3Health;
     void Awake()
     {
+        
         if(targetDir == null){targetDir = GameObject.FindWithTag("Player");}
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        anim = GetComponentInChildren<Animator>();
+        ghoulHealth = GetComponent<EnemyHealthScript>();
+        Boss3Health = GameObject.FindWithTag("Boss").GetComponent<EnemyHealthScript>();
         atkTime = Time.time;
     }
 
@@ -33,10 +36,14 @@ public class ghoul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if(GetComponent<EnemyHealthScript>().Health > 0 && Time.time-atkTime > 0.3f)
+        if(ghoulHealth.Health > 0 && Time.time-atkTime > 0.3f && Boss3Health.Health > 0)
         {
-            GameObject.FindWithTag("Boss").GetComponent<EnemyHealthScript>().EnemyDamage(-1);
+            Boss3Health.EnemyDamage(-1);
             atkTime = Time.time;
+        }
+        else if (Boss3Health.Health <= 0)
+        {
+            ghoulHealth.Health = 0;
         }
         myDir = targetDir.transform.position - transform.position;
         dir = myDir.normalized;

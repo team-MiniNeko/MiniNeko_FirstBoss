@@ -17,7 +17,7 @@ public class FallenAngelAttack : MonoBehaviour
     public GameObject darkSword;
     public GameObject darkSwordGate;
 
-    public GameObject light;
+    public GameObject lightAttack;
     public GameObject lightSkillRange;
 
     public GameObject lightDarkLight;
@@ -98,7 +98,7 @@ public class FallenAngelAttack : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(lightAttackRange);
         coo = new Vector3(coo.x,coo.y, -0.1f);
-        var lightAttack = Instantiate(this.light, coo, Quaternion.identity);
+        var lightAttack = Instantiate(this.lightAttack, coo, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
         Destroy(lightAttack);
     }
