@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a9003a7-ff6f-4f2d-b96c-826e395cf81d" name="변경" comment="" />
+    <list default="true" id="5a9003a7-ff6f-4f2d-b96c-826e395cf81d" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Scenes/Boss 3/Boss 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Scenes/Boss 3/Boss 3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Scripts/LichKing/LichScript/VoidBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Scripts/LichKing/LichScript/VoidBall.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

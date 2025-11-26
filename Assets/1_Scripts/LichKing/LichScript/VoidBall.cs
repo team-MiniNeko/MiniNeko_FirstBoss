@@ -8,7 +8,6 @@ public class VoidBall : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject target;
-    public Material material;
     void Awake()
     {
         if(target == null)
