@@ -11,14 +11,10 @@ using Unity.VisualScripting;
 public class PlayerHealth : MonoBehaviour
 {  
     public float maxHp;
-    public float _curHp;
+    private float _curHp;
     public float invisibleTime;
     public GameObject DamageText;
     public GameObject CameraCanvas;
-    
-    float curPer = 0;
-    float targetPer = 1;
-    float nuckback = 0f;
     public float CurHp
     {
         get { return _curHp;}
@@ -32,7 +28,6 @@ public class PlayerHealth : MonoBehaviour
                 _curHp = 0;
             }
             else{_curHp = value;}
-            targetPer = _curHp / maxHp;
         }   
     }
     Vector2 lF;
@@ -40,9 +35,10 @@ public class PlayerHealth : MonoBehaviour
     float lastAutoHealTime;
     void Start()
     {
+        
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
-        _curHp = maxHp;
+        CurHp = maxHp;
         CameraCanvas = Instantiate(CameraCanvas);
         invisibleTime = Time.time;
     }
@@ -56,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
             dmgText.transform.SetParent(CameraCanvas.transform);
             if(num < 0)
                 dmgText.GetComponent<DamageTextScript>().SetText($"+{Math.Abs(num)}");
-            else;
+            else
                 dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,transform.position.z);
@@ -73,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
             dmgText.transform.SetParent(CameraCanvas.transform);
             if(num < 0)
                 dmgText.GetComponent<DamageTextScript>().SetText(Math.Abs(num)) ;
-            else;
+            else
                 dmgText.GetComponent<DamageTextScript>().SetText(num);
             dmgText.GetComponent<DamageTextScript>().SetTextColor(color);
             dmgText.transform.position = transform.position;
