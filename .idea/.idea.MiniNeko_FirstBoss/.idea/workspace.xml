@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a9003a7-ff6f-4f2d-b96c-826e395cf81d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Scripts/CameraScripts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Scripts/CameraScripts.cs" afterDir="false" />
-    </list>
+    <list default="true" id="5a9003a7-ff6f-4f2d-b96c-826e395cf81d" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +112,7 @@
       <workItem from="1763970119285" duration="43000" />
       <workItem from="1763970166909" duration="10547000" />
       <workItem from="1764055314250" duration="1354000" />
+      <workItem from="1764134057500" duration="1823000" />
     </task>
     <servers />
   </component>

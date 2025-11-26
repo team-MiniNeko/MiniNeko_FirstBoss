@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -4686,7 +4686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -5973,7 +5973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -6504,7 +6504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
-  Damage: 15
+  Damage: 20
   Type: Stay
   MultipleSize: 1
   invisibleTime: 0.1
@@ -6651,7 +6651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0
+  m_fontSize: 86.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6879,7 +6879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 30
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -7255,7 +7255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
-  Damage: 10
+  Damage: 15
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
