@@ -283,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -1142,6 +1143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -1297,7 +1299,7 @@ MonoBehaviour:
   crack: {fileID: 1637583164}
   playerMove: {fileID: 642462487}
   speed: 300
-  page2: 0
+  page2: 1
   Attack:
   - {fileID: -1876575632989397844, guid: 403fd20c03d6449e8af0d04346350052, type: 3}
   - {fileID: 1259095790213493357, guid: 2dcc548dda1a5446aabe8cd26136c9a9, type: 3}
@@ -1566,6 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -2384,6 +2387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.01
   EffectType: 0
   EffectRate: 0.1
@@ -2700,6 +2704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -2773,6 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.01
   EffectType: 0
   EffectRate: 0.1
@@ -3004,6 +3010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -3744,6 +3751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -4054,6 +4062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -4636,6 +4645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -5922,6 +5932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -6117,6 +6128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 40
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.01
   EffectType: 0
   EffectRate: 0.1
@@ -6451,6 +6463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 15
   Type: Stay
+  MultipleSize: 1
   invisibleTime: 0.1
   EffectType: 0
   EffectRate: 0.1
@@ -6595,7 +6608,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0
+  m_fontSize: 86.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6825,6 +6838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -7200,6 +7214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackEffectScript
   Damage: 10
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1
@@ -7486,6 +7501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 50
   Type: Enter
+  MultipleSize: 1
   invisibleTime: 0.03
   EffectType: 0
   EffectRate: 0.1

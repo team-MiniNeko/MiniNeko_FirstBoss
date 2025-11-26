@@ -548,7 +548,7 @@ MonoBehaviour:
   HPBarEF: {fileID: 72827518}
   HealthText: {fileID: 1051282630}
   HitSound: {fileID: 0}
-  DamageText: {fileID: 0}
+  DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
 --- !u!114 &265867410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1630,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316480671}
   m_CullTransparentMesh: 1
+--- !u!1 &1353672763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353672764}
+  - component: {fileID: 1353672767}
+  - component: {fileID: 1353672766}
+  - component: {fileID: 1353672765}
+  m_Layer: 5
+  m_Name: DebuffManageUI
+  m_TagString: DebuffIcon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1353672764
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353672763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2090834280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 690, y: -424.19995}
+  m_SizeDelta: {x: 1000, y: 100}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1353672765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353672763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad4e1ec9f27d42508ded52e9ca6c483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IconSample: {fileID: 7212361788515778098, guid: 03b428a6e7d774b4596e49196f4a82e6, type: 3}
+  PosionIconSprite: {fileID: 21300000, guid: e59725f948ec04bc7b81d6df11b61ee6, type: 3}
+--- !u!114 &1353672766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353672763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0.2}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: e20e69158b25745aca6687570eafb3ff, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1353672767
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353672763}
+  m_CullTransparentMesh: 1
 --- !u!1 &1455932588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2155,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1118792631779097089, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118792631779097089, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118792631779097089, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.55
@@ -2230,6 +2332,7 @@ RectTransform:
   m_Children:
   - {fileID: 1464831928}
   - {fileID: 1056814791}
+  - {fileID: 1353672764}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2595,9 +2698,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Type: Stay
-  invisibleTime: 0
+  MultipleSize: 10
+  invisibleTime: 1
   EffectType: 1
-  EffectRate: 0.1
+  EffectRate: 0
 --- !u!61 &8068589429916244334
 BoxCollider2D:
   m_ObjectHideFlags: 0

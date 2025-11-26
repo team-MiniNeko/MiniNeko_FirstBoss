@@ -31,7 +31,7 @@ public class EnemyHealthScript : MonoBehaviour
             dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
             dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(Damage));
             dmgText.transform.position = transform.position;
-            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y-1,transform.position.z);
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
             Destroy(dmgText,2.5f);
         }
     }
