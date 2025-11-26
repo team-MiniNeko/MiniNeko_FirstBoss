@@ -68,7 +68,7 @@ public class LichKingAttack : MonoBehaviour
 
     private void Update()
     {
-        if (LichHp.Health < 30 && !page2)
+        if (LichHp.Health < 100 && !page2)
         {
             page2 = true;
             StopAllCoroutines();
@@ -588,14 +588,24 @@ IEnumerator BossHp()
     cor = null;
     crack.transform.GetChild(0).gameObject.SetActive(false);
     sword.transform.GetChild(3).gameObject.SetActive(false);
+    CameraScripts CS = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
+    CS.Target = transform;
+    CS.Size = 10f;
+    CS.originSize = 10f;
+    transform.Find("Phase 2 Aura").gameObject.SetActive(true);
     while (LichHp.Health < 1000)
     {
         playerMove.isStop = true;
         rb.velocity = Vector2.zero;
-        LichHp.Health += 5;
-        yield return null;
+        LichHp.Health += 10;
+        yield return new WaitForSeconds(0.1f);
     }
-
+    CS.CameraShake(200f);
+    transform.Find("Green Idle").GetComponent<SpriteRenderer>().color = new Color(1f,0.5f,1f);
+    yield return new WaitForSeconds(1f);
+    CS.Target = playerMove.transform;
+    CS.Size = 20f;
+    CS.originSize = 20f;
     if (page2 && LichHp.Health > 999)
     {
         Boss3Audiomanager.instance.PlayBGM();
