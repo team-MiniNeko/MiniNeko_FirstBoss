@@ -7,12 +7,14 @@ public class KeyBoardScript : MonoBehaviour
 {
     public KeyCode Key;
     public Sprite changeSprite;
+    Sprite OriginSprite;
     public bool wasChanged = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        OriginSprite = GetComponent<Image>().sprite;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -23,5 +25,10 @@ public class KeyBoardScript : MonoBehaviour
             gameObject.GetComponent<Image>().sprite = changeSprite;
             return;
         } 
+        if (Input.GetKeyUp(Key))
+        {
+            gameObject.GetComponent<Image>().sprite = OriginSprite;
+            return;
+        }
     }
 }

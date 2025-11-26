@@ -25,11 +25,10 @@ public class PlayerSkillScript : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D col)
     {
-        if(AttackType == "Stay" && Time.time-beforeAtkTime >= 0.1f){
+        if(AttackType == "Stay"){
             if(col.CompareTag("Boss")||col.CompareTag("DestoryableStructer")||col.CompareTag("Enemy")){
-                beforeAtkTime = Time.time;
                 EnemyHealthScript healthScript = col.gameObject.transform.GetComponent<EnemyHealthScript>();
-                healthScript.EnemyDamage(AttackDamage);
+                healthScript.EnemyDamage(AttackDamage,0.1f);
             }
         }else{return;}
     }

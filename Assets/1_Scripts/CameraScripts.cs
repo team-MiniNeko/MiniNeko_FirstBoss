@@ -17,7 +17,7 @@ public class CameraScripts : MonoBehaviour
     public Material material;
     float ShakeForce = 0f;
     float debuffTime = 0f;
-    float originSize;
+    public float originSize;
     float originYv;
     void Awake()
     {
@@ -38,6 +38,7 @@ public class CameraScripts : MonoBehaviour
             transform.position = new Vector3(transform.position.x+(Target.position.x-transform.position.x)*Time.deltaTime/1.2f*cameraSpeed,
                                         transform.position.y+(ylimit+yValue-transform.position.y)*Time.deltaTime/1.2f*cameraSpeed,
                                         -10);
+        Debug.Log(Target.position);
         if(ShakeForce >= 0.01f)
         {
             float xdif = UnityEngine.Random.Range(-ShakeForce,ShakeForce);
@@ -46,18 +47,20 @@ public class CameraScripts : MonoBehaviour
             ShakeForce -= ShakeForce*5f*Time.deltaTime;
         }
         GetComponent<Camera>().orthographicSize = GetComponent<Camera>().orthographicSize+((Size-GetComponent<Camera>().orthographicSize)*Time.deltaTime*3f);
-        if(Time.time <= debuffTime){
-            Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
-            Size = 10f;
-            yValue = 0;
-            material.color = new Color(0.15f, 0.15f, 0.15f, 1f);
-            Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
+        if(Icon != null){
+            if(Time.time <= debuffTime){
+                Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
+                Size = originSize/2f;
+                yValue = 0;
+                material.color = new Color(0.15f, 0.15f, 0.15f, 1f);
+                Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
 
-        }else{
-            Size = originSize;
-            yValue = originYv;
-            material.color = new Color(1f, 1f, 1f, 1f);
-            Icon.transform.parent = transform;
+            }else{
+                Size = originSize;
+                yValue = originYv;
+                material.color = new Color(1f, 1f, 1f, 1f);
+                Icon.transform.parent = transform;//?
+            }
         }
     }
     public void CameraShake(float a)

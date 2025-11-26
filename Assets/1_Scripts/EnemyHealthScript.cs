@@ -19,10 +19,12 @@ public class EnemyHealthScript : MonoBehaviour
     public AudioSource HitSound;
     public GameObject HitEffect;
     public GameObject DamageText;
+    float invinsibleTime;
     void Start()
     {
         Health = StartHealth;
         BFH = Health;
+        invinsibleTime = Time.time;
     }
     public void EnemyDamage(int Damage)
     {
@@ -42,6 +44,37 @@ public class EnemyHealthScript : MonoBehaviour
             hiteffect.transform.position = transform.position;
             hiteffect.transform.rotation = quaternion.Euler(0f,0f,UnityEngine.Random.Range(0f,360f));
             Destroy(hiteffect,0.3f);
+        }
+        if(HitSound != null)
+        {
+            HitSound.Play();
+        }
+    }
+    public void EnemyDamage(int Damage, float iT)
+    {
+        if(Time.time - invinsibleTime < 0f)
+            return;
+        invinsibleTime = Time.time + iT;
+        Health -= Damage;
+        if(DamageText != null){
+            GameObject dmgText = Instantiate(DamageText);
+            dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
+            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(Damage));
+            dmgText.transform.position = transform.position;
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
+            Destroy(dmgText,2.5f);
+        }
+        if(HitEffect != null)
+        {
+            GameObject hiteffect = Instantiate(HitEffect);
+            Vector2 playerLoc = GameObject.FindWithTag("Player").transform.position;
+            hiteffect.transform.position = transform.position;
+            hiteffect.transform.rotation = quaternion.Euler(0f,0f,UnityEngine.Random.Range(0f,360f));
+            Destroy(hiteffect,0.3f);
+        }
+        if(HitSound != null)
+        {
+            HitSound.Play();
         }
     }
     // Update is called once per frame
