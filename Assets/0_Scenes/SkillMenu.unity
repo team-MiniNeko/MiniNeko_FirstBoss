@@ -369,6 +369,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fbf03691ea48c84586b05d870e388b2, type: 2}
   - {fileID: 11400000, guid: 4dec1fa9ac063f44a95298996a7ae2d6, type: 2}
   - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
+  - {fileID: 11400000, guid: cc671d105ee29254ea3b653460699516, type: 2}
+  - {fileID: 11400000, guid: 19ff21cb0d607254593518083d90e30a, type: 2}
+  - {fileID: 11400000, guid: d6f797b30cf42fb4aaf578e01d573ae0, type: 2}
   rootSkill: {fileID: 11400000, guid: 45df31146545e92459f578bc5d154370, type: 2}
   nextSkills: []
 --- !u!1 &1263821854
