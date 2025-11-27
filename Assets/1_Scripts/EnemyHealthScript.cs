@@ -10,6 +10,8 @@ public class EnemyHealthScript : MonoBehaviour
 {
     public int StartHealth;
     public int Health;
+    public int _health;
+    public int preHealth;
     int BFH;
     double lastchanged;
     public bool isBoss;
@@ -20,15 +22,18 @@ public class EnemyHealthScript : MonoBehaviour
     public GameObject HitEffect;
     public GameObject DamageText;
     float invinsibleTime;
+
+    public ShieldHp shield;
     void Start()
     {
-        Health = StartHealth;
+        _health = StartHealth;
+        preHealth = StartHealth;
         BFH = Health;
         invinsibleTime = Time.time;
     }
     public void EnemyDamage(int Damage)
     {
-        Health -= Damage;
+        _health -= Damage;
         if(DamageText != null){
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
@@ -55,7 +60,7 @@ public class EnemyHealthScript : MonoBehaviour
         if(Time.time - invinsibleTime < 0f)
             return;
         invinsibleTime = Time.time + iT;
-        Health -= Damage;
+        _health -= Damage;
         if(DamageText != null){
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
@@ -80,6 +85,22 @@ public class EnemyHealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (shield != null)
+        {
+            if (_health != preHealth && shield.curHp > 0)
+            {
+                shield.curHp -= (preHealth - _health);
+                _health = StartHealth;
+            }
+            else
+            {
+                Health = _health;
+            }
+        }
+        else
+        {
+            Health = _health;
+        }
         if (transform.position.y < -50)
         {
             Health -= 200;

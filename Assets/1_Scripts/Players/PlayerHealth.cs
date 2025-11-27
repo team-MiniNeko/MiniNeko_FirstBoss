@@ -6,7 +6,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {  
@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     public float invisibleTime;
     public GameObject DamageText;
     public GameObject CameraCanvas;
+
+    public GameObject wing;
+    string currentSceneName;
     public float CurHp
     {
         get { return _curHp;}
@@ -35,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
     float lastAutoHealTime;
     void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(currentSceneName);
         maxHp = PlayerStatsManager.Instance.playerHp;
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
@@ -81,6 +86,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (transform.position.y < -50)
         {
+            if (currentSceneName == "FallenAngel")
+            {
+                StartCoroutine(IBelieveICanFly());
+            }
             // transform.position = new Vector2(0, );
             GetComponent<Rigidbody2D>().velocity = StPos;
             Damage(100);
@@ -96,5 +105,13 @@ public class PlayerHealth : MonoBehaviour
         else{
             GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f);
         }
+    }
+    IEnumerator IBelieveICanFly()
+    {
+        wing.SetActive(true);
+        GameObject player = GameObject.FindWithTag("Player");
+        player.transform.DOMove(new Vector3(0,3,0),3f);
+        yield return new WaitForSeconds(3f);
+        wing.SetActive(false);
     }
 }
