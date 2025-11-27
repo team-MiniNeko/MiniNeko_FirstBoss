@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/FallenAngel.unity
     guid: e3b34c3dcf9eefa4daaa5bed6004e670
+  - enabled: 1
+    path: Assets/0_Scenes/Boss 3/Boss 3.unity
+    guid: efb61d5081c484d339410f40868f0766
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f2996de2893920345a283f0675c536fd, type: 2}

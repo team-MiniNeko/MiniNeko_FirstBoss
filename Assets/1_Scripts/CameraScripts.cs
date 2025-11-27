@@ -38,7 +38,6 @@ public class CameraScripts : MonoBehaviour
             transform.position = new Vector3(transform.position.x+(Target.position.x-transform.position.x)*Time.deltaTime/1.2f*cameraSpeed,
                                         transform.position.y+(ylimit+yValue-transform.position.y)*Time.deltaTime/1.2f*cameraSpeed,
                                         -10);
-        Debug.Log(Target.position);
         if(ShakeForce >= 0.01f)
         {
             float xdif = UnityEngine.Random.Range(-ShakeForce,ShakeForce);

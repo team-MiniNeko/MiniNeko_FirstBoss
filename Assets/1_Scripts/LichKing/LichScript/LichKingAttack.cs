@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Net;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,6 +17,7 @@ public class LichKingAttack : MonoBehaviour
     public Transform sword;
     public Transform crack;
     public PlayerMove playerMove;
+    public ConversationScript conversation;
 
     public int speed;
     public bool page2;
@@ -594,6 +596,7 @@ IEnumerator BossHp()
     CS.Size = 10f;
     CS.originSize = 10f;
     transform.Find("Phase 2 Aura").gameObject.SetActive(true);
+    conversation.DisplayText("...",0.5f);
     while (LichHp.Health < 1000)
     {
         playerMove.isStop = true;
@@ -601,6 +604,10 @@ IEnumerator BossHp()
         LichHp.Health += 5;
         yield return new WaitForSeconds(0.01f);
     }
+    yield return new WaitForSeconds(1f);
+    conversation.DisplayText("이제, 시작이다.",0.5f);
+    yield return new WaitForSeconds(5f);
+    conversation.DisplayText("");
     CS.CameraShake(200f);
     transform.Find("Green Idle").GetComponent<SpriteRenderer>().color = new Color(1f,0.5f,1f);
     yield return new WaitForSeconds(1f);
