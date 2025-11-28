@@ -97,5 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348bfb03ecaa9fd49b79fb29b4d713af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asdf: {fileID: 0}
   sword: {fileID: 2205257296409096499, guid: 65c0199cd5b671c4db07a5884a14eb9d, type: 3}
