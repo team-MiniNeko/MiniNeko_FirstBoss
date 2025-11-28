@@ -10,6 +10,7 @@ public class VoidBall2 : MonoBehaviour
     GameObject target;
     private GameObject[] VoidBallCha;
     private voidBall2a[] voidBall2a;
+    private Transform bossTransform;
     void Awake()
     {
         if(target == null)
@@ -24,12 +25,17 @@ public class VoidBall2 : MonoBehaviour
     }
     void OnEnable()
     {
-        transform.position = GameObject.FindWithTag("Boss").transform.position;
+        bossTransform = GameObject.FindWithTag("Boss").transform;
         float[] angle = transform.position.x < target.transform.position.x
             ? new float[] { -30, -15, 0, 15, 30 }
             : new float[] { 150, 165, 180, 195, 210 };
         Boss3Audiomanager.instance.PlayAudio(2);
         StartCoroutine(VoidMove(angle));
+    }
+
+    private void Update()
+    {
+        transform.position = bossTransform.position;
     }
 
     IEnumerator VoidMove(float[] angle)
