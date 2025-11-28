@@ -546,7 +546,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.55
+      value: -35.8
       objectReference: {fileID: 0}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1470,6 +1470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 1000
   Health: 1000
+  _health: 0
+  preHealth: 0
   isBoss: 1
   HPBar: {fileID: 21709739}
   HPBarEF: {fileID: 844601359}
@@ -1477,6 +1479,7 @@ MonoBehaviour:
   HitSound: {fileID: 265867414}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!114 &265867410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3929,6 +3932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 40
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -3936,6 +3941,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!70 &893057583
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4255,6 +4261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 40
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -4262,6 +4270,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!1 &930132725
 GameObject:
   m_ObjectHideFlags: 0
@@ -9799,6 +9808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 40
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -9806,6 +9817,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!70 &1255910418
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10876,6 +10888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 40
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -10883,6 +10897,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!70 &1561074094
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11300,6 +11315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 40
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -11307,6 +11324,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  shield: {fileID: 0}
 --- !u!70 &1750754172
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12502,7 +12520,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 86.95
+  m_fontSize: 400
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
