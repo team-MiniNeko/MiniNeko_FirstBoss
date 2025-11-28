@@ -36,9 +36,9 @@ public class ghoul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if(ghoulHealth.Health > 0 && Time.time-atkTime > 0.3f && Boss3Health.Health > 0)
+        if(ghoulHealth.Health > 0 && Time.time-atkTime > 0.3f && Boss3Health.Health > 0 && Boss3Health.Health < 1500)
         {
-            Boss3Health.EnemyDamage(-1);
+            Boss3Health.EnemyDamage(-3);
             atkTime = Time.time;
         }
         else if (Boss3Health.Health <= 0)

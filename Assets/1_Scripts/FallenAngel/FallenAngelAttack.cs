@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
-using UnityEngine.UIElements;
 
 public class FallenAngelAttack : MonoBehaviour
 {
@@ -24,6 +22,7 @@ public class FallenAngelAttack : MonoBehaviour
     public GameObject lightDarkLightSkillRange;
 
     public EnemyHealthScript bossHp;
+    public int phase;
 
     private void Awake()
     {
@@ -56,25 +55,71 @@ public class FallenAngelAttack : MonoBehaviour
         {
             StartCoroutine(LightDarkLightAttack());
         }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (phase == 3)
+            {
+                phase = 1;
+            }
+            else
+            {
+                phase++;
+            }
+        }
     }
-
+    void Phase()
+    {
+        if (bossHp.Health > bossHp.StartHealth/2)
+        {
+            phase = 1;
+        }
+        else if (bossHp.Health < bossHp.StartHealth / 2)
+        {
+            phase = 2;
+        }
+    }
     IEnumerator ChainAttack()
     {
-        Vector3 coo = player.transform.position;
-        var chainAttackRange = Instantiate(chainSkillRange, coo, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        Destroy(chainAttackRange );
-        yield return new WaitForSeconds(0.5f);
-        var chainLeft = Instantiate(chain, (coo - new Vector3(24, 24, 0)), Quaternion.identity);
-        var chainRight = Instantiate(chain, (coo + new Vector3(24, -24, 0)), Quaternion.identity);
-        chainRight.GetComponent<Transform>().Rotate(0, 180, 0);
-        chainLeft.GetComponent<ChainAttack>().isFlip = 1;
-        chainRight.GetComponent<ChainAttack>().isFlip = -1;
-        chainLeft.GetComponent <ChainAttack>().coo = coo;
-        chainRight.GetComponent <ChainAttack>().coo = coo;
-        yield return new WaitForSeconds(5f);
-        Destroy(chainLeft );
-        Destroy(chainRight );
+        switch (phase)
+        {
+            case 1:
+                Vector3 coo = player.transform.position;
+                var chainAttackRange = Instantiate(chainSkillRange, coo, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+                Destroy(chainAttackRange);
+                yield return new WaitForSeconds(0.5f);
+                var chainLeft = Instantiate(chain, (coo - new Vector3(24, 24, 0)), Quaternion.identity);
+                var chainRight = Instantiate(chain, (coo + new Vector3(24, -24, 0)), Quaternion.identity);
+                chainRight.GetComponent<Transform>().Rotate(0, 180, 0);
+                chainLeft.GetComponent<ChainAttack>().isFlip = 1;
+                chainRight.GetComponent<ChainAttack>().isFlip = -1;
+                chainLeft.GetComponent<ChainAttack>().coo = coo;
+                chainRight.GetComponent<ChainAttack>().coo = coo;
+                yield return new WaitForSeconds(5f);
+                Destroy(chainLeft);
+                Destroy(chainRight);
+                break;
+            case 2:
+                Vector3 coo2 = player.transform.position;
+                var chainAttackRange2 = Instantiate(chainSkillRange, coo2, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+                Destroy(chainAttackRange2);
+                yield return new WaitForSeconds(0.5f);
+                var chainLeft2 = Instantiate(chain, (coo2 - new Vector3(24, 24, 0)), Quaternion.identity);
+                var chainRight2 = Instantiate(chain, (coo2 + new Vector3(24, -24, 0)), Quaternion.identity);
+                chainRight2.GetComponent<Transform>().Rotate(0, 180, 0);
+                chainLeft2.GetComponent<ChainAttack>().isFlip = 1;
+                chainRight2.GetComponent<ChainAttack>().isFlip = -1;
+                chainLeft2.GetComponent<ChainAttack>().coo = coo2;
+                chainRight2.GetComponent<ChainAttack>().coo = coo2;
+                yield return new WaitForSeconds(5f);
+                Destroy(chainLeft2);
+                Destroy(chainRight2);
+                break;
+            case 3:
+                break;
+        }
+        
     }
 
     IEnumerator LightSwordAttack()
@@ -95,7 +140,7 @@ public class FallenAngelAttack : MonoBehaviour
     }
     IEnumerator LightAttack()
     {
-        Vector3 coo = new Vector3(player.transform.position.x, 10, 0);
+        Vector3 coo = new Vector3(player.transform.position.x, 1, 0);
         var lightAttackRange = Instantiate(this.lightSkillRange,coo, Quaternion.identity);
         yield return new WaitForSeconds(1f);
         Destroy(lightAttackRange);
@@ -106,13 +151,13 @@ public class FallenAngelAttack : MonoBehaviour
     }
     IEnumerator LightDarkLightAttack()
     {
-        Vector3 coo = new Vector3(player.transform.position.x, 10, 0);
+        Vector3 coo = new Vector3(player.transform.position.x, 0, 0);
         var leftLightAttackRange = Instantiate(this.lightDarkLightSkillRange, coo + new Vector3(-7,0,0), Quaternion.identity);
         var rightLightAttackRange = Instantiate(this.lightDarkLightSkillRange, coo + new Vector3(7, 0, 0), Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
         Destroy(leftLightAttackRange);
         Destroy(rightLightAttackRange);
-        coo = new Vector3(coo.x, 6.5f, -0.1f);
+        coo = new Vector3(coo.x, -3.5f, -0.1f);
         var leftLightAttack = Instantiate(this.lightDarkLight, coo + new Vector3(-7, 0, 0), Quaternion.identity);
         var rightLightAttack = Instantiate(this.lightDarkLight, coo + new Vector3(7, 0, 0), Quaternion.identity);
         yield return new WaitForSeconds(0.5f);

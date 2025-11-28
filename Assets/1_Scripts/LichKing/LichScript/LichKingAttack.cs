@@ -38,8 +38,15 @@ public class LichKingAttack : MonoBehaviour
     private EnemyHealthScript[] ghoulHp;
 
     public GameObject[] voidBall;
+    
+    public GameObject voidBall2;
 
     private EnemyHealthScript LichHp;
+    
+    bool isRightWall;
+
+    bool isLeftWall;
+
     
     void Awake()
     {
@@ -79,18 +86,24 @@ public class LichKingAttack : MonoBehaviour
         }
         if (isCrecked)
             return;
-        if (transform.position.x > Target.transform.position.x && !isSkill)
+        if (transform.position.x > Target.transform.position.x && !isSkill && !isLeftWall)
         {
             flipx.x = Mathf.Abs(flipx.x); 
             transform.localScale = flipx;
             rb.velocity = Vector2.left * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-        else if(transform.position.x < Target.transform.position.x && !isSkill)
+        else if(transform.position.x < Target.transform.position.x && !isSkill && !isRightWall)
         {
             flipx.x = -Mathf.Abs(flipx.x);
             transform.localScale = flipx;
             rb.velocity = Vector2.right * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
+
+        if ((isRightWall && rb.velocity.x > 0) || (isLeftWall && rb.velocity.x < 0))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
     }
 
     IEnumerator BossAttackLoop()
@@ -107,7 +120,7 @@ public class LichKingAttack : MonoBehaviour
                 {
                     while (pattenCycle == lastPattenCycle)
                     {
-                        pattenCycle = Random.Range(0, 2);
+                        pattenCycle = Random.Range(0, 6);
                     }
 
                     lastPattenCycle = pattenCycle; // 다음 회차를 위해 저장
@@ -130,7 +143,7 @@ public class LichKingAttack : MonoBehaviour
                 {
                     while (pattenCycle == lastPattenCycle)
                     {
-                        pattenCycle = Random.Range(0, 5);
+                        pattenCycle = Random.Range(0, 6);
                     }
 
                     lastPattenCycle = pattenCycle;
@@ -148,6 +161,10 @@ public class LichKingAttack : MonoBehaviour
                             break;
                         case 4:
                             cor = VoidBall();
+                            yield return cor;
+                            break;
+                        case 5:
+                            cor = VoidBall2();
                             yield return cor;
                             break;
                 }
@@ -561,7 +578,16 @@ IEnumerator VoidBall()
     isSkill = false;
     cor = null;
 }
-
+IEnumerator VoidBall2()
+{
+    isSkill = true;
+    rb.velocity = Vector2.zero;
+        voidBall2.SetActive(true);
+    yield return new WaitForSeconds(3f);
+    rb.velocity = Vector2.one;
+    isSkill = false;
+    cor = null;
+}
 
 
 
@@ -621,6 +647,30 @@ IEnumerator BossHp()
         rb.velocity = Vector2.one;
         playerMove.isStop = false;
         StartCoroutine(BossAttackLoop());
+    }
+}
+
+void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.gameObject.tag == "RightWall")
+    {
+        isRightWall = true;
+    }
+    if (collision.gameObject.tag == "LeftWall")
+    {
+        isLeftWall = true;
+    }
+}
+
+void OnTriggerExit2D(Collider2D collision)
+{
+    if (collision.gameObject.tag == "RightWall")
+    {
+        isRightWall = false;
+    }
+    if (collision.gameObject.tag == "LeftWall")
+    {
+        isLeftWall = false;
     }
 }
 }
