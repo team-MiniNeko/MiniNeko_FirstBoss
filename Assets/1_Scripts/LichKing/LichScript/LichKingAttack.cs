@@ -120,7 +120,7 @@ public class LichKingAttack : MonoBehaviour
                 {
                     while (pattenCycle == lastPattenCycle)
                     {
-                        pattenCycle = Random.Range(0, 6);
+                        pattenCycle = Random.Range(0, 2);
                     }
 
                     lastPattenCycle = pattenCycle; // 다음 회차를 위해 저장
@@ -308,7 +308,7 @@ public class LichKingAttack : MonoBehaviour
                 case 2:
                     
                     ranDelay = Random.Range(0, 0.2f);
-                    
+                    sword.localRotation = Quaternion.Euler(0, 0, 0);
                     isDelay = true;
                     
                     sword.transform.GetChild(0).gameObject.SetActive(false);
