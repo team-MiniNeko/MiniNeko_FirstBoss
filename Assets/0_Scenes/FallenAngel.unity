@@ -537,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1046,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1692,7 +1692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1917,7 +1917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2596,7 +2596,7 @@ Transform:
   m_GameObject: {fileID: 1474992920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9826567, y: -2.044138, z: -0.037739318}
+  m_LocalPosition: {x: 0, y: -2, z: -0.037739318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2885,7 +2885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5797000518184192907, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3272,37 +3272,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
   m_PrefabInstance: {fileID: 265724644}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1631357524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1631357525}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1631357525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631357524}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.11416, y: -3.7403018, z: -1.2014526}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632711220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,11 +4341,12 @@ MonoBehaviour:
   lightSwordGate: {fileID: 981359546583017129, guid: a42db839447a7a845bd9912420b4fc36, type: 3}
   darkSword: {fileID: 8531832496798978171, guid: f131223f168765540a6e59918c32c3d4, type: 3}
   darkSwordGate: {fileID: 8116457507891045361, guid: 9287c73fb06ce0a4e96367e725d06902, type: 3}
+  swordAttackRange: {fileID: 2948132434758767053, guid: f24b61198f1037c46a20ebb475a2c914, type: 3}
   lightAttack: {fileID: 4062427478750402446, guid: a18c6f2cee487ec4fa3a000f25b99dc6, type: 3}
   lightSkillRange: {fileID: 9143175653084453902, guid: d5d036736a0cf664383e3e65cece061a, type: 3}
   lightDarkLight: {fileID: 5907776585055746836, guid: 85726b9184eed254a8fbaed3ef067778, type: 3}
   lightDarkLightSkillRange: {fileID: 7794249210078158854, guid: a6bfb79f42c3ba7469edd1705e319f98, type: 3}
-  bossHp: {fileID: 0}
+  bossHp: {fileID: 2023414148}
   phase: 1
 --- !u!114 &2023414148
 MonoBehaviour:
@@ -4500,7 +4470,7 @@ Transform:
   m_GameObject: {fileID: 2025770103}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: -5.8, z: -1}
+  m_LocalPosition: {x: 40, y: -5.8, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4661,10 +4631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 550
-  playerHp: 1000
-  playerDefence: 300
-  playerSpeed: 14
 --- !u!4 &2073467346
 Transform:
   m_ObjectHideFlags: 0
@@ -4829,7 +4795,6 @@ SceneRoots:
   - {fileID: 1632711223}
   - {fileID: 1224410309}
   - {fileID: 1474992921}
-  - {fileID: 515567279}
   - {fileID: 2073467346}
-  - {fileID: 1631357525}
+  - {fileID: 515567279}
   - {fileID: 879076864}

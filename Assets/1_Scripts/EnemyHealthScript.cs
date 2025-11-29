@@ -31,13 +31,14 @@ public class EnemyHealthScript : MonoBehaviour
         BFH = Health;
         invinsibleTime = Time.time;
     }
-    public void EnemyDamage(int Damage)
+    public void EnemyDamage(float Damage)
     {
-        _health -= Damage;
-        if(DamageText != null){
+        _health -= Convert.ToInt32(Damage*Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
+        int damage = Convert.ToInt32(Damage * Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
+        if (DamageText != null){
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
-            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(Damage));
+            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(damage));
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
             Destroy(dmgText,2.5f);
@@ -55,16 +56,17 @@ public class EnemyHealthScript : MonoBehaviour
             HitSound.Play();
         }
     }
-    public void EnemyDamage(int Damage, float iT)
+    public void EnemyDamage(float Damage, float iT)
     {
         if(Time.time - invinsibleTime < 0f)
             return;
         invinsibleTime = Time.time + iT;
-        _health -= Damage;
-        if(DamageText != null){
+        _health -= (int)(Damage * Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
+        int damage = (int)(Damage * Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
+        if (DamageText != null){
             GameObject dmgText = Instantiate(DamageText);
             dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
-            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(Damage));
+            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(damage));
             dmgText.transform.position = transform.position;
             dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
             Destroy(dmgText,2.5f);

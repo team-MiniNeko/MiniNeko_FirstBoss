@@ -183,6 +183,17 @@ public class SkillTreeManager : MonoBehaviour
         if (canLock && node.currentRank >= 0)
         {
             node.SetRank(node.currentRank - 1);
+            if (node.skillData.weakening != null)
+            {
+                if (!node.skillData.isPercent)
+                {
+                    node.skillData.weakening.Weakening(node.skillData.weakFigure);//약화 실행
+                }
+                else
+                {
+                    node.skillData.weakening.Weakening((float)node.skillData.weakFigure);//약화 실행
+                }
+            }
             Debug.Log($"skill name: {node.skillData.skillName}");
         }
         else

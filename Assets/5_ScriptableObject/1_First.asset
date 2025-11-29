@@ -14,13 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Charactor
   icon: {fileID: 21300000, guid: 0de989b29ccd65b4abc5e15f2c0d323a, type: 3}
-  cost: 0
   maxRank: 1
-  requiredLevel: 0
+  isPercent: 0
+  weakFigure: 0
   preRequisites: []
   nextSkills:
   - {fileID: 11400000, guid: 586226ddb48c41245a1abf6392e8bd83, type: 2}
   - {fileID: 11400000, guid: 9fbf03691ea48c84586b05d870e388b2, type: 2}
   - {fileID: 11400000, guid: 4dec1fa9ac063f44a95298996a7ae2d6, type: 2}
   - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
+  weakening:
+    rid: -2
   description: asdf
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

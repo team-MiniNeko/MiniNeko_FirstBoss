@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerSkillScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int AttackDamage = 20;
+    public float AttackDamage = 20;
     public String AttackType = "Enter";
     float beforeAtkTime;
 

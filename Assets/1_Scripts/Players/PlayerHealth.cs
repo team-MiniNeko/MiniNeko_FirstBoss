@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log(currentSceneName);
-        maxHp = PlayerStatsManager.Instance.playerHp;
+        maxHp = PlayerStatsManager.Instance.PlayerHp;
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
         CurHp = maxHp;

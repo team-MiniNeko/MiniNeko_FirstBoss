@@ -15,7 +15,17 @@ MonoBehaviour:
   skillName: 
   icon: {fileID: 0}
   maxRank: 1
+  isPercent: 0
+  weakFigure: 5
   preRequisites:
   - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
   nextSkills: []
+  weakening:
+    rid: 3761197948404236288
   description: 
+  references:
+    version: 2
+    RefIds:
+    - rid: 3761197948404236288
+      type: {class: AttackWeakening, ns: , asm: Assembly-CSharp}
+      data: 

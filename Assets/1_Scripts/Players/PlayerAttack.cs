@@ -38,7 +38,6 @@ public class PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && Time.time - Skill1Cooltime > 0f)
         {
-
             Anims.SetTrigger("Skill1");
             Skill1Cooltime = Time.time+5;
             atkTime = Time.time+1.5f;
