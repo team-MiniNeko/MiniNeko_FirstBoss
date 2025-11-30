@@ -124,7 +124,7 @@ public class PlayerMove : MonoBehaviour
         isDashing = true;
         
         // --- 기존 무적 시간 기능 유지 ---
-        gameObject.GetComponent<PlayerHealth>().invisibleTime = Time.time + dashDuration; 
+        gameObject.GetComponent<PlayerHealth>().invisibleTime = Time.time + dashDuration + 0.01f; 
         
         // --- 기존 파티클 기능 유지 ---
         if(DashParticle != null)

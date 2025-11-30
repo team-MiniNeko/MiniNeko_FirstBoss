@@ -622,26 +622,27 @@ IEnumerator BossHp()
     CS.Size = 10f;
     CS.originSize = 10f;
     transform.Find("Phase 2 Aura").gameObject.SetActive(true);
-    conversation.DisplayText("...",0.5f);
-    while (LichHp.Health < 1000)
+    conversation.DisplayText("...",0.25f);
+    LichHp.StartHealth = 1500;
+    while (LichHp.Health < 1500)
     {
         playerMove.isStop = true;
         rb.velocity = Vector2.zero;
-        LichHp.Health += 5;
+        LichHp._health += 5;
         yield return new WaitForSeconds(0.01f);
     }
     yield return new WaitForSeconds(1f);
-    conversation.DisplayText("이제, 시작이다.",0.5f);
-    yield return new WaitForSeconds(5f);
+    conversation.DisplayText("이제, 시작이다.",0.25f);
+    yield return new WaitForSeconds(3f);
     conversation.DisplayText("");
     CS.CameraShake(200f);
     transform.Find("Green Idle").GetComponent<SpriteRenderer>().color = new Color(1f,0.5f,1f);
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(2f);
     GetComponent<BoxCollider2D>().enabled = true;
     CS.Target = playerMove.transform;
     CS.Size = 20f;
     CS.originSize = 20f;
-    if (page2 && LichHp.Health > 999)
+    if (page2 && LichHp.Health > 1499)
     {
         Boss3Audiomanager.instance.PlayBGM();
         rb.velocity = Vector2.one;

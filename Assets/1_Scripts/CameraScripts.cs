@@ -138,6 +138,8 @@ public class CameraScripts : MonoBehaviour
         else
         {
             debuffTime += times;
+            if(debuffTime - Time.time >= 15f)
+                debuffTime = Time.time + 15f;
         }
     }
 }

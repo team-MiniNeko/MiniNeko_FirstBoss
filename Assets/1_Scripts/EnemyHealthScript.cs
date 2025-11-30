@@ -31,6 +31,30 @@ public class EnemyHealthScript : MonoBehaviour
         BFH = Health;
         invinsibleTime = Time.time;
     }
+    public void EnemyHeal(float HealAmount)
+    {
+        _health += Convert.ToInt32(HealAmount);
+        if (DamageText != null){
+            GameObject dmgText = Instantiate(DamageText);
+            dmgText.transform.SetParent(GameObject.FindWithTag("FieldUI").transform);
+            dmgText.GetComponent<DamageTextScript>().SetText(Convert.ToInt32(-HealAmount));
+            dmgText.transform.position = transform.position;
+            dmgText.transform.position = new Vector3(transform.position.x,transform.position.y+3f,transform.position.z);
+            Destroy(dmgText,2.5f);
+        }
+        if(HitEffect != null)
+        {
+            GameObject hiteffect = Instantiate(HitEffect);
+            Vector2 playerLoc = GameObject.FindWithTag("Player").transform.position;
+            hiteffect.transform.position = transform.position;
+            hiteffect.transform.rotation = quaternion.Euler(0f,0f,UnityEngine.Random.Range(0f,360f));
+            Destroy(hiteffect,0.3f);
+        }
+        if(HitSound != null)
+        {
+            HitSound.Play();
+        }
+    }
     public void EnemyDamage(float Damage)
     {
         _health -= Convert.ToInt32(Damage*Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));

@@ -455,6 +455,7 @@ MonoBehaviour:
   invisibleTime: 0
   DamageText: {fileID: 1487416769882642056, guid: edcc3b94bf3614596a7771fbbd9d73d4, type: 3}
   CameraCanvas: {fileID: 7183246942121871575, guid: 491c4a248d2d34bd8bfe8d383d6774dc, type: 3}
+  wing: {fileID: 0}
 --- !u!114 &3446606855542817626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: {fileID: 7096505069737248528, guid: 8971ac57f21664aeca89b04c2f253109, type: 3}
   Skill1: {fileID: 1044083867600511065, guid: 444803448fa28444ba2225450ad109e7, type: 3}
+  Skill2: {fileID: 7096505069737248528, guid: 11129592a34eb447d82233ab7377a5eb, type: 3}
 --- !u!114 &7925413559310152435
 MonoBehaviour:
   m_ObjectHideFlags: 0
