@@ -6,11 +6,11 @@ public class voidBall2a : MonoBehaviour
 {
     private CameraScripts camera;
     public GameObject ball;
-    private Vector3 startLocalPos;
+    public Vector3 startLocalPos;
     void Awake()
     {
         camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
-        startLocalPos = transform.localPosition;
+        startLocalPos = ball.transform.localPosition;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

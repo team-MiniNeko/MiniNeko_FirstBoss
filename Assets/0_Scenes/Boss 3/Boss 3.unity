@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3237,7 +3237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3543,7 +3543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3717,7 +3717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -4282,6 +4282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930132726}
   - component: {fileID: 930132727}
+  - component: {fileID: 930132728}
   m_Layer: 0
   m_Name: voidball2
   m_TagString: Untagged
@@ -4321,6 +4322,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db824092c91e249c59a375c847702f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  VoidBallCha:
+  - {fileID: 2109215699}
+  - {fileID: 251861584}
+  - {fileID: 642367023}
+  - {fileID: 1188474073}
+  - {fileID: 796734920}
+--- !u!114 &930132728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930132725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5f81bfa76f5479b86d705cf54d7e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 265867404}
+  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!1 &981771015
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,7 +4549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -4869,7 +4891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -10515,7 +10537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -12989,7 +13011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -13075,7 +13097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1988673062
 Transform:
   m_ObjectHideFlags: 0
@@ -13215,7 +13237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -13697,7 +13719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
