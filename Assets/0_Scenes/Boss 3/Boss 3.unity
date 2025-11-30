@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -1326,6 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &251861592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 930132725}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &265867402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,6 +1501,7 @@ MonoBehaviour:
   conversation: {fileID: 384379181}
   speed: 300
   page2: 0
+  isCrecked: 0
   Attack:
   - {fileID: -1876575632989397844, guid: 403fd20c03d6449e8af0d04346350052, type: 3}
   - {fileID: 1259095790213493357, guid: 2dcc548dda1a5446aabe8cd26136c9a9, type: 3}
@@ -2686,7 +2689,10 @@ MonoBehaviour:
   Icon: {fileID: 7212361788515778098, guid: c999fe833fc3f483bbebda25e583bae4, type: 3}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
-  deBuff: {fileID: 0}
+  deBuffLight: {fileID: 0}
+  deBuffDark: {fileID: 0}
+  deBuffType: 
+  player: {fileID: 0}
 --- !u!1 &536441768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,7 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3256,6 +3262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 930132725}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &642462480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8406327759789480898, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
@@ -3543,7 +3550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3717,7 +3724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -3788,6 +3795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 930132725}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &805538549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,6 +4290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930132726}
   - component: {fileID: 930132727}
+  - component: {fileID: 930132728}
   m_Layer: 0
   m_Name: voidball2
   m_TagString: Untagged
@@ -4321,6 +4330,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db824092c91e249c59a375c847702f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  VoidBallCha:
+  - {fileID: 2109215699}
+  - {fileID: 251861584}
+  - {fileID: 642367023}
+  - {fileID: 1188474073}
+  - {fileID: 796734920}
+--- !u!114 &930132728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930132725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5f81bfa76f5479b86d705cf54d7e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!1 &981771015
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,7 +4556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -4869,7 +4898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -4940,6 +4969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 930132725}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1202171398
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,7 +10545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -12905,7 +12935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1968904268
 Transform:
   m_ObjectHideFlags: 0
@@ -12989,7 +13019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -13109,7 +13139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5f81bfa76f5479b86d705cf54d7e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 265867404}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
 --- !u!1 &2014501729
 GameObject:
@@ -13215,7 +13244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -13697,7 +13726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 20
   Type: Enter
   MultipleSize: 1
   invisibleTime: 0.03
@@ -13716,6 +13745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 930132725}
+  startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2115988720
 GameObject:
   m_ObjectHideFlags: 0
