@@ -27,13 +27,11 @@ public class VoidBall : MonoBehaviour
     IEnumerator VoidMove (float angle)
     {
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        while (Mathf.Abs(transform.position.x) < 200)
+        while (gameObject.activeSelf)
         {
             transform.position += transform.right * Time.deltaTime * 20;        
             yield return null;
         }
-        transform.localPosition = Vector3.zero;
-        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,6 +39,12 @@ public class VoidBall : MonoBehaviour
         if (other.CompareTag("Player"))
         {   
             camera.Debuff(3f);
+        }
+
+        if (other.CompareTag("LeftWall") || other.CompareTag("RightWall"))
+        {
+            gameObject.SetActive(false);
+            transform.localPosition = Vector3.zero;
         }
     }
 }
