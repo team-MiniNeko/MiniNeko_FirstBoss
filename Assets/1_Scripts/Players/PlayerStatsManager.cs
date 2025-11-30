@@ -5,10 +5,49 @@ using UnityEngine;
 public class PlayerStatsManager : MonoBehaviour
 {
     public static PlayerStatsManager Instance;
-    public float playerAttack;
-    public float playerHp;
-    public float playerDefence;
-    public float playerSpeed;
+    private float playerAttack = 20;
+    private float playerHp = 1000;
+    private float playerDefence = 300;
+    private float playerSpeed = 14;
+    public float PlayerAttack 
+    {   
+        get => playerAttack;
+        set {
+            playerAttack = value;
+            PlayerPrefs.SetFloat("PlayerAttack", this.PlayerAttack);
+            Debug.Log($"Attack : {playerAttack}");
+        } 
+    }
+    public float PlayerHp 
+    { 
+        get => playerHp;
+        set
+        {
+            playerHp = value;
+            PlayerPrefs.SetFloat("PlayerHp", this.PlayerHp);
+            Debug.Log($"Hp : {playerHp}");
+        }
+    }
+    public float PlayerDefence
+    { 
+        get => playerDefence;
+        set
+        {
+            playerDefence = value;
+            PlayerPrefs.SetFloat("PlayerDefence", this.playerDefence);
+            Debug.Log($"Defence : {playerDefence}");
+        }
+    }
+    public float PlayerSpeed 
+    { 
+        get => playerSpeed;
+        set
+        {
+            playerSpeed = value;
+            PlayerPrefs.SetFloat("PlayerSpeed", playerSpeed);
+            Debug.Log($"Speed : {playerSpeed}");
+        }
+    }
     private void Awake()
     {
         if (!Instance)
@@ -23,6 +62,7 @@ public class PlayerStatsManager : MonoBehaviour
     }
     private void Start()
     {
+        PlayerPrefs.DeleteKey("FirstTime");
         if (!PlayerPrefs.HasKey("FirstTime"))
         {
             SetStats();
@@ -36,7 +76,8 @@ public class PlayerStatsManager : MonoBehaviour
     }
     void SetStats()
     {
-        PlayerPrefs.SetFloat("PlayerAttack", 550);
+        Debug.LogError("SEtSTats");
+        PlayerPrefs.SetFloat("PlayerAttack", 20);
         PlayerPrefs.SetFloat("PlayerHp", 1000);
         PlayerPrefs.SetFloat("PlayerDefence", 300);
         PlayerPrefs.SetFloat("PlayerSpeed", 14);
@@ -44,9 +85,10 @@ public class PlayerStatsManager : MonoBehaviour
     }
     void LoadStats()
     {
-        playerAttack = PlayerPrefs.GetFloat("PlayerAttack");
-        playerHp = PlayerPrefs.GetFloat("PlayerHp");
-        playerDefence = PlayerPrefs.GetFloat("PlayerDefence");
-        playerSpeed = PlayerPrefs.GetFloat("PlayerSpeed");
+        Debug.LogError("LoadSTats");
+        PlayerAttack = PlayerPrefs.GetFloat("PlayerAttack");
+        PlayerHp = PlayerPrefs.GetFloat("PlayerHp");
+        PlayerDefence = PlayerPrefs.GetFloat("PlayerDefence");
+        PlayerSpeed = PlayerPrefs.GetFloat("PlayerSpeed");
     }
 }

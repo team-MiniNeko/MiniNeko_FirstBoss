@@ -22,7 +22,7 @@ public class SkillTreeManager : MonoBehaviour
         if (!Instance)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -32,6 +32,7 @@ public class SkillTreeManager : MonoBehaviour
     private void Start()
     {
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
+        LoadProgress();
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)
     {
@@ -183,6 +184,18 @@ public class SkillTreeManager : MonoBehaviour
         if (canLock && node.currentRank >= 0)
         {
             node.SetRank(node.currentRank - 1);
+            if (node.skillData.weakening != null)
+            {
+                if (!node.skillData.isPercent)
+                {
+                    node.skillData.weakening.Weakening(node.skillData.weakFigure);//약화 실행
+                }
+                else
+                {
+                    node.skillData.weakening.Weakening((float)node.skillData.weakFigure);//약화 실행
+                }
+            }
+            SaveProgress();
             Debug.Log($"skill name: {node.skillData.skillName}");
         }
         else
@@ -197,6 +210,7 @@ public class SkillTreeManager : MonoBehaviour
             string key = "skill" + kv.Key.name;
             PlayerPrefs.SetInt(key, kv.Value.currentRank);
             PlayerPrefs.Save();
+            Debug.Log($"{key} save");
         }
     }
     public void LoadProgress()
@@ -206,6 +220,9 @@ public class SkillTreeManager : MonoBehaviour
             string key = "skill" + kv.Key.name;
             if (PlayerPrefs.HasKey(key))
                 kv.Value.SetRank(PlayerPrefs.GetInt(key));
+            else
+                kv.Value.SetRank(kv.Key.maxRank);
+                Debug.Log($"{key} load");
         }
     }
 }

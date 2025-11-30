@@ -4613,10 +4613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 550
-  playerHp: 1000
-  playerDefence: 300
-  playerSpeed: 14
 --- !u!4 &996297864
 Transform:
   m_ObjectHideFlags: 0
@@ -12908,7 +12904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1968904268
 Transform:
   m_ObjectHideFlags: 0

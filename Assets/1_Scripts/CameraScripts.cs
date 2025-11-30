@@ -19,6 +19,7 @@ public class CameraScripts : MonoBehaviour
     float debuffTime = 0f;
     public float originSize;
     float originYv;
+    public GameObject deBuff;
     void Awake()
     {
         originSize = Size;
@@ -51,13 +52,13 @@ public class CameraScripts : MonoBehaviour
                 Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
                 Size = originSize/2f;
                 yValue = 0;
-                material.color = new Color(0.15f, 0.15f, 0.15f, 1f);
+                material.color = new Color(0.15f, 0.15f, 0.15f, 1f);//
                 Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
 
             }else{
                 Size = originSize;
                 yValue = originYv;
-                material.color = new Color(1f, 1f, 1f, 1f);
+                material.color = new Color(1f, 1f, 1f, 1f);//
                 Icon.transform.parent = transform;//?
             }
         }
