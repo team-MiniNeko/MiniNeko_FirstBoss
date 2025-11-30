@@ -555,8 +555,11 @@ IEnumerator Chain()
         yield return null;
     }
     yield return new WaitForSeconds(0.5f);
-
+    int ran = Random.Range(0, 2); 
+    if (ran == 0)
     cor = Coroutine_Creck();
+    else
+    cor = VoidBall2();
     yield return cor;
 }
 
