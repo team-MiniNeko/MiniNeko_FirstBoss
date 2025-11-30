@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef26c6b6cb74940208706579d7e4f169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
+  ball: {fileID: 930132725}
   startLocalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &251861592
 MonoBehaviour:
