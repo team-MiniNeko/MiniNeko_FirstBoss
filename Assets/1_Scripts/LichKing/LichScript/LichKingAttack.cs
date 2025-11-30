@@ -246,6 +246,7 @@ public class LichKingAttack : MonoBehaviour
                 case 0:
                     ranDelay = Random.Range(0, 0.2f);
                     
+                    sword.localRotation = Quaternion.Euler(0, 0, 0);
                     sword.transform.GetChild(0).gameObject.SetActive(true);
                     sword.transform.GetChild(1).gameObject.SetActive(false);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
@@ -296,7 +297,7 @@ public class LichKingAttack : MonoBehaviour
                     break;
 
                 case 1:
-                    
+                    sword.localRotation = Quaternion.Euler(0, 0, 0);
                     sword.transform.GetChild(0).gameObject.SetActive(false);
                     sword.transform.GetChild(1).gameObject.SetActive(true);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
@@ -384,6 +385,7 @@ public class LichKingAttack : MonoBehaviour
 
    IEnumerator Coroutine_Creck()
 {
+    sword.localRotation = Quaternion.Euler(0, 0, 0);
     isCrecked = true;
     rb.velocity = Vector2.zero;
     int ran = Random.Range(0, 3);
@@ -553,8 +555,11 @@ IEnumerator Chain()
         yield return null;
     }
     yield return new WaitForSeconds(0.5f);
-
+    int ran = Random.Range(0, 2); 
+    if (ran == 0)
     cor = Coroutine_Creck();
+    else
+    cor = VoidBall2();
     yield return cor;
 }
 
