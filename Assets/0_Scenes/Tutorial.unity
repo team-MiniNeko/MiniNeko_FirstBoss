@@ -1778,6 +1778,7 @@ MonoBehaviour:
   Icon: {fileID: 7212361788515778098, guid: c999fe833fc3f483bbebda25e583bae4, type: 3}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
+  deBuff: {fileID: 0}
 --- !u!1 &539445956
 GameObject:
   m_ObjectHideFlags: 0
@@ -7485,6 +7486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 100
   Health: 0
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -7492,6 +7495,7 @@ MonoBehaviour:
   HitSound: {fileID: 761773148}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 0}
+  shield: {fileID: 0}
 --- !u!50 &761773147
 Rigidbody2D:
   serializedVersion: 4
@@ -9759,10 +9763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 550
-  playerHp: 1000
-  playerDefence: 300
-  playerSpeed: 14
 --- !u!4 &1638863539
 Transform:
   m_ObjectHideFlags: 0
@@ -10037,6 +10037,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 100
   Health: 100
+  _health: 0
+  preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
   HPBarEF: {fileID: 0}
@@ -10044,6 +10046,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 0}
+  shield: {fileID: 0}
 --- !u!50 &1689798609
 Rigidbody2D:
   serializedVersion: 4

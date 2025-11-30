@@ -3574,6 +3574,10 @@ MonoBehaviour:
   Icon: {fileID: 0}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
+  deBuffLight: {fileID: 0}
+  deBuffDark: {fileID: 0}
+  deBuffType: 
+  player: {fileID: 0}
 --- !u!1 &1975274129
 GameObject:
   m_ObjectHideFlags: 0

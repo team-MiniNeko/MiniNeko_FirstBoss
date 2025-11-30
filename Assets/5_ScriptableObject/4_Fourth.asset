@@ -12,12 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465270165308da3418bad72da022b1c2, type: 3}
   m_Name: 4_Fourth
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: PlayerDashWeak
   icon: {fileID: 21300000, guid: 43a7a9e3db37fbf45b65205909b62d94, type: 3}
-  cost: 1
-  maxRank: 1
-  requiredLevel: 0
+  maxRank: 10
+  isPercent: 0
+  weakFigure: 2
   preRequisites:
   - {fileID: 11400000, guid: 45df31146545e92459f578bc5d154370, type: 2}
-  nextSkills: []
+  nextSkills:
+  - {fileID: 11400000, guid: c629e913324c4d844b0d6fd6766a7431, type: 2}
+  - {fileID: 11400000, guid: e8f63196c8c1d3341b874c4ed62ebbfc, type: 2}
+  - {fileID: 11400000, guid: 5b46c7de8d7d389408d43ab806d72fef, type: 2}
+  weakening:
+    rid: 3761197974890217474
   description: 
+  references:
+    version: 2
+    RefIds:
+    - rid: 3761197974890217474
+      type: {class: DashWeak, ns: , asm: Assembly-CSharp}
+      data: 

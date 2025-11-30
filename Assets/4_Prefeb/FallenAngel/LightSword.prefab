@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 15
+  type: Light
 --- !u!1 &9139215139514168968
 GameObject:
   m_ObjectHideFlags: 0

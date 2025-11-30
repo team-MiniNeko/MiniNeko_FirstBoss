@@ -37,7 +37,14 @@ public class SwordGate : MonoBehaviour
         var swordAttack = Instantiate(sword, this.transform.position + new Vector3(-2,0,0), Quaternion.identity);
         if (sr.flipX)
         {
-            swordAttack.transform.Find("LightSwordSource").GetComponent<LightSwordAttack>().isFlip = -1;
+            if (swordAttack.transform.Find("LightSwordSource") != null)
+            {
+                swordAttack.transform.Find("LightSwordSource").GetComponent<LightSwordAttack>().isFlip = -1;
+            }
+            else
+            {
+                swordAttack.transform.Find("DarkSwordSource").GetComponent<LightSwordAttack>().isFlip = -1;
+            }
             swordAttack.transform.rotation = Quaternion.Euler(180, 180, 0);
         }
         swordAttack.transform.SetParent(this.transform);

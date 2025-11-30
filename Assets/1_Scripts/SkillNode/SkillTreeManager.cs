@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SkillTreeManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SkillTreeManager : MonoBehaviour
     public GameObject connectionPrefab;
     public SkillData[] allSkills;
     public SkillData rootSkill;
+    private int canWeak = 0;
+    public TextMeshProUGUI text;
 
     private Dictionary<SkillData, SkillNodeUI> nodes = new Dictionary<SkillData, SkillNodeUI>();
     private List<GameObject> connections = new List<GameObject>();
@@ -31,7 +34,11 @@ public class SkillTreeManager : MonoBehaviour
     }
     private void Start()
     {
+        canWeak += 3;
+        text.text = $"{canWeak}";
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
+        LoadProgress();
+        ReSetProgress();
         LoadProgress();
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)
@@ -181,7 +188,7 @@ public class SkillTreeManager : MonoBehaviour
                 break;
             }
         }
-        if (canLock && node.currentRank >= 0)
+        if (canLock && node.currentRank >= 0 && canWeak > 0)
         {
             node.SetRank(node.currentRank - 1);
             if (node.skillData.weakening != null)
@@ -197,6 +204,8 @@ public class SkillTreeManager : MonoBehaviour
             }
             SaveProgress();
             Debug.Log($"skill name: {node.skillData.skillName}");
+            canWeak--;
+            text.text = $"{canWeak}";
         }
         else
         {
@@ -223,6 +232,16 @@ public class SkillTreeManager : MonoBehaviour
             else
                 kv.Value.SetRank(kv.Key.maxRank);
                 Debug.Log($"{key} load");
+        }
+    }
+    public void ReSetProgress()
+    {
+        foreach (var kv in nodes)
+        {
+            string key = "skill" + kv.Key.name;
+            PlayerPrefs.SetInt(key, kv.Key.maxRank);
+            PlayerPrefs.Save();
+            Debug.Log($"{key} save");
         }
     }
 }

@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465270165308da3418bad72da022b1c2, type: 3}
   m_Name: 6_Sixth
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: PlayerHpWeak3
   icon: {fileID: 0}
   maxRank: 1
   isPercent: 0
-  weakFigure: 15
+  weakFigure: 100
   preRequisites:
-  - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
+  - {fileID: 11400000, guid: 586226ddb48c41245a1abf6392e8bd83, type: 2}
   nextSkills: []
   weakening:
-    rid: 3761197948404236290
+    rid: 3761197974890217477
   description: 
   references:
     version: 2
     RefIds:
-    - rid: 3761197948404236290
-      type: {class: AttackWeakening, ns: , asm: Assembly-CSharp}
+    - rid: 3761197974890217477
+      type: {class: HealthWeaking, ns: , asm: Assembly-CSharp}
       data: 

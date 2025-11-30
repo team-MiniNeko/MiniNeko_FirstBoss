@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     ParticleSystemRenderer PSR;
     void Start()
     {
+        DashForce = PlayerStatsManager.Instance.PlayerDash;
         colider2d = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = GravityScale; // Rigidbody의 중력 스케일 적용
