@@ -12,4 +12,5 @@ public class DashWeak : IWeakening
     {
         PlayerStatsManager.Instance.PlayerDash -= (PlayerStatsManager.Instance.PlayerDash * (figure / 100));
     }
+    public string Weakening(){return "Dash";}
 }

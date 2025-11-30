@@ -8,6 +8,8 @@ public class SkillNodeUI : MonoBehaviour
     public Image icon;
     public GameObject lockOverlay;
     public TextMeshProUGUI rankText;
+    public TextMeshProUGUI infoText;
+    public Image infos;
     public Button button;
 
     public SkillData skillData;
@@ -31,13 +33,18 @@ public class SkillNodeUI : MonoBehaviour
             icon.sprite = skillData.icon;
         lockOverlay.SetActive(!IsUnlocked());
         rankText.text = $"{currentRank}/{(skillData != null ? skillData.maxRank : 0)}";
+        if(infoText != null){
+            Debug.Log("i have info text");
+            Debug.Log($"i have weakenType() = {skillData.weakening.Weakening()}");
+            infoText.text = $"{skillData.weakening.Weakening()}: {skillData.weakFigure}";
+        }
     }
 
     public bool IsUnlocked()
     {
         return currentRank > 0;
     }
-
+    
     public void SetRank(int r)
     {
         if(currentRank < r && currentRank > 0){

@@ -12,4 +12,5 @@ public class AttackWeakening : IWeakening
     {
         PlayerStatsManager.Instance.PlayerAttack -= (PlayerStatsManager.Instance.PlayerAttack * (figure/100));
     }
+    public string Weakening(){return "Attack";}
 }
