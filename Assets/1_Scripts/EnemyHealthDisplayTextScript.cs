@@ -12,7 +12,7 @@ public class EnemyHealthDisplayTextScript : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        StartHealth = enemy.Health;
+        StartHealth = enemy.StartHealth;
     }
     void Update()
     {
