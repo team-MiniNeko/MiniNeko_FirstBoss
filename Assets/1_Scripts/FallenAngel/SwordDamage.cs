@@ -6,6 +6,7 @@ public class SwordDamage : MonoBehaviour
 {
     public int swordDamage = 15;
     private CameraScripts camera;
+    public string type;
     private void Awake()
     {
         camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
@@ -15,6 +16,7 @@ public class SwordDamage : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().Damage(swordDamage);
+            camera.deBuffType = type;
             camera.Debuff(3f);
         }
     }

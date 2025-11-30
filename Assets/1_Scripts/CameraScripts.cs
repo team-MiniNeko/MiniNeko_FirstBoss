@@ -19,7 +19,12 @@ public class CameraScripts : MonoBehaviour
     float debuffTime = 0f;
     public float originSize;
     float originYv;
-    public GameObject deBuff;
+    public GameObject deBuffLight;
+    public GameObject deBuffDark;
+
+    public string deBuffType;
+
+    public GameObject player;
     void Awake()
     {
         originSize = Size;
@@ -47,7 +52,7 @@ public class CameraScripts : MonoBehaviour
             ShakeForce -= ShakeForce*5f*Time.deltaTime;
         }
         GetComponent<Camera>().orthographicSize = GetComponent<Camera>().orthographicSize+((Size-GetComponent<Camera>().orthographicSize)*Time.deltaTime*3f);
-        if(Icon != null){
+        if(Icon != null && material != null){
             if(Time.time <= debuffTime){
                 Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime-Time.time)+1);
                 Size = originSize/2f;
@@ -62,6 +67,63 @@ public class CameraScripts : MonoBehaviour
                 Icon.transform.parent = transform;//?
             }
         }
+        if (deBuffDark != null && deBuffType == "Dark")
+        {
+            if (deBuffLight.activeSelf == true)
+            {
+                debuffTime = 0;
+                StartCoroutine(DebuffDamage());
+                deBuffDark.SetActive(false);
+                deBuffLight.SetActive(false);
+            }
+            else if (Time.time <= debuffTime)
+            {
+                Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime - Time.time) + 1);
+                Size = originSize / 2f;
+                yValue = 0;
+                deBuffDark.SetActive(true);
+                Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
+
+            }
+            else
+            {
+                Size = originSize;
+                yValue = originYv;
+                deBuffDark.SetActive(false);
+                Icon.transform.parent = transform;//?
+            }
+        }
+        if (deBuffLight != null && deBuffType == "Light")
+        {
+            if (deBuffDark.activeSelf == true)
+            {
+                debuffTime = 0;
+                StartCoroutine(DebuffDamage());
+                deBuffDark.SetActive(false);
+                deBuffLight.SetActive(false);
+            }
+            else if (Time.time <= debuffTime)
+            {
+                Icon.GetComponentInChildren<TextMeshProUGUI>().text = Convert.ToString((int)(debuffTime - Time.time) + 1);
+                Size = originSize / 2f;
+                yValue = 0;
+                deBuffLight.SetActive(true);
+                Icon.transform.SetParent(GameObject.FindWithTag("DebuffIcon").transform);
+
+            }
+            else
+            {
+                Size = originSize;
+                yValue = originYv;
+                deBuffLight.SetActive(false);
+                Icon.transform.parent = transform;
+            }
+        }
+    }
+    IEnumerator DebuffDamage()
+    {
+        yield return new WaitForSeconds(0.1f);
+        player.GetComponent<PlayerHealth>().Damage(50);
     }
     public void CameraShake(float a)
     {

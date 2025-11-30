@@ -22,7 +22,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 586226ddb48c41245a1abf6392e8bd83, type: 2}
   - {fileID: 11400000, guid: 9fbf03691ea48c84586b05d870e388b2, type: 2}
   - {fileID: 11400000, guid: 4dec1fa9ac063f44a95298996a7ae2d6, type: 2}
-  - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
   weakening:
     rid: -2
   description: asdf

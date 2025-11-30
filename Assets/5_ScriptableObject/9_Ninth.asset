@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 465270165308da3418bad72da022b1c2, type: 3}
-  m_Name: 8_Eighth
+  m_Name: 9_Ninth
   m_EditorClassIdentifier: 
-  skillName: PlayerAttackWeak2
+  skillName: PlayerAttackWeak3
   icon: {fileID: 0}
   maxRank: 1
   isPercent: 0
@@ -21,11 +21,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fbf03691ea48c84586b05d870e388b2, type: 2}
   nextSkills: []
   weakening:
-    rid: 3761197974890217479
+    rid: 3761197974890217480
   description: 
   references:
     version: 2
     RefIds:
-    - rid: 3761197974890217479
+    - rid: 3761197974890217480
       type: {class: AttackWeakening, ns: , asm: Assembly-CSharp}
       data: 
