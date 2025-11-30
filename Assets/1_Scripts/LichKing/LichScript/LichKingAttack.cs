@@ -274,7 +274,7 @@ public class LichKingAttack : MonoBehaviour
                             isDelay = false;
                         }
                     }
-
+                    isCrecked = true;
                     yield return new WaitForSeconds(1f);
 
                     while (Quaternion.Angle(sword.localRotation, startRot) > 0.1f)
@@ -288,6 +288,7 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
+                    isCrecked = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -337,6 +338,7 @@ public class LichKingAttack : MonoBehaviour
                     {
                         rb.AddForce(Vector2.right * 500);
                     }
+                    isCrecked = true;
 
                     while (Quaternion.Angle(sword.localRotation, targetRot) > 0.1f)
                     {
@@ -367,6 +369,7 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
+                    isCrecked = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -621,10 +624,11 @@ IEnumerator CrackScaleUp()
 
 IEnumerator BossHp()
 {
-    sr = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
+    sr.sprite = Attack[0];
     cor = null;
     crack.transform.GetChild(0).gameObject.SetActive(false);
     sword.transform.GetChild(3).gameObject.SetActive(false);
+    sword.transform.GetChild(0).gameObject.SetActive(true);
     CameraScripts CS = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
     CS.Target = transform;
     CS.Size = 10f;
