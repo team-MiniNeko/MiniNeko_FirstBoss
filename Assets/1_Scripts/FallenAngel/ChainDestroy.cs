@@ -7,7 +7,7 @@ public class ChainDestroy : MonoBehaviour
 {
     private bool isHit = false;
     private GameObject Chain;
-    private GameObject spark;
+    //private GameObject spark;
 
     public bool isPhaseTwo;
 
@@ -18,8 +18,8 @@ public class ChainDestroy : MonoBehaviour
     }
     private void Start()
     {
-        var canvas = GameObject.Find("HealthDisplays").transform;
-        spark = canvas.Find("spark").gameObject;
+        //var canvas = GameObject.Find("HealthDisplays").transform;
+        //spark = canvas.Find("spark").gameObject;
         StartCoroutine(Destroy());
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,10 +48,10 @@ public class ChainDestroy : MonoBehaviour
             player.gameObject.GetComponent<PlayerMove>().isStop = true;
             isFirst = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            if (isPhaseTwo)
-            {
-                spark.gameObject.SetActive(true);
-            }
+            //if (isPhaseTwo)
+            //{
+            //    spark.gameObject.SetActive(true);
+            //}
             yield return new WaitForSeconds(2f);
             Debug.Log("Sec");
             player.gameObject.GetComponent<PlayerMove>().isStop = false;

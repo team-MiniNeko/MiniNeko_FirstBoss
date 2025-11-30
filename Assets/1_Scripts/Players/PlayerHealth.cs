@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         lastAutoHealTime = Time.time;
         StPos = new Vector2(transform.position.x,transform.position.y);
         CurHp = maxHp;
+        Debug.Log($"{CurHp}");
         CameraCanvas = Instantiate(CameraCanvas);
         invisibleTime = Time.time;
     }

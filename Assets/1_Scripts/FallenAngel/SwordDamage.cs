@@ -5,11 +5,17 @@ using UnityEngine;
 public class SwordDamage : MonoBehaviour
 {
     public int swordDamage = 15;
+    private CameraScripts camera;
+    private void Awake()
+    {
+        camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().Damage(swordDamage);
+            camera.Debuff(3f);
         }
     }
 }
