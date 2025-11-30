@@ -16,17 +16,6 @@ public class BlockScript : MonoBehaviour
             fallenAngel = GameObject.Find("FallenAngel(Sprite)").GetComponent<FallenAngelAttack>();
         }
     }
-    private void Update()
-    {
-        if (this.transform.position.y <= coo.y-29)
-        {
-            this.gameObject.SetActive(false);
-        }
-        else
-        {
-            this.gameObject.SetActive(true);
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Sequence seq = DOTween.Sequence();

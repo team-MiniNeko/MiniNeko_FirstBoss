@@ -14,11 +14,18 @@ public class SkillTreeManager : MonoBehaviour
     public SkillData rootSkill;
     private int canWeak = 0;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI HealthText;
+    public TextMeshProUGUI AttackText;
+    public TextMeshProUGUI DashText;
+    public GameObject nextButton;
+    public NextButton button;
 
     private Dictionary<SkillData, SkillNodeUI> nodes = new Dictionary<SkillData, SkillNodeUI>();
     private List<GameObject> connections = new List<GameObject>();
 
     public List<SkillData> nextSkills = new List<SkillData>();
+
+    private string[] nextScene = { "SlimeKing", "FallenAngel", "Boss 3" };
 
     private void Awake()
     {
@@ -34,11 +41,10 @@ public class SkillTreeManager : MonoBehaviour
     }
     private void Start()
     {
+        PublishText();
         canWeak += 3;
         text.text = $"{canWeak}";
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
-        LoadProgress();
-        ReSetProgress();
         LoadProgress();
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)
@@ -206,6 +212,15 @@ public class SkillTreeManager : MonoBehaviour
             Debug.Log($"skill name: {node.skillData.skillName}");
             canWeak--;
             text.text = $"{canWeak}";
+            PublishText();
+            if (!PlayerPrefs.HasKey("SceneCount"))
+                PlayerPrefs.SetInt("SceneCount", 0);
+            if (canWeak == 0)
+            {
+                button.sceneName = nextScene[PlayerPrefs.GetInt("SceneCount")];
+                nextButton.SetActive(true);
+                PlayerPrefs.SetInt("SceneCount", PlayerPrefs.GetInt("SceneCount")+1);
+            }
         }
         else
         {
@@ -243,5 +258,11 @@ public class SkillTreeManager : MonoBehaviour
             PlayerPrefs.Save();
             Debug.Log($"{key} save");
         }
+    }
+    public void PublishText()
+    {
+        HealthText.text = $"Health:{PlayerStatsManager.Instance.PlayerHp}";
+        AttackText.text = $"Attack:{PlayerStatsManager.Instance.PlayerAttack}";
+        DashText.text = $"Dash:{PlayerStatsManager.Instance.PlayerDash}";
     }
 }

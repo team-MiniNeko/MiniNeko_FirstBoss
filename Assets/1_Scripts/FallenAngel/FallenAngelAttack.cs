@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallenAngelAttack : MonoBehaviour
@@ -36,26 +37,7 @@ public class FallenAngelAttack : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            StartCoroutine(ChainAttack());
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            StartCoroutine(LightSwordAttack());
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            StartCoroutine(LightAttack(player.transform.position));
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            StartCoroutine(DarkSwordAttack());
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            StartCoroutine(LightDarkLightAttack());
-        }
+        Phase();
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (phase == 3)
@@ -97,8 +79,8 @@ public class FallenAngelAttack : MonoBehaviour
                 chainLeft.GetComponent<ChainAttack>().coo = coo;
                 chainRight.GetComponent<ChainAttack>().coo = coo;
                 yield return new WaitForSeconds(5f);
-                Destroy(chainLeft);
-                Destroy(chainRight);
+                //Destroy(chainLeft);
+                //Destroy(chainRight);
                 break;
             case 2:
                 Vector3 coo2 = player.transform.position;
@@ -114,8 +96,8 @@ public class FallenAngelAttack : MonoBehaviour
                 chainLeft2.GetComponent<ChainAttack>().coo = coo2;
                 chainRight2.GetComponent<ChainAttack>().coo = coo2;
                 yield return new WaitForSeconds(5f);
-                Destroy(chainLeft2);
-                Destroy(chainRight2);
+                //Destroy(chainLeft2);
+                //Destroy(chainRight2);
                 break;
             case 3:
                 break;

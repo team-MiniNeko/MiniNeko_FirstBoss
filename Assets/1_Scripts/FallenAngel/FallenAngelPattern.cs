@@ -6,7 +6,7 @@ public class FallenAngelPattern : MonoBehaviour
 {
     public FallenAngelAttack fallenAngel;
     public GameObject player;
-    private int curPhase = 0;
+    public int curPhase = 0;
     public IEnumerator PatternOne()
     {
         for (int i = -50; i <= 50; i += 10)
@@ -46,28 +46,101 @@ public class FallenAngelPattern : MonoBehaviour
             switch (fallenAngel.phase)
             {
                 case 1:
+                    Debug.LogError($"{curPhase}, {fallenAngel.phase}");
+                    curPhase++;
+                    StartCoroutine(PhaseOne());
                     break;
                 case 2:
+                    curPhase++;
+                    StartCoroutine(PhaseTwo());
                     break;
                 case 3:
+                    StartCoroutine(PhseThree());
+                    curPhase++;
                     break;
                 default:
                     Debug.LogError("...?!?!?");
                     break;
             }
-            curPhase = fallenAngel.phase;
         }
     }
-    //public IEnumerator PhaseOne()
-    //{
-
-    //}
-    //public IEnumerator PhaseTwo()
-    //{
-
-    //}
-    //public IEnumerator PhseThree()
-    //{
-
-    //}
+    public IEnumerator PhaseOne()
+    {
+        Debug.LogError($"{curPhase}, {fallenAngel.phase}");
+        while (curPhase == fallenAngel.phase)
+        {
+            Debug.LogError("1페이이지");
+            int value = Random.Range(0, 2);
+            if (value == 0)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternOne());
+            }
+            else
+            {
+                yield return StartCoroutine(PatternThree());
+            }
+            yield return StartCoroutine(fallenAngel.ChainAttack());
+        }
+    }
+    public IEnumerator PhaseTwo()
+    {
+        while (curPhase == fallenAngel.phase)
+        {
+            int value = Random.Range(0, 4);
+            if (value == 0)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternOne());
+            }
+            else if (value == 1)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternThree());
+            }
+            else if (value == 2)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternFour());
+            }
+            else if (value == 3)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternTwo());
+            }
+                yield return new WaitForSeconds(0.6f);
+            yield return StartCoroutine(fallenAngel.ChainAttack());
+            yield return new WaitForSeconds(0.6f);
+        }
+    }
+    public IEnumerator PhseThree()
+    {
+        while (curPhase == fallenAngel.phase)
+        {
+            int value = Random.Range(0, 4);
+            if (value == 0)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternOne());
+            }
+            else if (value == 1)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternThree());
+            }
+            else if (value == 2)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternFour());
+            }
+            else if (value == 3)
+            {
+                yield return StartCoroutine(fallenAngel.ChainAttack());
+                yield return StartCoroutine(PatternTwo());
+            }
+            yield return new WaitForSeconds(0.3f);
+            yield return StartCoroutine(fallenAngel.ChainAttack());
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
 }

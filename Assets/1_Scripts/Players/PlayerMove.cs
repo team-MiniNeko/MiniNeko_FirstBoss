@@ -47,6 +47,10 @@ public class PlayerMove : MonoBehaviour
         if(!CutSceneStatus.CheckStatus()){
             if (!isStop && !isDashing) // 일반 이동/점프/대쉬 입력은 정지 상태가 아니고 대쉬 중이 아닐 때만 받음
             {
+                if (rb.bodyType == RigidbodyType2D.Static)
+                {
+                    rb.bodyType = RigidbodyType2D.Dynamic;
+                }
                 // --- 일반 이동 방향 결정 ---
                 float horizontalInput = 0f;
                 if (Input.GetKey(KeyCode.A))

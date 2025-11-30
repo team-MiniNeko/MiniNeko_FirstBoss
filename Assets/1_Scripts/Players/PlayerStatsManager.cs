@@ -62,7 +62,6 @@ public class PlayerStatsManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayerPrefs.DeleteKey("FirstTime");
         if (!PlayerPrefs.HasKey("FirstTime"))
         {
             SetStats();

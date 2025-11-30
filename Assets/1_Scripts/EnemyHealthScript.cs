@@ -23,6 +23,8 @@ public class EnemyHealthScript : MonoBehaviour
     public GameObject DamageText;
     float invinsibleTime;
 
+    public GameObject portal;
+
     public ShieldHp shield;
     void Start()
     {
@@ -160,6 +162,7 @@ public class EnemyHealthScript : MonoBehaviour
                 Destroy(GetComponent<EnemyHealthScript>());
                 enabled = false;
             }else{
+                portal.SetActive(true);
                 gameObject.SetActive(false);
             }
         }

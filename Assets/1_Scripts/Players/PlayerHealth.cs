@@ -111,7 +111,9 @@ public class PlayerHealth : MonoBehaviour
     {
         wing.SetActive(true);
         GameObject player = GameObject.FindWithTag("Player");
-        player.transform.DOMove(new Vector3(0,3,0),3f);
+        player.GetComponent<Collider2D>().enabled = false;
+        yield return player.transform.DOMove(new Vector3(0,3,0),3f);
+        player.GetComponent <Collider2D>().enabled = true;
         yield return new WaitForSeconds(3f);
         wing.SetActive(false);
     }
