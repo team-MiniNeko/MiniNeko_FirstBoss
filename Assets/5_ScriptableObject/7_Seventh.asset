@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   maxRank: 1
   isPercent: 0
-  weakFigure: 10
+  weakFigure: 3
   preRequisites:
   - {fileID: 11400000, guid: 993ffd78e6d19e841bb8510f4c22ec39, type: 2}
   nextSkills: []

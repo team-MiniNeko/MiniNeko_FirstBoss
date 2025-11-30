@@ -31,7 +31,16 @@ public class SkillTreeManager : MonoBehaviour
     }
     private void Start()
     {
+        
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
+        LoadProgress();
+        foreach (var kv in nodes)
+        {
+            string key = "skill" + kv.Key.name;
+            PlayerPrefs.SetInt(key, kv.Key.maxRank);
+            PlayerPrefs.Save();
+            Debug.Log($"{key} save");
+        }
         LoadProgress();
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)

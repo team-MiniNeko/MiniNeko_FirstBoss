@@ -43,10 +43,10 @@ public class PlayerAttack : MonoBehaviour
                 ins.transform.Rotate(0,180,0);
             Destroy(ins, 0.15f);
         }
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time - cooltimes[0] > 0f)
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time - cooltimes[0] > 0f&& Time.time - atkTime > 0f)
         {
             Anims.SetTrigger("Skill1");
-            cooltimes[0] = Time.time+5;
+            cooltimes[0] = Time.time+10;
             atkTime = Time.time+1.5f;
             GameObject ins = Instantiate(Skill1);
             ins.transform.position = transform.position;
@@ -60,11 +60,11 @@ public class PlayerAttack : MonoBehaviour
                 ins.transform.Rotate(0,180,0);
             Destroy(ins, 1.5f);
         }
-        if (Input.GetKeyDown(KeyCode.X) && Time.time - cooltimes[1] > 0f)
+        if (Input.GetKeyDown(KeyCode.X) && Time.time - cooltimes[1] > 0f&& Time.time - atkTime > 0f)
         {
             Anims.SetTrigger("Skill2");
-            cooltimes[1] = Time.time+5;
-            atkTime = Time.time+1.5f;
+            cooltimes[1] = Time.time+15;
+            atkTime = Time.time+3f;
             GameObject ins = Instantiate(Skill2);
             ins.transform.position = transform.position;
             ins.transform.Translate(lastFace * 2f);

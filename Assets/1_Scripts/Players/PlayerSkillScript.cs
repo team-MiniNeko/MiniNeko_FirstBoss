@@ -9,6 +9,7 @@ public class PlayerSkillScript : MonoBehaviour
     public float AttackDamage = 20;
     public String AttackType = "Enter";
     float beforeAtkTime;
+    public float invTime = 0.1f;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class PlayerSkillScript : MonoBehaviour
         if(AttackType == "Stay"){
             if(col.CompareTag("Boss")||col.CompareTag("DestoryableStructer")||col.CompareTag("Enemy")){
                 EnemyHealthScript healthScript = col.gameObject.transform.GetComponent<EnemyHealthScript>();
-                healthScript.EnemyDamage(AttackDamage,0.1f);
+                healthScript.EnemyDamage(AttackDamage,invTime);
             }
         }else{return;}
     }

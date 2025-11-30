@@ -623,8 +623,8 @@ IEnumerator BossHp()
     CS.originSize = 10f;
     transform.Find("Phase 2 Aura").gameObject.SetActive(true);
     conversation.DisplayText("...",0.25f);
-    LichHp.StartHealth = 3000;
-    while (LichHp.Health < 3000)
+    LichHp.StartHealth = 2000;
+    while (LichHp.Health < 2000)
     {
         playerMove.isStop = true;
         rb.velocity = Vector2.zero;
@@ -642,7 +642,7 @@ IEnumerator BossHp()
     CS.Target = playerMove.transform;
     CS.Size = 20f;
     CS.originSize = 20f;
-    if (page2 && LichHp.Health > 2999)
+    if (page2 && LichHp.Health > 1999)
     {
         Boss3Audiomanager.instance.PlayBGM();
         rb.velocity = Vector2.one;
