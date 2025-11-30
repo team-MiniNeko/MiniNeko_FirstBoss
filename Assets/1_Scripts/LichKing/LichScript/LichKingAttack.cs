@@ -21,7 +21,7 @@ public class LichKingAttack : MonoBehaviour
 
     public int speed;
     public bool page2;
-    bool isCrecked;
+    public bool isCrecked;
     private bool isSkill;
     public Sprite[] Attack;
     public GameObject[] chain;
@@ -47,6 +47,7 @@ public class LichKingAttack : MonoBehaviour
 
     bool isLeftWall;
 
+    private bool isVoidBall2;
     
     void Awake()
     {
@@ -84,15 +85,20 @@ public class LichKingAttack : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(BossHp());
         }
+
         if (isCrecked)
+        {
+            rb.velocity = Vector2.zero;
             return;
-        if (transform.position.x > Target.transform.position.x && !isSkill && !isLeftWall)
+        }
+        
+        if (transform.position.x > Target.transform.position.x && !isLeftWall)
         {
             flipx.x = Mathf.Abs(flipx.x); 
             transform.localScale = flipx;
             rb.velocity = Vector2.left * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-        else if(transform.position.x < Target.transform.position.x && !isSkill && !isRightWall)
+        else if(transform.position.x < Target.transform.position.x && !isRightWall)
         {
             flipx.x = -Mathf.Abs(flipx.x);
             transform.localScale = flipx;
@@ -564,28 +570,29 @@ IEnumerator Ghoul()
 IEnumerator VoidBall()
 {
     isSkill = true;
-    rb.velocity = Vector2.zero;
-    int i;
-    for (i = 0; i < voidBall.Length; i++)
+    isCrecked = true;
+    for (int i = 0; i < voidBall.Length; i++)
     {
         voidBall[i].SetActive(true);
-        
         yield return new WaitForSeconds(0.5f);
+        if (voidBall[5].activeSelf)
+        {
+            isCrecked = false;
+        }
     }
-
-    yield return new WaitForSeconds(1f);
-    rb.velocity = Vector2.one;
     isSkill = false;
     cor = null;
 }
 IEnumerator VoidBall2()
 {
     isSkill = true;
-    rb.velocity = Vector2.zero;
-        voidBall2.SetActive(true);
-    yield return new WaitForSeconds(3f);
-    rb.velocity = Vector2.one;
+    isCrecked = true;
+    voidBall2.SetActive(true);
+    isVoidBall2 = true;
+    yield return new WaitForSeconds(1f);
     isSkill = false;
+    isCrecked = false;
+    yield return new WaitForSeconds(3f);
     cor = null;
 }
 
@@ -614,6 +621,7 @@ IEnumerator CrackScaleUp()
 
 IEnumerator BossHp()
 {
+    sr = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
     cor = null;
     crack.transform.GetChild(0).gameObject.SetActive(false);
     sword.transform.GetChild(3).gameObject.SetActive(false);
