@@ -778,6 +778,7 @@ MonoBehaviour:
   Icon: {fileID: 7212361788515778098, guid: c999fe833fc3f483bbebda25e583bae4, type: 3}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
+  deBuff: {fileID: 0}
 --- !u!1 &589997534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,6 +7230,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3446606855542817626, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: Skill2
+      value: 
+      objectReference: {fileID: 7096505069737248528, guid: 11129592a34eb447d82233ab7377a5eb, type: 3}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

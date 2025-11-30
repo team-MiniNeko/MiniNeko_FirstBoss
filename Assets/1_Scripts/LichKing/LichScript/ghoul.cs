@@ -35,7 +35,7 @@ public class ghoul : MonoBehaviour
     private void OnDisable()
     {
         if(Boss3Health.gameObject.GetComponent<LichKingAttack>().page2)
-            Boss3Health.EnemyDamage(-20);
+            Boss3Health.EnemyHeal(20);
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class ghoul : MonoBehaviour
     {   
         if(ghoulHealth.Health > 0 && Time.time-atkTime > 0.3f && Boss3Health.Health > 0 && Boss3Health.Health < 1500)
         {
-            Boss3Health.EnemyDamage(-3);
+            Boss3Health.EnemyHeal(3);
             atkTime = Time.time;
         }
         else if (Boss3Health.Health <= 0)

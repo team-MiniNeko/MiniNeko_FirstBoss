@@ -2278,7 +2278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 138.00012, y: -675}
+  m_AnchoredPosition: {x: 1731, y: -224.36}
   m_SizeDelta: {x: 334.0869, y: 62.641296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753274403
@@ -3958,6 +3958,7 @@ MonoBehaviour:
   Icon: {fileID: 0}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
+  deBuff: {fileID: 0}
 --- !u!1 &1975274129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,7 +4010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeColor: {r: 0.33975744, g: 0, b: 1, a: 1}
-  XMoveScale: 0.5
+  XMoveScale: -0.5
   Scale: 1.2
 --- !u!114 &1975274132
 MonoBehaviour:
@@ -4201,7 +4202,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FallenAngel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1995126654
