@@ -85,8 +85,12 @@ public class LichKingAttack : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(BossHp());
         }
+
         if (isCrecked)
+        {
+            rb.velocity = Vector2.zero;
             return;
+        }
         
         if (transform.position.x > Target.transform.position.x && !isLeftWall)
         {
