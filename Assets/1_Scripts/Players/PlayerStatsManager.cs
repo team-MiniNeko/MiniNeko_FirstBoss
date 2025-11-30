@@ -8,7 +8,7 @@ public class PlayerStatsManager : MonoBehaviour
     private float playerAttack = 20;
     private float playerHp = 1000;
     private float playerDefence = 300;
-    private float playerSpeed = 14;
+    private float playerDash = 100;
     public float PlayerAttack 
     {   
         get => playerAttack;
@@ -38,14 +38,14 @@ public class PlayerStatsManager : MonoBehaviour
             Debug.Log($"Defence : {playerDefence}");
         }
     }
-    public float PlayerSpeed 
+    public float PlayerDash
     { 
-        get => playerSpeed;
+        get => playerDash;
         set
         {
-            playerSpeed = value;
-            PlayerPrefs.SetFloat("PlayerSpeed", playerSpeed);
-            Debug.Log($"Speed : {playerSpeed}");
+            playerDash = value;
+            PlayerPrefs.SetFloat("PlayerDash", playerDash);
+            Debug.Log($"Dash : {playerDash}");
         }
     }
     private void Awake()
@@ -80,7 +80,7 @@ public class PlayerStatsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerAttack", 20);
         PlayerPrefs.SetFloat("PlayerHp", 1000);
         PlayerPrefs.SetFloat("PlayerDefence", 300);
-        PlayerPrefs.SetFloat("PlayerSpeed", 14);
+        PlayerPrefs.SetFloat("PlayerDash", 100);
         LoadStats();
     }
     void LoadStats()
@@ -89,6 +89,6 @@ public class PlayerStatsManager : MonoBehaviour
         PlayerAttack = PlayerPrefs.GetFloat("PlayerAttack");
         PlayerHp = PlayerPrefs.GetFloat("PlayerHp");
         PlayerDefence = PlayerPrefs.GetFloat("PlayerDefence");
-        PlayerSpeed = PlayerPrefs.GetFloat("PlayerSpeed");
+        PlayerDash = PlayerPrefs.GetFloat("PlayerDash");
     }
 }

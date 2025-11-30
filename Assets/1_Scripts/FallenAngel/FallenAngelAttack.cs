@@ -46,7 +46,7 @@ public class FallenAngelAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            StartCoroutine(LightAttack());
+            StartCoroutine(LightAttack(player.transform.position));
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -79,7 +79,7 @@ public class FallenAngelAttack : MonoBehaviour
             phase = 2;
         }
     }
-    IEnumerator ChainAttack()
+    public IEnumerator ChainAttack()
     {
         switch (phase)
         {
@@ -123,7 +123,7 @@ public class FallenAngelAttack : MonoBehaviour
         
     }
 
-    IEnumerator LightSwordAttack()
+    public IEnumerator LightSwordAttack()
     {
         var swordGateOneRight = Instantiate(lightSwordGate, new Vector3(50, player.transform.position.y, 0), Quaternion.identity);
         var swordGateTwoLeft = Instantiate(lightSwordGate, new Vector3(-50, player.transform.position.y + 6, 0), Quaternion.identity);
@@ -138,17 +138,23 @@ public class FallenAngelAttack : MonoBehaviour
         Destroy(swordAttackRangeThree, 1f);
         yield return new WaitForSeconds(0.5f);
     }
-    IEnumerator DarkSwordAttack()
+    public IEnumerator DarkSwordAttack()
     {
-        var firstGate = Instantiate(darkSwordGate, new Vector3(this.transform.position.x - 7, player.transform.position.y, 0), Quaternion.identity);
+        var swordGateOneLeft = Instantiate(darkSwordGate, new Vector3(-50, player.transform.position.y, 0), Quaternion.identity);
+        var swordGateTwoRight = Instantiate(darkSwordGate, new Vector3(50, player.transform.position.y + 6, 0), Quaternion.identity);
+        var sworGateThreeRight = Instantiate(darkSwordGate, new Vector3(50, player.transform.position.y - 6, 0), Quaternion.identity);
+        swordGateOneLeft.GetComponent<SpriteRenderer>().flipX = true;
+        var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y, 0), Quaternion.identity);
+        var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y + 6, 0), Quaternion.identity);
+        var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y - 6, 0), Quaternion.identity);
+        Destroy(swordAttackRangeOne, 1f);
+        Destroy(swordAttackRangeTwo, 1f);
+        Destroy(swordAttackRangeThree, 1f);
         yield return new WaitForSeconds(0.5f);
-        var secondGate = Instantiate(darkSwordGate, new Vector3(this.transform.position.x - 7, player.transform.position.y + 3, 0), Quaternion.identity);
-        yield return new WaitForSeconds(0.5f);
-        var thirdGate = Instantiate(darkSwordGate, new Vector3(this.transform.position.x - 7, player.transform.position.y + 6, 0), Quaternion.identity);
     }
-    IEnumerator LightAttack()
+    public IEnumerator LightAttack(Vector3 loc)
     {
-        Vector3 coo = new Vector3(player.transform.position.x, 1, 0);
+        Vector3 coo = loc;
         var lightAttackRange = Instantiate(this.lightSkillRange,coo, Quaternion.identity);
         yield return new WaitForSeconds(1f);
         Destroy(lightAttackRange);
@@ -157,7 +163,7 @@ public class FallenAngelAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(lightAttack);
     }
-    IEnumerator LightDarkLightAttack()
+    public IEnumerator LightDarkLightAttack()
     {
         Vector3 coo = new Vector3(player.transform.position.x, 0, 0);
         var leftLightAttackRange = Instantiate(this.lightDarkLightSkillRange, coo + new Vector3(-7,0,0), Quaternion.identity);
@@ -198,21 +204,21 @@ public class FallenAngelAttack : MonoBehaviour
                 case 3:
                     StartCoroutine(ChainAttack());
                     yield return new WaitForSeconds(2f);
-                    StartCoroutine(LightAttack());
+                    StartCoroutine(LightAttack(player.transform.position));
                     break;
                 case 4:
-                    StartCoroutine(LightAttack());
+                    StartCoroutine(LightAttack(player.transform.position));
                     yield return new WaitForSeconds(1f);
-                    StartCoroutine (LightAttack());
+                    StartCoroutine (LightAttack(player.transform.position));
                     yield return new WaitForSeconds(1f);
-                    StartCoroutine(LightAttack());
+                    StartCoroutine(LightAttack(player.transform.position));
                     yield return new WaitForSeconds(2f);
                     break;
                 case 5:
                     StartCoroutine(LightSwordAttack());
                     yield return new WaitForSeconds(2f);
                     StartCoroutine(ChainAttack());
-                    StartCoroutine (LightAttack());
+                    StartCoroutine (LightAttack(player.transform.position));
                     break;
                 default:
                     Debug.LogWarning("Error?!?!?");
@@ -221,8 +227,4 @@ public class FallenAngelAttack : MonoBehaviour
 
         }
     }
-    //IEnumerator SecondPattern()
-    //{
-
-    //}
 }
