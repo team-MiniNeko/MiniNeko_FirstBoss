@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aafa9345795c433c83b1f696a1ef3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastFace: {x: -1, y: 0}
+  lastFace: {x: 1, y: 0}
   moveSpeed: 14
   DashForce: 100
   dashCoolTime: 0.2
