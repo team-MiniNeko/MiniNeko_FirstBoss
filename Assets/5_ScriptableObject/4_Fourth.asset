@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 4_Fourth
   m_EditorClassIdentifier: 
   skillName: PlayerDashWeak
-  icon: {fileID: 21300000, guid: 43a7a9e3db37fbf45b65205909b62d94, type: 3}
-  maxRank: 10
+  icon: {fileID: -477537351, guid: c86aefed644163846832c075a1bd765d, type: 3}
+  maxRank: 1
   isPercent: 0
   weakFigure: 2
   preRequisites:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 8_Eighth
   m_EditorClassIdentifier: 
   skillName: PlayerAttackWeak2
-  icon: {fileID: 0}
+  icon: {fileID: -511693497, guid: c86aefed644163846832c075a1bd765d, type: 3}
   maxRank: 1
   isPercent: 0
   weakFigure: 2
