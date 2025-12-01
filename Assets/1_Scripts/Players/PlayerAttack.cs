@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,11 +11,15 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Skill2;
     public AudioSource NormalAttackSound;
     public AudioSource Skill2Sound;
+    public GameObject Cooltime1;
+    public GameObject Cooltime2;
     public bool isStop = false;
     Animator Anims;
     Vector2 lastFace;
     float atkTime;
     float[] cooltimes = new float [2];
+
+    float[] cooltimestatic = {10f,15f};
     // Start is called before the first frame update
     IEnumerator ShakeEff(float forces,float times)
     {
@@ -37,7 +42,13 @@ public class PlayerAttack : MonoBehaviour
         cooltimes[0] = Time.time;
         cooltimes[1] = Time.time;
     }
-
+    public float getCooltime(int i)
+    {
+        if(Time.time - atkTime > 0f && Time.time - cooltimes[i] > 0f)
+            return 0;
+        else
+            return (System.Math.Max(cooltimes[i] , atkTime) - Time.time)/cooltimestatic[i];
+    }
     // Update is called once per frame
     void Update()
     {   
