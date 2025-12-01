@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-//[CustomEditor(typeof(SkillData))]
+[CustomEditor(typeof(SkillData))]
 public class SkillDataEditor : Editor
 {
     private List<Type> skillTypes;
@@ -32,6 +32,7 @@ public class SkillDataEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
         serializedObject.Update();
 
         SerializedProperty skillProp = serializedObject.FindProperty("weakening");

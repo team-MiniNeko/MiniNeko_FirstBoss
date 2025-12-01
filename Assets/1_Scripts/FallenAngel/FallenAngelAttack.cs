@@ -30,11 +30,6 @@ public class FallenAngelAttack : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
     }
-
-    private void Start()
-    {
-        //StartCoroutine(FirstPattern());
-    }
     void Update()
     {
         Phase();
@@ -113,7 +108,9 @@ public class FallenAngelAttack : MonoBehaviour
         swordGateTwoLeft.GetComponent<SpriteRenderer>().flipX = true;
         sworGateThreeLeft.GetComponent<SpriteRenderer>().flipX = true;
         var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
         var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y + 6, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
         var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y - 6, 0), Quaternion.identity);
         Destroy(swordAttackRangeOne, 1f);
         Destroy(swordAttackRangeTwo, 1f);
@@ -122,13 +119,16 @@ public class FallenAngelAttack : MonoBehaviour
     }
     public IEnumerator DarkSwordAttack()
     {
-        var swordGateOneLeft = Instantiate(darkSwordGate, new Vector3(-50, player.transform.position.y, 0), Quaternion.identity);
-        var swordGateTwoRight = Instantiate(darkSwordGate, new Vector3(50, player.transform.position.y + 6, 0), Quaternion.identity);
-        var sworGateThreeRight = Instantiate(darkSwordGate, new Vector3(50, player.transform.position.y - 6, 0), Quaternion.identity);
+        Vector3 coo = player.transform.position;
+        var swordGateOneLeft = Instantiate(darkSwordGate, new Vector3(-50, coo.y, 0), Quaternion.identity);
+        var swordGateTwoRight = Instantiate(darkSwordGate, new Vector3(50, coo.y + 6, 0), Quaternion.identity);
+        var sworGateThreeRight = Instantiate(darkSwordGate, new Vector3(50, coo.y - 6, 0), Quaternion.identity);
         swordGateOneLeft.GetComponent<SpriteRenderer>().flipX = true;
-        var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y, 0), Quaternion.identity);
-        var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y + 6, 0), Quaternion.identity);
-        var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y - 6, 0), Quaternion.identity);
+        var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, coo.y, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, coo.y + 6, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, coo.y - 6, 0), Quaternion.identity);
         Destroy(swordAttackRangeOne, 1f);
         Destroy(swordAttackRangeTwo, 1f);
         Destroy(swordAttackRangeThree, 1f);
@@ -159,54 +159,5 @@ public class FallenAngelAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(leftLightAttack);
         Destroy(rightLightAttack);
-    }
-    IEnumerator FirstPattern()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(4f);
-            int value = Random.Range(0, 6);
-            switch (value)
-            {
-                case 0:
-                    StartCoroutine(LightSwordAttack());
-                    yield return new WaitForSeconds(2f);
-                    break;
-                case 1:
-                    StartCoroutine(ChainAttack());
-                    StartCoroutine(LightSwordAttack());
-                    yield return new WaitForSeconds(2f);
-                    break;
-                case 2:
-                    StartCoroutine (LightSwordAttack());
-                    yield return new WaitForSeconds (2f);
-                    StartCoroutine(LightSwordAttack());
-                    yield return new WaitForSeconds(2f);
-                    break;
-                case 3:
-                    StartCoroutine(ChainAttack());
-                    yield return new WaitForSeconds(2f);
-                    StartCoroutine(LightAttack(player.transform.position));
-                    break;
-                case 4:
-                    StartCoroutine(LightAttack(player.transform.position));
-                    yield return new WaitForSeconds(1f);
-                    StartCoroutine (LightAttack(player.transform.position));
-                    yield return new WaitForSeconds(1f);
-                    StartCoroutine(LightAttack(player.transform.position));
-                    yield return new WaitForSeconds(2f);
-                    break;
-                case 5:
-                    StartCoroutine(LightSwordAttack());
-                    yield return new WaitForSeconds(2f);
-                    StartCoroutine(ChainAttack());
-                    StartCoroutine (LightAttack(player.transform.position));
-                    break;
-                default:
-                    Debug.LogWarning("Error?!?!?");
-                    break;
-            }
-
-        }
     }
 }

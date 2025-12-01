@@ -9,6 +9,7 @@ public class Reset : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("FirstTime");
         PlayerPrefs.DeleteKey("SceneCount");
+        PlayerPrefs.DeleteKey("FallenAngelDied");
         foreach (var kv in skillData)
         {
             string key = "skill" + kv.name;

@@ -8,5 +8,5 @@ public interface IWeakening
     {
 
     }
-    public string Weakening(){return "";}
+    public string Weakening();
 }

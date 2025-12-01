@@ -21,8 +21,7 @@ public class ChainDestroy : MonoBehaviour
     {
         var _fallenAngel = GameObject.Find("FallenAngel").transform;
         fallenAngel = _fallenAngel.Find("FallenAngel(Sprite)").gameObject.GetComponent<FallenAngelAttack>();
-        StartCoroutine(Destroy());
-        Destroy(Chain, 5f);
+        //StartCoroutine(Destroy());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -82,14 +81,13 @@ public class ChainDestroy : MonoBehaviour
                     yield return StartCoroutine(fallenAngel.LightDarkLightAttack());
                 }
             }
-                yield return new WaitForSeconds(2f);
-            Debug.Log("Sec");
+                yield return new WaitForSeconds(0.25f);
             player.gameObject.GetComponent<PlayerMove>().isStop = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            Chain.GetComponent<ChainAttack>().DisAppear();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             Debug.Log("Thi");
-            Destroy(Chain);
+            StartCoroutine(Chain.GetComponent<ChainAttack>().DisAppear());
+            Destroy(this.gameObject.GetComponent<Collider2D>());
         }
     }
 }
