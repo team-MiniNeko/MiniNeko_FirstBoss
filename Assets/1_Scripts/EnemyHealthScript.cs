@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealthScript : MonoBehaviour
 {
@@ -32,8 +33,11 @@ public class EnemyHealthScript : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         GetComponent<SpriteRenderer>().color = new Color(1,1,1);
     }
+
+    string currentSceneName;
     void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
         _health = StartHealth;
         preHealth = StartHealth;
         BFH = Health;
@@ -164,6 +168,12 @@ public class EnemyHealthScript : MonoBehaviour
         }
         if (Health <= 0){
             Health = 0;
+            if (currentSceneName == "FallenAngel" && !PlayerPrefs.HasKey("FallenAngelDied"))
+            {
+                StartHealth = 1000;
+                EnemyHeal(1000);
+                PlayerPrefs.SetInt("FallenAngelDied", 1);
+            }
             if(gameObject.CompareTag("DestoryableStructer")){
                 Destroy(gameObject.GetComponent<Rigidbody2D>());
                 transform.Rotate(0f,0f,-90f);

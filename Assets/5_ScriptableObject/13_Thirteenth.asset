@@ -21,11 +21,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4dec1fa9ac063f44a95298996a7ae2d6, type: 2}
   nextSkills: []
   weakening:
-    rid: 3761197974890217486
+    rid: 2612046026788044800
   description: 
   references:
     version: 2
     RefIds:
-    - rid: 3761197974890217486
+    - rid: 2612046026788044800
       type: {class: DashWeak, ns: , asm: Assembly-CSharp}
       data: 

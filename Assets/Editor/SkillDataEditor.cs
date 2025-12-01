@@ -30,6 +30,7 @@ public class SkillDataEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
         serializedObject.Update();
 
         SerializedProperty skillProp = serializedObject.FindProperty("weakening");

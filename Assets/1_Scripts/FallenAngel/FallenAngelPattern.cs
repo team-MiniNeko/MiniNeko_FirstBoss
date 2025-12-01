@@ -47,16 +47,16 @@ public class FallenAngelPattern : MonoBehaviour
             {
                 case 1:
                     Debug.LogError($"{curPhase}, {fallenAngel.phase}");
-                    curPhase++;
+                    curPhase = fallenAngel.phase;
                     StartCoroutine(PhaseOne());
                     break;
                 case 2:
-                    curPhase++;
+                    curPhase = fallenAngel.phase;
                     StartCoroutine(PhaseTwo());
                     break;
                 case 3:
-                    StartCoroutine(PhseThree());
-                    curPhase++;
+                    curPhase = fallenAngel.phase;
+                    StartCoroutine(PhseThree()); 
                     break;
                 default:
                     Debug.LogError("...?!?!?");

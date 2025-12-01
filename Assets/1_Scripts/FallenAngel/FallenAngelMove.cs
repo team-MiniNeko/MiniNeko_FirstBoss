@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class FallenAngelMove : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class FallenAngelMove : MonoBehaviour
     public GameObject fallenAngel;
     public SpriteRenderer sr;
     public bool isRight = true;
+
+    public GameObject shield;
+
+    public float speed = 1f;     // 움직임 속도
+    public float sizeX = 3f;     // 무한대 가로 크기
+    public float sizeY = 2f;     // 무한대 세로 크기
+    private float t = 0f;
+    private Vector3 origin;
     public IEnumerator PhaseOne()
     {
         while (curPhase == fallenAngelAttack.phase)
@@ -17,13 +26,17 @@ public class FallenAngelMove : MonoBehaviour
             yield return new WaitForSeconds(7f);
             if (isRight)
             {
-                fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
-                sr.flipX = true;
+                yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
+                yield return sr.flipX = true;
+                shield.gameObject.SetActive(true);
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().curHp;
+                isRight = false;
             }
             else
             {
-                fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
-                sr.flipX = false;
+                yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
+                yield return sr.flipX = false;
+                isRight = true;
             }
         }
         
@@ -36,20 +49,36 @@ public class FallenAngelMove : MonoBehaviour
             if (isRight)
             {
                 yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
-                sr.flipX = true;
+                yield return sr.flipX = true;
+                isRight = false;
             }
             else
             {
                 yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
-                sr.flipX = false;
+                yield return sr.flipX = false;
+                isRight = true;
             }
         }
         
     }
-    //public IEnumerator PhaseThree()
-    //{
+    public IEnumerator PhaseThree()
+    {
+        while(curPhase == fallenAngelAttack.phase)
+        {
+            yield return new WaitForSeconds(5f);
+            t += Time.deltaTime * speed;
 
-    //}
+            float x = sizeX * Mathf.Sin(t);
+            float y = sizeY * Mathf.Sin(t * 2);
+
+            transform.position = origin + new Vector3(x, y, 0f);
+        }
+        yield return new WaitForSeconds(0f);
+    }
+    private void Start()
+    {
+        origin = transform.position;
+    }
     private void Update()
     {
         if (curPhase != fallenAngelAttack.phase)
@@ -67,7 +96,7 @@ public class FallenAngelMove : MonoBehaviour
                     break;
                 case 3:
                     curPhase++;
-                    //StartCoroutine(PhaseThree());
+                    StartCoroutine(PhaseThree());
                     break;
                 default:
                     Debug.LogError("...?!?!?");
