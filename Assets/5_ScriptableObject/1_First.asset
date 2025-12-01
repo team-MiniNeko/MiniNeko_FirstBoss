@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1_First
   m_EditorClassIdentifier: 
   skillName: Charactor
-  icon: {fileID: 21300000, guid: 0de989b29ccd65b4abc5e15f2c0d323a, type: 3}
+  icon: {fileID: 1047756309, guid: c86aefed644163846832c075a1bd765d, type: 3}
   maxRank: 1
   isPercent: 0
   weakFigure: 0

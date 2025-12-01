@@ -11201,7 +11201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4880d281a4f84c6b8ada29bbed065ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SkillMenu
+  sceneName: Ending
 --- !u!95 &1464675979
 Animator:
   serializedVersion: 5

@@ -40,6 +40,10 @@ public class ShieldHp : MonoBehaviour
             cameraScript.CameraShake(100);
             this.gameObject.SetActive(false);
         }
+        else if (curHp >= maxHp)
+        {
+            curHp = maxHp;
+        }
         else
         {
             this.gameObject.SetActive(true);
