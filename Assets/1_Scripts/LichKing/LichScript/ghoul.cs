@@ -17,8 +17,11 @@ public class ghoul : MonoBehaviour
     private EnemyHealthScript Boss3Health;
     void Awake()
     {
-        
-        if(targetDir == null){targetDir = GameObject.FindWithTag("Player");}
+
+        if (targetDir == null)
+        {
+            targetDir = GameObject.FindWithTag("Player");
+        }
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ghoulHealth = GetComponent<EnemyHealthScript>();
@@ -31,11 +34,6 @@ public class ghoul : MonoBehaviour
         int ranPos = Random.Range(-5, 5);
         transform.localPosition = new Vector3(ranPos, -0.4f, 0);
         GetComponent<EnemyHealthScript>().Health = GetComponent<EnemyHealthScript>().StartHealth;
-    }
-    private void OnDisable()
-    {
-        if(Boss3Health.gameObject.GetComponent<LichKingAttack>().page2)
-            Boss3Health.EnemyHeal(20);
     }
 
     // Update is called once per frame

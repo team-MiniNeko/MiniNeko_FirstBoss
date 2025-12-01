@@ -20,8 +20,8 @@ public class SkipTutorialUi : MonoBehaviour
             return;
         Debug.Log($"{name}: triggered");
         
-
-        tutomana.SetUiLevel(Level);
+        if(tutomana)
+            tutomana.SetUiLevel(Level);
 
         if (hasCutScene)
         {

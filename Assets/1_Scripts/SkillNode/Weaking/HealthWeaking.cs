@@ -12,4 +12,5 @@ public class HealthWeaking : IWeakening
     {
         PlayerStatsManager.Instance.PlayerHp -= (PlayerStatsManager.Instance.PlayerHp * (figure / 100));
     }
+    public string Weakening(){return "Health";}
 }

@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class VoidTransform : MonoBehaviour
 {
-    public Transform target;
+    private GameObject target;
     public Material material;
-
     private void Awake()
     {
+            target = GameObject.FindWithTag("Boss");
         material.color = new Color(1, 1, 1, 1f);
     }
-
-    void Update()
+    private void OnEnable()
     {
-        transform.position = target.position;       
+        if (target == null)
+        {
+            target = GameObject.FindWithTag("Boss");
+        }
+        transform.position = target.transform.position;
     }
+
+   
 }

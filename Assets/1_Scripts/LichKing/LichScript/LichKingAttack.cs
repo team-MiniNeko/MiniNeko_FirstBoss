@@ -21,7 +21,7 @@ public class LichKingAttack : MonoBehaviour
 
     public int speed;
     public bool page2;
-    bool isCrecked;
+    public bool isCrecked;
     private bool isSkill;
     public Sprite[] Attack;
     public GameObject[] chain;
@@ -47,6 +47,7 @@ public class LichKingAttack : MonoBehaviour
 
     bool isLeftWall;
 
+    private bool isVoidBall2;
     
     void Awake()
     {
@@ -84,15 +85,20 @@ public class LichKingAttack : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(BossHp());
         }
+
         if (isCrecked)
+        {
+            rb.velocity = Vector2.zero;
             return;
-        if (transform.position.x > Target.transform.position.x && !isSkill && !isLeftWall)
+        }
+        
+        if (transform.position.x > Target.transform.position.x && !isLeftWall)
         {
             flipx.x = Mathf.Abs(flipx.x); 
             transform.localScale = flipx;
             rb.velocity = Vector2.left * 0.7f * Math.Abs(transform.transform.position.x - Target.transform.position.x);
         }
-        else if(transform.position.x < Target.transform.position.x && !isSkill && !isRightWall)
+        else if(transform.position.x < Target.transform.position.x && !isRightWall)
         {
             flipx.x = -Mathf.Abs(flipx.x);
             transform.localScale = flipx;
@@ -240,6 +246,7 @@ public class LichKingAttack : MonoBehaviour
                 case 0:
                     ranDelay = Random.Range(0, 0.2f);
                     
+                    sword.localRotation = Quaternion.Euler(0, 0, 0);
                     sword.transform.GetChild(0).gameObject.SetActive(true);
                     sword.transform.GetChild(1).gameObject.SetActive(false);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
@@ -268,7 +275,7 @@ public class LichKingAttack : MonoBehaviour
                             isDelay = false;
                         }
                     }
-
+                    isCrecked = true;
                     yield return new WaitForSeconds(1f);
 
                     while (Quaternion.Angle(sword.localRotation, startRot) > 0.1f)
@@ -282,6 +289,7 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
+                    isCrecked = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -289,7 +297,7 @@ public class LichKingAttack : MonoBehaviour
                     break;
 
                 case 1:
-                    
+                    sword.localRotation = Quaternion.Euler(0, 0, 0);
                     sword.transform.GetChild(0).gameObject.SetActive(false);
                     sword.transform.GetChild(1).gameObject.SetActive(true);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
@@ -331,6 +339,7 @@ public class LichKingAttack : MonoBehaviour
                     {
                         rb.AddForce(Vector2.right * 500);
                     }
+                    isCrecked = true;
 
                     while (Quaternion.Angle(sword.localRotation, targetRot) > 0.1f)
                     {
@@ -361,6 +370,7 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
+                    isCrecked = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -375,6 +385,7 @@ public class LichKingAttack : MonoBehaviour
 
    IEnumerator Coroutine_Creck()
 {
+    sword.localRotation = Quaternion.Euler(0, 0, 0);
     isCrecked = true;
     rb.velocity = Vector2.zero;
     int ran = Random.Range(0, 3);
@@ -544,8 +555,11 @@ IEnumerator Chain()
         yield return null;
     }
     yield return new WaitForSeconds(0.5f);
-
+    int ran = Random.Range(0, 2); 
+    if (ran == 0)
     cor = Coroutine_Creck();
+    else
+    cor = VoidBall2();
     yield return cor;
 }
 
@@ -564,28 +578,29 @@ IEnumerator Ghoul()
 IEnumerator VoidBall()
 {
     isSkill = true;
-    rb.velocity = Vector2.zero;
-    int i;
-    for (i = 0; i < voidBall.Length; i++)
+    isCrecked = true;
+    for (int i = 0; i < voidBall.Length; i++)
     {
         voidBall[i].SetActive(true);
-        
         yield return new WaitForSeconds(0.5f);
+        if (voidBall[5].activeSelf)
+        {
+            isCrecked = false;
+        }
     }
-
-    yield return new WaitForSeconds(1f);
-    rb.velocity = Vector2.one;
     isSkill = false;
     cor = null;
 }
 IEnumerator VoidBall2()
 {
     isSkill = true;
-    rb.velocity = Vector2.zero;
-        voidBall2.SetActive(true);
-    yield return new WaitForSeconds(3f);
-    rb.velocity = Vector2.one;
+    isCrecked = true;
+    voidBall2.SetActive(true);
+    isVoidBall2 = true;
+    yield return new WaitForSeconds(1f);
     isSkill = false;
+    isCrecked = false;
+    yield return new WaitForSeconds(3f);
     cor = null;
 }
 
@@ -614,9 +629,11 @@ IEnumerator CrackScaleUp()
 
 IEnumerator BossHp()
 {
+    sr.sprite = Attack[0];
     cor = null;
     crack.transform.GetChild(0).gameObject.SetActive(false);
     sword.transform.GetChild(3).gameObject.SetActive(false);
+    sword.transform.GetChild(0).gameObject.SetActive(true);
     CameraScripts CS = GameObject.FindWithTag("MainCamera").GetComponent<CameraScripts>();
     CS.Target = transform;
     CS.Size = 10f;
