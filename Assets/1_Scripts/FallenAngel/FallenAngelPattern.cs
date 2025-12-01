@@ -108,9 +108,9 @@ public class FallenAngelPattern : MonoBehaviour
                 yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternTwo());
             }
-                yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(1.5f);
             yield return StartCoroutine(fallenAngel.ChainAttack());
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
     public IEnumerator PhseThree()

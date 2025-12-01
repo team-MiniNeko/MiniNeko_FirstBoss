@@ -29,13 +29,15 @@ public class FallenAngelMove : MonoBehaviour
                 yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
                 yield return sr.flipX = true;
                 shield.gameObject.SetActive(true);
-                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().curHp;
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
                 isRight = false;
             }
             else
             {
                 yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
                 yield return sr.flipX = false;
+                shield.gameObject.SetActive(true);
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
                 isRight = true;
             }
         }

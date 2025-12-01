@@ -102,16 +102,17 @@ public class FallenAngelAttack : MonoBehaviour
 
     public IEnumerator LightSwordAttack()
     {
-        var swordGateOneRight = Instantiate(lightSwordGate, new Vector3(50, player.transform.position.y, 0), Quaternion.identity);
-        var swordGateTwoLeft = Instantiate(lightSwordGate, new Vector3(-50, player.transform.position.y + 6, 0), Quaternion.identity);
-        var sworGateThreeLeft = Instantiate(lightSwordGate, new Vector3(-50, player.transform.position.y - 6, 0), Quaternion.identity);
+        Vector3 coo = player.transform.position;
+        var swordGateOneRight = Instantiate(lightSwordGate, new Vector3(50, coo.y, 0), Quaternion.identity);
+        var swordGateTwoLeft = Instantiate(lightSwordGate, new Vector3(-50, coo.y + 6, 0), Quaternion.identity);
+        var sworGateThreeLeft = Instantiate(lightSwordGate, new Vector3(-50, coo.y - 6, 0), Quaternion.identity);
         swordGateTwoLeft.GetComponent<SpriteRenderer>().flipX = true;
         sworGateThreeLeft.GetComponent<SpriteRenderer>().flipX = true;
-        var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y, 0), Quaternion.identity);
+        var swordAttackRangeOne = Instantiate(swordAttackRange, new Vector3(0, coo.y, 0), Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
-        var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y + 6, 0), Quaternion.identity);
+        var swordAttackRangeTwo = Instantiate(swordAttackRange, new Vector3(0, coo.y + 6, 0), Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
-        var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, player.transform.position.y - 6, 0), Quaternion.identity);
+        var swordAttackRangeThree = Instantiate(swordAttackRange, new Vector3(0, coo.y - 6, 0), Quaternion.identity);
         Destroy(swordAttackRangeOne, 1f);
         Destroy(swordAttackRangeTwo, 1f);
         Destroy(swordAttackRangeThree, 1f);
