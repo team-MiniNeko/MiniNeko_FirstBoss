@@ -22,22 +22,25 @@ public class EnemyHealthScript : MonoBehaviour
     public AudioSource HitSound;
     public GameObject HitEffect;
     public GameObject DamageText;
+    public SpriteRenderer texture2d;
     float invinsibleTime;
 
     public GameObject portal;
 
     public ShieldHp shield;
+    Color orc;
     IEnumerator hitColor()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1,0,0);
-        yield return new WaitForSeconds(0.01f);
-        GetComponent<SpriteRenderer>().color = new Color(1,1,1);
+        texture2d.color = new Color(1,0,0);
+        yield return new WaitForSeconds(0.02f);
+        texture2d.color = orc;
     }
 
     string currentSceneName;
     void Start()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
+        orc = texture2d.color;
         _health = StartHealth;
         preHealth = StartHealth;
         BFH = Health;

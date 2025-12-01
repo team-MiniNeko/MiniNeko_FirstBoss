@@ -1481,6 +1481,7 @@ MonoBehaviour:
   HitSound: {fileID: 265867414}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 8068589429916244330}
   portal: {fileID: 1464675976}
   shield: {fileID: 0}
 --- !u!114 &265867410
@@ -3712,6 +3713,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &893057583
@@ -4042,6 +4044,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!1 &930132725
@@ -9868,6 +9871,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1255910418
@@ -11115,6 +11119,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1561074094
@@ -11543,6 +11548,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1750754172

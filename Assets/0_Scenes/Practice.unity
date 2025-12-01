@@ -7883,6 +7883,7 @@ MonoBehaviour:
   HitSound: {fileID: 1689244851}
   HitEffect: {fileID: 1509147252}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 7239377525733388068}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!114 &7239377525733388093

@@ -4566,6 +4566,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 2023414145}
   portal: {fileID: 1670374602}
   shield: {fileID: 1649290675}
 --- !u!61 &2023414149

@@ -553,6 +553,7 @@ MonoBehaviour:
   HitSound: {fileID: 265867411}
   HitEffect: {fileID: 1751417277235054239, guid: 23174ea92b24c47859c4cfb94c82da07, type: 3}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 8068589429916244330}
   portal: {fileID: 1097946063}
   shield: {fileID: 0}
 --- !u!114 &265867410
@@ -2335,6 +2336,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 0}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!50 &1689798609
