@@ -38,7 +38,7 @@ public class VoidBall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {   
-            camera.Debuff(3f);
+            camera.Debuff(1.5f);
         }
 
         if (other.CompareTag("LeftWall") || other.CompareTag("RightWall"))

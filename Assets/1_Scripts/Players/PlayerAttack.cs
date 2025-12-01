@@ -55,20 +55,7 @@ public class PlayerAttack : MonoBehaviour
         if(!isStop){
             // --- 공격 입력 (대쉬 중에도 공격 가능하도록 Update에 유지) ---
             lastFace = GetComponent<PlayerMove>().lastFace;
-            if (Input.GetMouseButton(0) && Time.time - atkTime > 0f)
-            {
-
-                Anims.SetTrigger("NormalAttacking");
-                NormalAttackSound.pitch = Random.Range(2f,3f);
-                NormalAttackSound.Play();
-                atkTime = Time.time+0.3f;
-                GameObject ins = Instantiate(atk);
-                ins.transform.position = transform.position;
-                ins.transform.Translate(lastFace * 2f);
-                if (lastFace == Vector2.left)
-                    ins.transform.Rotate(0,180,0);
-                Destroy(ins, 0.15f);
-            }
+            
             if (Input.GetKeyDown(KeyCode.Z) && Time.time - cooltimes[0] > 0f&& Time.time - atkTime > 0f)
             {
                 Anims.SetTrigger("Skill1");
@@ -100,6 +87,20 @@ public class PlayerAttack : MonoBehaviour
                 if (lastFace == Vector2.left)
                     ins.transform.Rotate(0,180,0);
                 Destroy(ins, 3f);
+            }
+            if (Input.GetMouseButton(0) && Time.time - atkTime > 0f)
+            {
+
+                Anims.SetTrigger("NormalAttacking");
+                NormalAttackSound.pitch = Random.Range(2f,3f);
+                NormalAttackSound.Play();
+                atkTime = Time.time+0.3f;
+                GameObject ins = Instantiate(atk);
+                ins.transform.position = transform.position;
+                ins.transform.Translate(lastFace * 2f);
+                if (lastFace == Vector2.left)
+                    ins.transform.Rotate(0,180,0);
+                Destroy(ins, 0.15f);
             }
         }
     }
