@@ -32,20 +32,11 @@ public class ChainDestroy : MonoBehaviour
             StartCoroutine(Hit(player));
         }
     }
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSeconds(1);
-        if (!isHit)
-        {
-            Destroy(Chain);
-        }
-    }
     IEnumerator Hit(Collider2D collision)
     {
         if (isFirst)
         {
             Collider2D player = collision;
-            Debug.Log("Fir");
             player.gameObject.GetComponent<PlayerMove>().isStop = true;
             isFirst = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -81,13 +72,12 @@ public class ChainDestroy : MonoBehaviour
                     yield return StartCoroutine(fallenAngel.LightDarkLightAttack());
                 }
             }
-                yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.25f);
             player.gameObject.GetComponent<PlayerMove>().isStop = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            yield return new WaitForSeconds(0.25f);
-            Debug.Log("Thi");
+            Destroy(this.gameObject.GetComponent<CapsuleCollider2D>());
+            Debug.LogError("콜라이더 삭제");
             StartCoroutine(Chain.GetComponent<ChainAttack>().DisAppear());
-            Destroy(this.gameObject.GetComponent<Collider2D>());
         }
     }
 }

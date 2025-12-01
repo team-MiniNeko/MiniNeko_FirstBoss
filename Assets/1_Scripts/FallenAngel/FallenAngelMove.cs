@@ -21,49 +21,58 @@ public class FallenAngelMove : MonoBehaviour
     private Vector3 origin;
     public IEnumerator PhaseOne()
     {
-        while (curPhase == fallenAngelAttack.phase)
+        while (curPhase == fallenAngelAttack.phase && fallenAngelAttack.phase == 1)
         {
             yield return new WaitForSeconds(7f);
             if (isRight)
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
+                yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 5f);
                 yield return sr.flipX = true;
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
                 shield.gameObject.SetActive(true);
-                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().curHp;
                 isRight = false;
+                yield return new WaitForSeconds(5f);
             }
             else
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
+                yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 5f);
                 yield return sr.flipX = false;
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
+                shield.gameObject.SetActive(true);
                 isRight = true;
+                yield return new WaitForSeconds(5f);
             }
         }
         
     }
     public IEnumerator PhaseTwo()
     {
-        while (curPhase == fallenAngelAttack.phase)
+        while (curPhase == fallenAngelAttack.phase && fallenAngelAttack.phase == 2)
         {
-            yield return new WaitForSeconds(7f);
             if (isRight)
             {
                 yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
+                shield.gameObject.SetActive(true);
                 yield return sr.flipX = true;
                 isRight = false;
+                yield return new WaitForSeconds(5f);
             }
             else
             {
                 yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
+                yield return shield.GetComponent<ShieldHp>().curHp = shield.GetComponent<ShieldHp>().maxHp;
+                shield.gameObject.SetActive(true);
                 yield return sr.flipX = false;
                 isRight = true;
+                yield return new WaitForSeconds(5f);
             }
         }
         
     }
     public IEnumerator PhaseThree()
     {
-        while(curPhase == fallenAngelAttack.phase)
+        while(curPhase == fallenAngelAttack.phase && fallenAngelAttack.phase == 3)
         {
             yield return new WaitForSeconds(5f);
             t += Time.deltaTime * speed;
@@ -91,10 +100,12 @@ public class FallenAngelMove : MonoBehaviour
                     StartCoroutine(PhaseOne());
                     break;
                 case 2:
+                    Debug.LogError("2페이지 움직임");
                     curPhase++;
                     StartCoroutine(PhaseTwo());
                     break;
                 case 3:
+                    Debug.LogError("3페이지 움직임");
                     curPhase++;
                     StartCoroutine(PhaseThree());
                     break;
