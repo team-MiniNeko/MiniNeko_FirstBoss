@@ -16,7 +16,7 @@ public class voidBall2a : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            camera.Debuff(3f);
+            camera.Debuff(1.5f);
         }
     }
     public IEnumerator MoveSingleVoid()
