@@ -14,7 +14,6 @@ public class SkillDataEditor : Editor
 
     private void OnEnable()
     {
-        // ISkill ±¸ÇöÃ¼ Ã£±â
         skillTypes = AppDomain.CurrentDomain.GetAssemblies()
             .SelectMany(a => a.GetTypes())
             .Where(t => typeof(IWeakening).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
@@ -22,7 +21,6 @@ public class SkillDataEditor : Editor
 
         skillNames = skillTypes.Select(t => t.Name).ToArray();
 
-        // ÇöÀç ÇÒ´çµÈ Å¸ÀÔÀÇ ÀÎµ¦½º Ã£±â
         var skillSO = (SkillData)target;
         if (skillSO.skillName != null)
         {
@@ -39,11 +37,11 @@ public class SkillDataEditor : Editor
 
         if (skillProp == null)
         {
-            EditorGUILayout.HelpBox("'skill' ÇÁ·ÎÆÛÆ¼¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.", MessageType.Error);
+            EditorGUILayout.HelpBox("'skill' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.", MessageType.Error);
             return;
         }
 
-        // µå·Ó´Ù¿î
+        // ï¿½ï¿½Ó´Ù¿ï¿½
         int typeIndex = EditorGUILayout.Popup("Skill Type", selectedIndex, skillNames);
 
         if (typeIndex != selectedIndex)
@@ -54,12 +52,12 @@ public class SkillDataEditor : Editor
             skillProp.managedReferenceValue = Activator.CreateInstance(newType);
         }
 
-        // ³»ºÎ ÇÊµå Ç¥½Ã
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ Ç¥ï¿½ï¿½
         if (skillProp.managedReferenceValue != null)
         {
             EditorGUI.indentLevel++;
 
-            // foldout Æ÷ÇÔ ÀüÃ¼ ÇÊµå Ç¥½Ã
+            // foldout ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Êµï¿½ Ç¥ï¿½ï¿½
             EditorGUILayout.PropertyField(skillProp, true);
 
             EditorGUI.indentLevel--;

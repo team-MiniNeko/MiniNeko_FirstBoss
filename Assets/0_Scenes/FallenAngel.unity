@@ -3039,6 +3039,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HolyShield
       objectReference: {fileID: 0}
+    - target: {fileID: 4711838197355879232, guid: 6e6d9db3394aae945b11e98b9b9aab8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4711838197355879235, guid: 6e6d9db3394aae945b11e98b9b9aab8c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

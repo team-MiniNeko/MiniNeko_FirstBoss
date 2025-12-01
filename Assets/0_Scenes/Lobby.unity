@@ -3525,7 +3525,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Practice
+          m_StringArgument: Credit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1369179026
@@ -4896,5 +4896,4 @@ SceneRoots:
   - {fileID: 1903043289}
   - {fileID: 316822271}
   - {fileID: 574577942}
-  - {fileID: 1732972905}
   - {fileID: 2105709258}

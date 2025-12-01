@@ -9,6 +9,7 @@ public class PlayerStatsManager : MonoBehaviour
     private float playerHp = 1000;
     private float playerDefence = 300;
     private float playerDash = 100;
+    private float playerHeal = 3;
     public float PlayerAttack 
     {   
         get => playerAttack;
@@ -16,6 +17,15 @@ public class PlayerStatsManager : MonoBehaviour
             playerAttack = value;
             PlayerPrefs.SetFloat("PlayerAttack", this.PlayerAttack);
             Debug.Log($"Attack : {playerAttack}");
+        } 
+    }
+    public float PlayerHeal 
+    {   
+        get => playerHeal;
+        set {
+            playerHeal = value;
+            PlayerPrefs.SetFloat("PlayerHeal", this.playerHeal);
+            Debug.Log($"Heal : {playerHeal}");
         } 
     }
     public float PlayerHp 
@@ -80,6 +90,7 @@ public class PlayerStatsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerHp", 1000);
         PlayerPrefs.SetFloat("PlayerDefence", 300);
         PlayerPrefs.SetFloat("PlayerDash", 100);
+        PlayerPrefs.SetFloat("PlayerHeal", 3);
         LoadStats();
     }
     void LoadStats()
@@ -89,5 +100,6 @@ public class PlayerStatsManager : MonoBehaviour
         PlayerHp = PlayerPrefs.GetFloat("PlayerHp");
         PlayerDefence = PlayerPrefs.GetFloat("PlayerDefence");
         PlayerDash = PlayerPrefs.GetFloat("PlayerDash");
+        PlayerHeal = PlayerPrefs.GetFloat("PlayerHeal");
     }
 }
