@@ -1,15 +1,16 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SkillNodeUI : MonoBehaviour
+public class SkillNodeUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
     public Image icon;
     public GameObject lockOverlay;
     public TextMeshProUGUI rankText;
     public TextMeshProUGUI infoText;
-    public Image infos;
+    public GameObject infos;
     public Button button;
 
     public SkillData skillData;
@@ -33,13 +34,25 @@ public class SkillNodeUI : MonoBehaviour
             icon.sprite = skillData.icon;
         lockOverlay.SetActive(!IsUnlocked());
         rankText.text = $"{currentRank}/{(skillData != null ? skillData.maxRank : 0)}";
-        if(infoText != null){
+        if(skillData.weakening != null){
             Debug.Log("i have info text");
             Debug.Log($"i have weakenType() = {skillData.weakening.Weakening()}");
             infoText.text = $"{skillData.weakening.Weakening()}: {skillData.weakFigure}";
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(skillData.weakening != null){
+            infoText.text = $"{skillData.weakening.Weakening()}: +{skillData.weakFigure}";
+        }
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        infos.SetActive(true);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        infos.SetActive(false);
+    }
     public bool IsUnlocked()
     {
         return currentRank > 0;

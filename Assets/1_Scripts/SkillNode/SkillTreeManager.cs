@@ -194,7 +194,7 @@ public class SkillTreeManager : MonoBehaviour
                 break;
             }
         }
-        if (canLock && node.currentRank >= 0 && canWeak > 0)
+        if (canLock && node.currentRank > 0 && canWeak > 0)
         {
             node.SetRank(node.currentRank - 1);
             if (node.skillData.weakening != null)

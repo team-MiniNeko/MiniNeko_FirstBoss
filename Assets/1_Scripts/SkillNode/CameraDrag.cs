@@ -14,7 +14,7 @@ public class CameraDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         skillTree = par.transform.Find("SkillTreee").GetComponent<RectTransform>();
         if (skillTree == null)
         {
-            Debug.LogError("¿ÀºêÁ§Æ® ¿¬°á x");
+            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ x");
         }
     }
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
@@ -35,7 +35,6 @@ public class CameraDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         skillTree.anchoredPosition -= defaultPos - currentPos;
         defaultPos = currentPos;
     }
-
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         //defaultPos = eventData.position;

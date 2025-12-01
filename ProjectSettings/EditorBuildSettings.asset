@@ -26,5 +26,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/Boss 3/Boss 3.unity
     guid: efb61d5081c484d339410f40868f0766
+  - enabled: 1
+    path: Assets/0_Scenes/Credit.unity
+    guid: 105f7efe0036646349fa31d03f173f85
+  - enabled: 1
+    path: Assets/0_Scenes/EasterEgg.unity
+    guid: b11c4a8b42d91483e98cb809e464d731
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f2996de2893920345a283f0675c536fd, type: 2}

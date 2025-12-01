@@ -64,7 +64,7 @@ public class CameraScripts : MonoBehaviour
                 Size = originSize;
                 yValue = originYv;
                 material.color = new Color(1f, 1f, 1f, 1f);//
-                Icon.transform.parent = transform;//?
+                Icon.transform.SetParent(transform, false);//?
             }
         }
         if (deBuffDark != null && deBuffType == "Dark")

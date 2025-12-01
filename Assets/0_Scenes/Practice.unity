@@ -778,7 +778,10 @@ MonoBehaviour:
   Icon: {fileID: 7212361788515778098, guid: c999fe833fc3f483bbebda25e583bae4, type: 3}
   material: {fileID: 2100000, guid: 073aa5e4589a34a0f8aadac8479be025, type: 2}
   originSize: 0
-  deBuff: {fileID: 0}
+  deBuffLight: {fileID: 0}
+  deBuffDark: {fileID: 0}
+  deBuffType: 
+  player: {fileID: 0}
 --- !u!1 &589997534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7594,7 +7597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909971d2f8c5a433aa4fefd6fd485bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 7239377525733388092}
 --- !u!114 &2115895014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7880,6 +7883,7 @@ MonoBehaviour:
   HitSound: {fileID: 1689244851}
   HitEffect: {fileID: 1509147252}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!114 &7239377525733388093
 MonoBehaviour:

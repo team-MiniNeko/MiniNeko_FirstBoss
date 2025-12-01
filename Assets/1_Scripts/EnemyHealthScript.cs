@@ -26,6 +26,12 @@ public class EnemyHealthScript : MonoBehaviour
     public GameObject portal;
 
     public ShieldHp shield;
+    IEnumerator hitColor()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1,0,0);
+        yield return new WaitForSeconds(0.01f);
+        GetComponent<SpriteRenderer>().color = new Color(1,1,1);
+    }
     void Start()
     {
         _health = StartHealth;
@@ -59,6 +65,8 @@ public class EnemyHealthScript : MonoBehaviour
     }
     public void EnemyDamage(float Damage)
     {
+        IEnumerator co = hitColor();
+        StartCoroutine(co);
         _health -= Convert.ToInt32(Damage*Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
         int damage = Convert.ToInt32(Damage * Convert.ToInt32(PlayerStatsManager.Instance.PlayerAttack));
         if (DamageText != null){
@@ -84,6 +92,8 @@ public class EnemyHealthScript : MonoBehaviour
     }
     public void EnemyDamage(float Damage, float iT)
     {
+        IEnumerator co = hitColor();
+        StartCoroutine(co);
         if(Time.time - invinsibleTime < 0f)
             return;
         invinsibleTime = Time.time + iT;
@@ -162,7 +172,8 @@ public class EnemyHealthScript : MonoBehaviour
                 Destroy(GetComponent<EnemyHealthScript>());
                 enabled = false;
             }else{
-                portal.SetActive(true);
+                if(portal != null)
+                    portal.SetActive(true);
                 gameObject.SetActive(false);
             }
         }
