@@ -127,16 +127,17 @@ public class EnemyHealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shield != null)
+        if (shield != null && preHealth != _health)
         {
             if (_health != preHealth && shield.curHp > 0)
             {
                 shield.curHp -= (preHealth - _health);
-                _health = StartHealth;
+                _health = Health;
             }
             else
             {
                 Health = _health;
+                preHealth = _health;
             }
         }
         else

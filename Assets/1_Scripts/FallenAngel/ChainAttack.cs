@@ -27,7 +27,9 @@ public class ChainAttack : MonoBehaviour
                 targetPos,
                 0.5f
         );
-        yield return new WaitForSeconds( 2.0f );
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.transform.Find("Colider").gameObject.GetComponent<CapsuleCollider2D>());
+        yield return new WaitForSeconds( 1.5f );
         StartCoroutine(DisAppear());
     }
     public IEnumerator DisAppear()

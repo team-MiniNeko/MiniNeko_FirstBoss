@@ -67,13 +67,12 @@ public class FallenAngelPattern : MonoBehaviour
     public IEnumerator PhaseOne()
     {
         Debug.LogError($"{curPhase}, {fallenAngel.phase}");
-        while (curPhase == fallenAngel.phase)
+        while (curPhase == fallenAngel.phase && fallenAngel.phase == 1)
         {
             Debug.LogError("1페이이지");
             int value = Random.Range(0, 2);
             if (value == 0)
             {
-                yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternOne());
             }
             else
@@ -85,27 +84,23 @@ public class FallenAngelPattern : MonoBehaviour
     }
     public IEnumerator PhaseTwo()
     {
-        while (curPhase == fallenAngel.phase)
+        while (curPhase == fallenAngel.phase && fallenAngel.phase == 2)
         {
             int value = Random.Range(0, 4);
             if (value == 0)
             {
-                yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternOne());
             }
             else if (value == 1)
             {
-                yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternThree());
             }
             else if (value == 2)
             {
-                yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternFour());
             }
             else if (value == 3)
             {
-                yield return StartCoroutine(fallenAngel.ChainAttack());
                 yield return StartCoroutine(PatternTwo());
             }
             yield return new WaitForSeconds(1.5f);
@@ -115,7 +110,7 @@ public class FallenAngelPattern : MonoBehaviour
     }
     public IEnumerator PhseThree()
     {
-        while (curPhase == fallenAngel.phase)
+        while (curPhase == fallenAngel.phase && fallenAngel.phase == 3)
         {
             int value = Random.Range(0, 4);
             if (value == 0)

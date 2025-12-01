@@ -7,13 +7,21 @@ using static UnityEngine.GraphicsBuffer;
 public class BlockScript : MonoBehaviour
 {
     public FallenAngelAttack fallenAngel;
+    public EnemyHealthScript fallenAngelHp;
     private Vector3 coo;
+    private Vector3 origin;
     private void Awake()
     {
-        coo = transform.position;
+        origin = transform.position;
+        coo = origin - new Vector3(0, 5, 0);
         if (fallenAngel == null)
         {
             fallenAngel = GameObject.Find("FallenAngel(Sprite)").GetComponent<FallenAngelAttack>();
+            fallenAngelHp = GameObject.Find("FallenAngel(Sprite)").GetComponent<EnemyHealthScript>();
+        }
+        if (fallenAngelHp.Health <= 0)
+        {
+            coo = origin;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,7 +33,7 @@ public class BlockScript : MonoBehaviour
         }
         if (fallenAngel.phase == 2 && collision.gameObject.CompareTag("Player"))
         {
-            transform.DOMove(coo - new Vector3(0, 30, 0), 3);
+            transform.DOMove(coo, 1);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -36,7 +44,7 @@ public class BlockScript : MonoBehaviour
         }
         if (fallenAngel.phase == 2 && collision.gameObject.CompareTag("Player"))
         {
-            transform.DOMove(coo, 3);
+            transform.DOMove(origin, 5);
         }
     }
 }
