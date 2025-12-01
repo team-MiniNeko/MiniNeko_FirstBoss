@@ -8,6 +8,7 @@ public class ChainDestroy : MonoBehaviour
     private bool isHit = false;
     private GameObject Chain;
     //private GameObject spark;
+    public FallenAngelAttack fallenAngel;
 
     public bool isPhaseTwo;
 
@@ -18,9 +19,10 @@ public class ChainDestroy : MonoBehaviour
     }
     private void Start()
     {
-        //var canvas = GameObject.Find("HealthDisplays").transform;
-        //spark = canvas.Find("spark").gameObject;
+        var _fallenAngel = GameObject.Find("FallenAngel").transform;
+        fallenAngel = _fallenAngel.Find("FallenAngel(Sprite)").gameObject.GetComponent<FallenAngelAttack>();
         StartCoroutine(Destroy());
+        Destroy(Chain, 5f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,11 +50,39 @@ public class ChainDestroy : MonoBehaviour
             player.gameObject.GetComponent<PlayerMove>().isStop = true;
             isFirst = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            //if (isPhaseTwo)
-            //{
-            //    spark.gameObject.SetActive(true);
-            //}
-            yield return new WaitForSeconds(2f);
+            if (fallenAngel.phase == 1)
+            {
+                int value = Random.Range(0, 2);
+                if (value == 0)
+                {
+                    yield return StartCoroutine(fallenAngel.LightSwordAttack());
+                }
+                else
+                {
+                    yield return StartCoroutine(fallenAngel.LightAttack(GameObject.FindWithTag("Player").transform.position));
+                }
+            }
+            else
+            {
+                int value = Random.Range(0, 4);
+                if (value == 0)
+                {
+                    yield return StartCoroutine(fallenAngel.LightSwordAttack());
+                }
+                else if (value == 1)
+                {
+                    yield return StartCoroutine(fallenAngel.LightAttack(GameObject.FindWithTag("Player").transform.position));
+                }
+                else if (value == 2)
+                {
+                    yield return StartCoroutine(fallenAngel.DarkSwordAttack());
+                }
+                else if (value == 3)
+                {
+                    yield return StartCoroutine(fallenAngel.LightDarkLightAttack());
+                }
+            }
+                yield return new WaitForSeconds(2f);
             Debug.Log("Sec");
             player.gameObject.GetComponent<PlayerMove>().isStop = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
