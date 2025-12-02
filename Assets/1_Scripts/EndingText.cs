@@ -6,6 +6,7 @@ using TMPro;
 public class EndingText : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public GameObject button;
     private void Start()
     {
         //StartCoroutine(TypeEffect(text, "'너'와 함께한 '나'의 이야기는 이걸로 끝이야"));
@@ -15,8 +16,10 @@ public class EndingText : MonoBehaviour
     IEnumerator start()
     {
         StartCoroutine(TypeEffect(text, "Thank You For Playing This Game"));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(TypeEffect(text, "WANT:Oblivion"));
+        yield return new WaitForSeconds(2f);
+        button.SetActive(true);
     }
     public IEnumerator TypeEffect(TextMeshProUGUI text, string fullText, float speed = 0.1f)
     {
