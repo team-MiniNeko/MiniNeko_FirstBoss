@@ -33,7 +33,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         float r = gameObject.GetComponent<TextMeshProUGUI>().color.r;
         float g = gameObject.GetComponent<TextMeshProUGUI>().color.g;
         float b = gameObject.GetComponent<TextMeshProUGUI>().color.b;
-        Color newColor = new Color(r+(Tcolor.r-r)*(Time.deltaTime*10f),g+(Tcolor.g-g)*(Time.deltaTime*10f),b+(Tcolor.b-b)*(Time.deltaTime*10f));
+        Color newColor = new Color(r+(Tcolor.r-r)*(Time.unscaledDeltaTime*10f),g+(Tcolor.g-g)*(Time.unscaledDeltaTime*10f),b+(Tcolor.b-b)*(Time.unscaledDeltaTime*10f));
         gameObject.GetComponent<TextMeshProUGUI>().color = newColor;
     }
     public void OnPointerEnter(PointerEventData eventData)
@@ -49,10 +49,10 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         TargetColor = originColor;
     }
     void Update(){
-        transform.localScale = Vector3.Lerp(transform.localScale,isHovering ? targetScale : originalScale, Time.deltaTime * 10f);
+        transform.localScale = Vector3.Lerp(transform.localScale,isHovering ? targetScale : originalScale, Time.unscaledDeltaTime * 10f);
         if(Xmove != 0){
-            transform.position = new Vector3(transform.position.x+Xmove*Time.deltaTime*10,transform.position.y);
-            Xmove = Xmove-(Xmove*Time.deltaTime*10);
+            transform.position = new Vector3(transform.position.x+Xmove*Time.unscaledDeltaTime*10,transform.position.y);
+            Xmove = Xmove-(Xmove*Time.unscaledDeltaTime*10);
             if(math.abs(Xmove) <= 0.001f){
                 transform.position = new Vector3(transform.position.x+Xmove,transform.position.y);
                 Xmove = 0;

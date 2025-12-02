@@ -7496,7 +7496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2090834277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8015,6 +8015,7 @@ MonoBehaviour:
   HitSound: {fileID: 1689244851}
   HitEffect: {fileID: 1509147252}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
+  texture2d: {fileID: 0}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!82 &7239377525733388094

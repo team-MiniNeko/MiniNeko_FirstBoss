@@ -13,7 +13,11 @@ public class PauseMenuScript : MonoBehaviour
         ispaused = false;
         Time.timeScale = 1;
     }
-
+    public void resume()
+    {
+        Time.timeScale = 1;
+        UIImage.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
