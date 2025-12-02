@@ -83,7 +83,7 @@ public class PlayerStatsManager : MonoBehaviour
             LoadStats();
         }
     }
-    void SetStats()
+    public void SetStats()
     {
         Debug.LogError("SEtSTats");
         PlayerPrefs.SetFloat("PlayerAttack", 20);

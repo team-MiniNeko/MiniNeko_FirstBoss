@@ -375,6 +375,10 @@ PrefabInstance:
       propertyPath: fallenAngel
       value: 
       objectReference: {fileID: 2023414147}
+    - target: {fileID: -9134020390187945654, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
+      propertyPath: fallenAngelHp
+      value: 
+      objectReference: {fileID: 2023414148}
     - target: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_Name
       value: Square (2)
@@ -675,6 +679,10 @@ PrefabInstance:
       propertyPath: fallenAngel
       value: 
       objectReference: {fileID: 2023414147}
+    - target: {fileID: -9134020390187945654, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
+      propertyPath: fallenAngelHp
+      value: 
+      objectReference: {fileID: 2023414148}
     - target: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_Name
       value: Square
@@ -1593,6 +1601,10 @@ PrefabInstance:
       propertyPath: fallenAngel
       value: 
       objectReference: {fileID: 2023414147}
+    - target: {fileID: -9134020390187945654, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
+      propertyPath: fallenAngelHp
+      value: 
+      objectReference: {fileID: 2023414148}
     - target: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_Name
       value: Square (3)
@@ -1747,6 +1759,10 @@ PrefabInstance:
       propertyPath: fallenAngel
       value: 
       objectReference: {fileID: 2023414147}
+    - target: {fileID: -9134020390187945654, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
+      propertyPath: fallenAngelHp
+      value: 
+      objectReference: {fileID: 2023414148}
     - target: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_Name
       value: Square (1)
@@ -2175,6 +2191,10 @@ PrefabInstance:
       propertyPath: fallenAngel
       value: 
       objectReference: {fileID: 2023414147}
+    - target: {fileID: -9134020390187945654, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
+      propertyPath: fallenAngelHp
+      value: 
+      objectReference: {fileID: 2023414148}
     - target: {fileID: 3416965295829700614, guid: 4ad718ba0fe1a694182282c32fd5d613, type: 3}
       propertyPath: m_Name
       value: Square (4)
@@ -3610,7 +3630,6 @@ MonoBehaviour:
   curPhase: 0
   fallenAngel: {fileID: 2025770103}
   sr: {fileID: 2023414145}
-  isRight: 0
   shield: {fileID: 1607062703}
   speed: 1
   sizeX: 3
