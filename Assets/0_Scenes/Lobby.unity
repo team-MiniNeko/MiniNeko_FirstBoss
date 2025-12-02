@@ -4148,10 +4148,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1524171297}
   m_HandleRect: {fileID: 1789232640}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: 0.001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4168,6 +4168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingvolume: {fileID: 1429852126}
+  mixer: {fileID: 24100000, guid: 1fb8f8592eba846a98c3881f099148f3, type: 2}
 --- !u!1 &1447727783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,7 +4569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.6000214, y: 0}
+  m_AnchoredPosition: {x: -2.600029, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789232641
@@ -5821,3 +5822,4 @@ SceneRoots:
   - {fileID: 574577942}
   - {fileID: 2105709258}
   - {fileID: 908948594}
+  - {fileID: 1256335113}
