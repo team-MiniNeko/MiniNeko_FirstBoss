@@ -9,8 +9,8 @@ public class EndingText : MonoBehaviour
     public GameObject button;
     private void Start()
     {
-        //StartCoroutine(TypeEffect(text, "'³Ê'¿Í ÇÔ²²ÇÑ '³ª'ÀÇ ÀÌ¾ß±â´Â ÀÌ°É·Î ³¡ÀÌ¾ß"));
-        //StartCoroutine(TypeEffect(text, "ÇÏÁö¸¸ '¿ì¸®'ÀÇ ÀÌ¾ß±â´Â ¿µ¿øÈ÷ ³¡³ªÁö ¾ÊÀ»°Å¾ß"));
+        //StartCoroutine(TypeEffect(text, "'ë„ˆ'ì™€ í•¨ê»˜í•œ 'ë‚˜'ì˜ ì´ì•¼ê¸°ëŠ” ì´ê±¸ë¡œ ëì´ì•¼"));
+        //StartCoroutine(TypeEffect(text, "í•˜ì§€ë§Œ 'ìš°ë¦¬'ì˜ ì´ì•¼ê¸°ëŠ” ì˜ì›íˆ ëë‚˜ì§€ ì•Šì„ê±°ì•¼"));
         StartCoroutine(start());
     }
     IEnumerator start()
