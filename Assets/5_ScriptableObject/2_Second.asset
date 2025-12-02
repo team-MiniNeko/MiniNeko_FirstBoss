@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2_Second
   m_EditorClassIdentifier: 
   skillName: PlayerHpWeak
-  icon: {fileID: 2070396622, guid: c86aefed644163846832c075a1bd765d, type: 3}
+  icon: {fileID: -323041944, guid: dc8dd91eeba9947fbb2028de304a831e, type: 3}
   maxRank: 1
   isPercent: 0
   weakFigure: 200

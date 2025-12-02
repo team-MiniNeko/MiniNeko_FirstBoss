@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 9_Ninth
   m_EditorClassIdentifier: 
   skillName: PlayerAttackWeak3
-  icon: {fileID: -511693497, guid: c86aefed644163846832c075a1bd765d, type: 3}
+  icon: {fileID: -1667744981, guid: dc8dd91eeba9947fbb2028de304a831e, type: 3}
   maxRank: 1
   isPercent: 0
   weakFigure: 2

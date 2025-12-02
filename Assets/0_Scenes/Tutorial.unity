@@ -7719,7 +7719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 100
   Health: 0
-  _health: 0
+  _health: 100
   preHealth: 0
   isBoss: 0
   HPBar: {fileID: 0}
