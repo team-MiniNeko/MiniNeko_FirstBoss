@@ -85,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
                     ins.transform.Rotate(0,180,0);
                 Destroy(ins, 3f);
             }
-            if (Input.GetMouseButton(0) && Time.time - atkTime > 0f)
+            if (Input.GetMouseButtonDown(0) && Time.time - atkTime > 0f)
             {
 
                 Anims.SetTrigger("NormalAttacking");

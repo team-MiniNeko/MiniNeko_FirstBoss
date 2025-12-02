@@ -659,7 +659,9 @@ IEnumerator BossHp()
     CS.Target = playerMove.transform;
     CS.Size = 20f;
     CS.originSize = 20f;
-    if (page2 && LichHp.Health > 1499)
+    LichHp.StartHealth = 2000;
+    LichHp.Health = 2000;
+    if (page2 && LichHp.Health > 1999)
     {
         Boss3Audiomanager.instance.PlayBGM();
         rb.velocity = Vector2.one;
