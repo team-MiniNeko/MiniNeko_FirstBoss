@@ -34,9 +34,9 @@ public class ShieldHp : MonoBehaviour
         if (curHp <= 0)
         {
             Debug.Log("충격파 발생");
-            Vector3 dir = player.GetComponent<Rigidbody2D>().transform.position - this.transform.position;
-            dir = dir.normalized;
-            player.GetComponent<Rigidbody2D>().AddForce(dir * forcePower, ForceMode2D.Impulse);
+            //Vector3 dir = player.GetComponent<Rigidbody2D>().transform.position - this.transform.position;
+            //dir = dir.normalized;
+            //player.GetComponent<Rigidbody2D>().AddForce(dir * forcePower, ForceMode2D.Impulse);
             cameraScript.CameraShake(100);
             this.gameObject.SetActive(false);
         }

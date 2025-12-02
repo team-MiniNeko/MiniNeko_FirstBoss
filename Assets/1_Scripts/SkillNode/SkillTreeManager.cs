@@ -20,6 +20,8 @@ public class SkillTreeManager : MonoBehaviour
     public GameObject nextButton;
     public NextButton button;
 
+    public GameObject tutorial;
+
     private Dictionary<SkillData, SkillNodeUI> nodes = new Dictionary<SkillData, SkillNodeUI>();
     private List<GameObject> connections = new List<GameObject>();
 
@@ -46,6 +48,14 @@ public class SkillTreeManager : MonoBehaviour
         text.text = $"{canWeak}";
         BuildTreeRecursive(rootSkill, Vector2.zero, 250f, 0);
         LoadProgress();
+        if (!PlayerPrefs.HasKey("isSKillFirst"))
+        {
+            tutorial.SetActive(true);
+        }
+        else
+        {
+            tutorial.SetActive(true);
+        }
     }
     void BuildTreeRecursive(SkillData current, Vector2 position, float radius, float angleOffset, int depth = 0, Vector2? fromDir = null)
     {

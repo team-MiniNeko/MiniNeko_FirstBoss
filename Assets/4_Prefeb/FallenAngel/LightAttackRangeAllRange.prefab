@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2348426623548530694}
+  - component: {fileID: -6614546177095191843}
   m_Layer: 0
   m_Name: LightAttackRangeAllRange
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   - {fileID: 3897168259368809822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6614546177095191843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069505480301112444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65edbeedfff78114abe7bda0a491006d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3770916838744404507
 PrefabInstance:
   m_ObjectHideFlags: 0
