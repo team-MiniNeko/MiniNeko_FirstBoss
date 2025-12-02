@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
