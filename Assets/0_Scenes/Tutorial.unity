@@ -16260,6 +16260,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 33b7d51a6fcb44736955e610d39c387e, type: 3}
+    - target: {fileID: 3446606855542817626, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: Cooltime1
+      value: 
+      objectReference: {fileID: 1393608273}
+    - target: {fileID: 3446606855542817626, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+      propertyPath: Cooltime2
+      value: 
+      objectReference: {fileID: 1393608272}
     - target: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -16307,6 +16315,7 @@ PrefabInstance:
     - target: {fileID: 7176152049945748819, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: HealthDisplays
       value: 
+      objectReference: {fileID: 0}
       objectReference: {fileID: 0}
     - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: hpBar

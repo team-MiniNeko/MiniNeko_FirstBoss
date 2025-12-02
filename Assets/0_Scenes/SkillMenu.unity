@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPos: {x: 0, y: 0}
-  skillTree: {fileID: 0}
+  skillTree: {fileID: 515793315}
 --- !u!1 &1967208977
 GameObject:
   m_ObjectHideFlags: 0
