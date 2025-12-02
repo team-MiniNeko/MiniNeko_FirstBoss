@@ -39,7 +39,9 @@ public class ChainDestroy : MonoBehaviour
             Collider2D player = collision;
             player.gameObject.GetComponent<PlayerMove>().isStop = true;
             isFirst = false;
-            player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            Vector2 vec = player.gameObject.GetComponent<Rigidbody2D>().velocity;
+            player.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (fallenAngel.phase == 1)
             {
                 int value = Random.Range(0, 2);
@@ -75,8 +77,8 @@ public class ChainDestroy : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
             player.gameObject.GetComponent<PlayerMove>().isStop = false;
             player.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            player.gameObject.GetComponent<Rigidbody2D>().velocity = vec;
             Destroy(this.gameObject.GetComponent<CapsuleCollider2D>());
-            Debug.LogError("콜라이더 삭제");
             StartCoroutine(Chain.GetComponent<ChainAttack>().DisAppear());
         }
     }

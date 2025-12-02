@@ -33,16 +33,9 @@ public class FallenAngelAttack : MonoBehaviour
     void Update()
     {
         Phase();
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            if (phase == 3)
-            {
-                phase = 1;
-            }
-            else
-            {
-                phase++;
-            }
+            StartCoroutine(LightAttack(player.transform.position));
         }
     }
     void Phase()

@@ -10,7 +10,7 @@ public class FallenAngelMove : MonoBehaviour
     public int curPhase = 0;
     public GameObject fallenAngel;
     public SpriteRenderer sr;
-    public bool isRight = true;
+    private bool isRight = true;
 
     public GameObject shield;
 
@@ -23,24 +23,41 @@ public class FallenAngelMove : MonoBehaviour
     {
         while (curPhase == fallenAngelAttack.phase && fallenAngelAttack.phase == 1)
         {
-            yield return new WaitForSeconds(7f);
             if (isRight)
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 5f);
-                yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
-                shield.gameObject.SetActive(true);
-                yield return new WaitForSeconds(5f);
-                yield return sr.flipX = true;
-                isRight = false;
+                int rand = Random.Range(0, 2);
+                if (rand == 0)
+                {
+                    yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 5f);
+                    yield return new WaitForSeconds(5f);
+                    yield return sr.flipX = true;
+                    isRight = false;
+
+                }
+                else
+                {
+                    yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
+                    shield.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(3f);
+                }
             }
             else
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 5f);
-                yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
-                shield.gameObject.SetActive(true);
-                yield return new WaitForSeconds(5f);
-                isRight = true;
-                yield return sr.flipX = false;
+                int rand = Random.Range(0, 2);
+                if (rand == 0)
+                {
+                    yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 5f);
+                    yield return new WaitForSeconds(5f);
+                    yield return sr.flipX = false;
+                    isRight = true;
+
+                }
+                else
+                {
+                    yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
+                    shield.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(3f);
+                }
             }
         }
         
@@ -51,21 +68,37 @@ public class FallenAngelMove : MonoBehaviour
         {
             if (isRight)
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
-                yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
-                shield.gameObject.SetActive(true);
-                yield return new WaitForSeconds(5f);
-                yield return sr.flipX = true;
-                isRight = false;
+                int rand = Random.Range(0, 2);
+                if (rand == 0)
+                {
+                    yield return fallenAngel.transform.DOMove(new Vector3(-40, -5.8f, -1), 3f);
+                    yield return new WaitForSeconds(5f);
+                    yield return sr.flipX = true;
+                    isRight = false;
+                }
+                else
+                {
+                    yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
+                    shield.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(2f);
+                }
             }
             else
             {
-                yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
-                yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
-                shield.gameObject.SetActive(true);
-                yield return new WaitForSeconds(5f);
-                yield return sr.flipX = false;
-                isRight = true;
+                int rand = Random.Range(0, 2);
+                if (rand == 0)
+                {
+                    yield return fallenAngel.transform.DOMove(new Vector3(40, -5.8f, -1), 3f);
+                    yield return new WaitForSeconds(5f);
+                    yield return sr.flipX = false;
+                    isRight = true;
+                }
+                else
+                {
+                    yield return shield.GetComponent<ShieldHp>().curHp += shield.GetComponent<ShieldHp>().maxHp / 2;
+                    shield.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(2f);
+                }
             }
         }
         
