@@ -17,7 +17,7 @@ public class SwordDamage : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().Damage(swordDamage);
             camera.deBuffType = type;
-            camera.Debuff(3f);
+            camera.Debuff(1f);
         }
     }
 }
