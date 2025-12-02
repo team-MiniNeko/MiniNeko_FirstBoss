@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 12_Twelveth
   m_EditorClassIdentifier: 
   skillName: PlayerDashWeak3
-  icon: {fileID: -477537351, guid: c86aefed644163846832c075a1bd765d, type: 3}
+  icon: {fileID: -1573771477, guid: dc8dd91eeba9947fbb2028de304a831e, type: 3}
   maxRank: 1
   isPercent: 0
   weakFigure: 5
