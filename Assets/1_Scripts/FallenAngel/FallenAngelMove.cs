@@ -14,9 +14,9 @@ public class FallenAngelMove : MonoBehaviour
 
     public GameObject shield;
 
-    public float speed = 1f;     // ¿òÁ÷ÀÓ ¼Óµµ
-    public float sizeX = 3f;     // ¹«ÇÑ´ë °¡·Î Å©±â
-    public float sizeY = 2f;     // ¹«ÇÑ´ë ¼¼·Î Å©±â
+    public float speed = 1f;     
+    public float sizeX = 3f;     
+    public float sizeY = 2f;     
     private float t = 0f;
     private Vector3 origin;
     public IEnumerator PhaseOne()
@@ -128,17 +128,17 @@ public class FallenAngelMove : MonoBehaviour
             switch (fallenAngelAttack.phase)
             {
                 case 1:
-                    Debug.LogError("1ÆäÀÌÁö ¿òÁ÷ÀÓ");
+                    Debug.LogError("1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                     curPhase++;
                     StartCoroutine(PhaseOne());
                     break;
                 case 2:
-                    Debug.LogError("2ÆäÀÌÁö ¿òÁ÷ÀÓ");
+                    Debug.LogError("2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                     curPhase++;
                     StartCoroutine(PhaseTwo());
                     break;
                 case 3:
-                    Debug.LogError("3ÆäÀÌÁö ¿òÁ÷ÀÓ");
+                    Debug.LogError("3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                     curPhase++;
                     StartCoroutine(PhaseThree());
                     break;
