@@ -197,7 +197,8 @@ public class EnemyHealthScript : MonoBehaviour
                 Destroy(GetComponent<EnemyHealthScript>());
                 enabled = false;
             }else{
-                HPBar.parent.gameObject.SetActive(false);
+                if(HPBar != null)
+                    HPBar.parent.gameObject.SetActive(false);
                 if(portal != null)
                     portal.SetActive(true);
                 gameObject.SetActive(false);

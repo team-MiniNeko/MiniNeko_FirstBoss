@@ -33,7 +33,7 @@ public class ghoul : MonoBehaviour
     {
         int ranPos = Random.Range(-5, 5);
         transform.localPosition = new Vector3(ranPos, -0.4f, 0);
-        GetComponent<EnemyHealthScript>().Health = GetComponent<EnemyHealthScript>().StartHealth;
+        GetComponent<EnemyHealthScript>()._health = GetComponent<EnemyHealthScript>().StartHealth;
     }
 
     // Update is called once per frame

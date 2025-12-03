@@ -58,10 +58,8 @@ public class DebuffManage : MonoBehaviour
     void Update()
     {
         Transform[] icons = GetComponentsInChildren<Transform>();
-        Debug.Log($"SCALE:{GetComponent<RectTransform>().sizeDelta.x}");
         float x = 0f;
         foreach(Transform child in transform){
-            Debug.Log(child.name);
             child.GetComponent<RectTransform>().localPosition = new Vector3(x-(GetComponent<RectTransform>().sizeDelta.x/2f),0,0);
             x+=100f;
         }
