@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerStatsManager : MonoBehaviour
 {
     public static PlayerStatsManager Instance;
-    private float playerAttack = 20;
-    private float playerHp = 1000;
-    private float playerDefence = 300;
-    private float playerDash = 100;
-    private float playerHeal = 3;
+    public float playerAttack = 20;
+    public float playerHp = 1000;
+    public float playerDefence = 300;
+    public float playerDash = 100;
+    public float playerHeal = 3;
     public float PlayerAttack 
     {   
         get => playerAttack;
@@ -93,7 +93,7 @@ public class PlayerStatsManager : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerHeal", 3);
         LoadStats();
     }
-    void LoadStats()
+    public void LoadStats()
     {
         Debug.LogError("LoadSTats");
         PlayerAttack = PlayerPrefs.GetFloat("PlayerAttack");

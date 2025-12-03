@@ -661,12 +661,13 @@ IEnumerator BossHp()
     CS.originSize = 20f;
     LichHp.StartHealth = 2500;
     LichHp._health = 2500;
-    if (page2 && LichHp.Health > 2499)
+    if (page2 && LichHp._health > 1000)
     {
         Boss3Audiomanager.instance.PlayBGM();
         rb.velocity = Vector2.one;
         playerMove.isStop = false;
         StartCoroutine(BossAttackLoop());
+            Debug.Log("pase2 st");
     }
 }
 
