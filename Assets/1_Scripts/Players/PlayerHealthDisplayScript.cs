@@ -28,6 +28,7 @@ public class PlayerHealthDisplayScript : MonoBehaviour
         CurHp = phs.CurHp;
         if(CurHp <= 0){
                 diedUI.SetActive(true);
+            Time.timeScale = 0;
                 phs.enabled = false;
                 this.enabled = false;
         }

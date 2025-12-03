@@ -12,10 +12,9 @@ public class SkillMenuTutorial : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || PlayerPrefs.GetInt("SceneCount") != 0)
         {
             this.gameObject.SetActive(false);
-            PlayerPrefs.SetInt("isSKillFirst", 1);
         }
     }
     IEnumerator TextAnim()
