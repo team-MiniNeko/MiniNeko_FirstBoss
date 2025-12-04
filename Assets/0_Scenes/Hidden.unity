@@ -1244,6 +1244,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334945651849321366, guid: 42c2b3ef39f414cd7984d05d9a68bd50, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1873334728}
+    - target: {fileID: 4334945651849321366, guid: 42c2b3ef39f414cd7984d05d9a68bd50, type: 3}
+      propertyPath: explosionAttack
+      value: 
+      objectReference: {fileID: 4816367835081944147, guid: 38ff252c92ddd5b47860f42d864c8a73, type: 3}
+    - target: {fileID: 4334945651849321366, guid: 42c2b3ef39f414cd7984d05d9a68bd50, type: 3}
+      propertyPath: explosionAttackRange
+      value: 
+      objectReference: {fileID: 3728653643477179243, guid: ceba7d903e3d8494f88c6cbc4311d0eb, type: 3}
     - target: {fileID: 7594139829882787942, guid: 42c2b3ef39f414cd7984d05d9a68bd50, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.141
@@ -1856,6 +1868,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729537193}
   m_CullTransparentMesh: 1
+--- !u!1 &1873334728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8406327759789480898, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
+  m_PrefabInstance: {fileID: 2111120794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074728359
 GameObject:
   m_ObjectHideFlags: 0
