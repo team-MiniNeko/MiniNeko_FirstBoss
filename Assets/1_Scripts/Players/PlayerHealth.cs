@@ -96,8 +96,11 @@ public class PlayerHealth : MonoBehaviour
         }
         PlayerHealth php = GetComponent<PlayerHealth>();
         if(Time.time-lastAutoHealTime >= 1f && (php.maxHp-php.CurHp) > 0){
-            Damage(-3,new Color(1f,0.6f,0.6f),0);
-            lastAutoHealTime = Time.time;
+            if(PlayerStatsManager.Instance.PlayerHeal != 0){
+                float healAmount = PlayerStatsManager.Instance.PlayerHeal;
+                Damage(Convert.ToInt32(-healAmount),new Color(1f,0.6f,0.6f),0);
+                lastAutoHealTime = Time.time;
+            }
         }
         if(Time.time < invisibleTime){
             GetComponent<SpriteRenderer>().color = new Color(0,1f,0.8f);

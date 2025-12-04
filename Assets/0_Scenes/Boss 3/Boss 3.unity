@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ea419ae475d451b8c11b2fb6f39995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statam: {fileID: 0}
 --- !u!114 &89734140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4276,6 +4277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af147ee4418810949a77219c639a6b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAttack: 20
+  playerHp: 1000
+  playerDefence: 300
+  playerDash: 100
+  playerHeal: 3
 --- !u!4 &996297864
 Transform:
   m_ObjectHideFlags: 0

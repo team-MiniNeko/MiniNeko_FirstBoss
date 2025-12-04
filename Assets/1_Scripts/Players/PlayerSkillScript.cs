@@ -18,6 +18,7 @@ public class PlayerSkillScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if(AttackType == "Enter"){
+            Debug.Log("Test "+col.name);
             if(col.CompareTag("Boss")||col.CompareTag("DestoryableStructer")||col.CompareTag("Enemy")){
                 EnemyHealthScript healthScript = col.gameObject.transform.GetComponent<EnemyHealthScript>();
                 healthScript.EnemyDamage(AttackDamage);
@@ -27,6 +28,7 @@ public class PlayerSkillScript : MonoBehaviour
     void OnTriggerStay2D(Collider2D col)
     {
         if(AttackType == "Stay"){
+            Debug.Log("Test "+col.name);
             if(col.CompareTag("Boss")||col.CompareTag("DestoryableStructer")||col.CompareTag("Enemy")){
                 EnemyHealthScript healthScript = col.gameObject.transform.GetComponent<EnemyHealthScript>();
                 healthScript.EnemyDamage(AttackDamage,invTime);

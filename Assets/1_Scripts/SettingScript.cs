@@ -10,7 +10,7 @@ public class SettingScript : MonoBehaviour
     public Slider settingvolume;
     public AudioMixer mixer;
     void Start()
-    {
+    {// 원하는 해상도 값
         settingvolume.value = volume;
     }
     void Update()
