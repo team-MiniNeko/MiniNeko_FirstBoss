@@ -3670,7 +3670,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
-  texture2d: {fileID: 0}
+  texture2d: {fileID: 893057586}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &893057583
@@ -4001,7 +4001,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
-  texture2d: {fileID: 0}
+  texture2d: {fileID: 918580800}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!1 &930132725
@@ -9816,7 +9816,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
-  texture2d: {fileID: 0}
+  texture2d: {fileID: 1255910421}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1255910418
@@ -11103,7 +11103,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
-  texture2d: {fileID: 0}
+  texture2d: {fileID: 1561074097}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1561074094
@@ -11459,7 +11459,7 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   HitEffect: {fileID: 0}
   DamageText: {fileID: 1487416769882642056, guid: 735c30487e8f64203b352027b5636a6a, type: 3}
-  texture2d: {fileID: 0}
+  texture2d: {fileID: 1750754175}
   portal: {fileID: 0}
   shield: {fileID: 0}
 --- !u!70 &1750754172
@@ -11746,8 +11746,8 @@ AudioSource:
   m_GameObject: {fileID: 1771969586}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1fb8f8592eba846a98c3881f099148f3, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 31cd697a8631646b99cd815c4b84297e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
