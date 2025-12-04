@@ -30,6 +30,7 @@ public class Boss3Audiomanager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        audioSource[1].Stop();
     }
     public void PlayAudio(int i)
     {
@@ -39,8 +40,6 @@ public class Boss3Audiomanager : MonoBehaviour
     public void PlayBGM()
     {
         audioSource[0].Stop();
-        audioSource[1].Stop();
-        audioSource[1].clip = Resources.Load<AudioClip>("02 Marching Onwards");
         audioSource[1].Play();
         audioSource[1].loop = true;
     }
