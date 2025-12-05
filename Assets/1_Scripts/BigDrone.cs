@@ -36,7 +36,7 @@ public class BigDrone : MonoBehaviour
         var attackRange = Instantiate(explosionAttackRange, vec, Quaternion.identity);
         Destroy(attackRange,7f);
         textLockOn.SetActive(true);
-        for(int i = 0; i < 1000; i++)
+        for(int i = 0; i < 500; i++)
         {
             vec = target.transform.position;
             attackRange.transform.position = vec;
