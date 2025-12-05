@@ -2299,6 +2299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174518936094108031, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
+      propertyPath: StartHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 307843948304842486, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
       propertyPath: w1
       value: 
@@ -2411,9 +2415,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4224183304492795767, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
+      propertyPath: StartHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5183035510746192993, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755995754912605160, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
+      propertyPath: StartHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381904861806573219, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
+      propertyPath: StartHealth
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7929629809485745656, guid: 72c937f4452b94eeaa3ff7e9a75848b2, type: 3}
       propertyPath: m_IsTrigger
