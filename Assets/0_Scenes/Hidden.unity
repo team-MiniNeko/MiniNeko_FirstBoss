@@ -909,6 +909,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &489632644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2674883480812258029, guid: 5f28877b4543c4650ba04a05455a4af5, type: 3}
+  m_PrefabInstance: {fileID: 714675799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2674883480812258029, guid: 5f28877b4543c4650ba04a05455a4af5, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6542514627685728290, guid: 5f28877b4543c4650ba04a05455a4af5, type: 3}
       propertyPath: m_Name
       value: HealthDisplays
@@ -1572,17 +1587,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4812473367370467949, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
   m_PrefabInstance: {fileID: 2111120794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1710757836 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3834822345304877254, guid: 5f28877b4543c4650ba04a05455a4af5, type: 3}
-  m_PrefabInstance: {fileID: 714675799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1710757837 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426929474185048474, guid: 5f28877b4543c4650ba04a05455a4af5, type: 3}
@@ -2166,7 +2170,7 @@ PrefabInstance:
     - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: hpBar
       value: 
-      objectReference: {fileID: 1710757836}
+      objectReference: {fileID: 489632644}
     - target: {fileID: 7925413559310152435, guid: 1351bb413b79d41b184cc2035363c8c7, type: 3}
       propertyPath: diedUI
       value: 
