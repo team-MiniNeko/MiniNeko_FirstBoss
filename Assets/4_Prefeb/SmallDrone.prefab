@@ -143,10 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 3
   Type: Enter
   MultipleSize: 1
-  invisibleTime: 0.03
+  invisibleTime: 0
   EffectType: 0
   EffectRate: 0.1
 --- !u!1 &2122012467919054447
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 3
   Type: Stay
   MultipleSize: 1
-  invisibleTime: 0.03
+  invisibleTime: 0
   EffectType: 0
   EffectRate: 0.1

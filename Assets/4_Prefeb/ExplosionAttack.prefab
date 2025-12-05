@@ -245,10 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d57e7addb0504d7692f657d9bc1a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 50
   Type: Enter
   MultipleSize: 1
-  invisibleTime: 0.03
+  invisibleTime: 0
   EffectType: 0
   EffectRate: 0.1
 --- !u!1 &5790100628592223201
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5968471618394924611
 MonoBehaviour:
   m_ObjectHideFlags: 0
