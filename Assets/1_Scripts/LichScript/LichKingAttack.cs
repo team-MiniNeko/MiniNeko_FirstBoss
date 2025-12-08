@@ -392,6 +392,7 @@ public class LichKingAttack : MonoBehaviour
     sword.localRotation = Quaternion.Euler(0, 0, 0);
     isCrecked = true;
     rb.velocity = Vector2.zero;
+    yield return null;
     int ran = Random.Range(0, 3);
     sr.sprite = Attack[1];
     crack.gameObject.SetActive(true);
@@ -708,6 +709,8 @@ IEnumerator Left()
         rb.AddForce(Vector2.left * (Time.deltaTime * 50000)); 
         yield return null;    
     }
+    rb.velocity = Vector2.one;
+    rb.angularVelocity = 1;
 }IEnumerator Right()
 {
     float t = 3;
@@ -717,5 +720,7 @@ IEnumerator Left()
         rb.AddForce(Vector2.right * (Time.deltaTime * 50000)); 
         yield return null;    
     }
+    rb.velocity = Vector2.one;
+    rb.angularVelocity = 1;
 }
 }
