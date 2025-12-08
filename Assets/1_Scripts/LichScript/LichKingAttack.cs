@@ -702,6 +702,8 @@ void OnTriggerExit2D(Collider2D collision)
 
 IEnumerator Left()
 {
+    Vector2 originalVelocity = rb.velocity;       
+    float originalAngular = rb.angularVelocity; 
     float t = 3;
     while (t > 0)
     {
@@ -709,10 +711,12 @@ IEnumerator Left()
         rb.AddForce(Vector2.left * (Time.deltaTime * 50000)); 
         yield return null;    
     }
-    rb.velocity = Vector2.one;
-    rb.angularVelocity = 1;
+    rb.velocity = originalVelocity;
+    rb.angularVelocity = originalAngular;
 }IEnumerator Right()
 {
+    Vector2 originalVelocity = rb.velocity;       
+    float originalAngular = rb.angularVelocity; 
     float t = 3;
     while (t > 0)
     {
@@ -720,7 +724,7 @@ IEnumerator Left()
         rb.AddForce(Vector2.right * (Time.deltaTime * 50000)); 
         yield return null;    
     }
-    rb.velocity = Vector2.one;
-    rb.angularVelocity = 1;
+    rb.velocity = originalVelocity;
+    rb.angularVelocity = originalAngular;
 }
 }
