@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9003a7-ff6f-4f2d-b96c-826e395cf81d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MiniNeko_FirstBoss/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Scripts/LichKing/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Scripts/LichKing/New Material.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Scripts/LichScript/LichKingAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Scripts/LichScript/LichKingAttack.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +126,7 @@
       <workItem from="1764510674444" duration="928000" />
       <workItem from="1764511664637" duration="5706000" />
       <workItem from="1764838979926" duration="2775000" />
-      <workItem from="1765169147830" duration="2397000" />
+      <workItem from="1765169147830" duration="3906000" />
     </task>
     <servers />
   </component>

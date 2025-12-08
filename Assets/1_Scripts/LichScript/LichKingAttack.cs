@@ -386,7 +386,9 @@ public class LichKingAttack : MonoBehaviour
     }
 
    IEnumerator Coroutine_Creck()
-{
+   {
+       sword.transform.localPosition = new Vector2(-0.556f, -0.164f);
+       sword.GetChild(3).transform.localPosition = new Vector2(0.58f, 0.49f);
     sword.localRotation = Quaternion.Euler(0, 0, 0);
     isCrecked = true;
     rb.velocity = Vector2.zero;
