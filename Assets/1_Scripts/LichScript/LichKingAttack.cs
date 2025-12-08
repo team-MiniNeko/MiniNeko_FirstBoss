@@ -373,10 +373,6 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
-                    if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
-                    {
-                        yield return Coroutine_Creck();
-                    }
                     break;
             }
 
