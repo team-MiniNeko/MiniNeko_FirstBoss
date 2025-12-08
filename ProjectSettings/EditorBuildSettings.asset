@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/Ending.unity
     guid: f7efb7e355cd8ce458fe73f56496e34c
+  - enabled: 1
+    path: Assets/0_Scenes/Hidden.unity
+    guid: 82fc1afc3e84e4c10a344639e8e89028
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f2996de2893920345a283f0675c536fd, type: 2}

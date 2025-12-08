@@ -74,6 +74,10 @@ public class LichKingAttack : MonoBehaviour
     private void Start()
     {
             StartCoroutine(BossAttackLoop());
+            if(PlayerStatsManager.Instance.PlayerHeal == 0)
+                GetComponent<EnemyHealthScript>().portal = GameObject.Find("choportal");
+            else
+                GetComponent<EnemyHealthScript>().portal = GameObject.Find("Square");
     }
 
     private void Update()
