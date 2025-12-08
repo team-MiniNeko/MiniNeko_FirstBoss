@@ -334,16 +334,15 @@ public class LichKingAttack : MonoBehaviour
                     else
                     {
                         anim.SetTrigger("Attack1Right");
-                    }           
-                    if (transform.transform.position.x > Target.transform.position.x)
-                    {
-                        rb.AddForce(Vector2.left * 500);
                     }
-                    else
+                        if (transform.transform.position.x > Target.transform.position.x)
                     {
-                        rb.AddForce(Vector2.right * 500);
+                        StartCoroutine(Left());
                     }
-                    isCrecked = true;
+                        else 
+                        {
+                            StartCoroutine(Right());
+                    }
 
                     while (Quaternion.Angle(sword.localRotation, targetRot) > 0.1f)
                     {
@@ -374,7 +373,6 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
-                    isCrecked = false;
                     if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
                     {
                         yield return Coroutine_Creck();
@@ -696,6 +694,26 @@ void OnTriggerExit2D(Collider2D collision)
     if (collision.gameObject.tag == "LeftWall")
     {
         isLeftWall = false;
+    }
+}
+
+IEnumerator Left()
+{
+    float t = 3;
+    while (t > 0)
+    {
+        t -= Time.deltaTime;
+        rb.AddForce(Vector2.left * (Time.deltaTime * 50000)); 
+        yield return null;    
+    }
+}IEnumerator Right()
+{
+    float t = 3;
+    while (t > 0)
+    {
+        t -= Time.deltaTime;
+        rb.AddForce(Vector2.right * (Time.deltaTime * 50000)); 
+        yield return null;    
     }
 }
 }
