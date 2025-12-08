@@ -48,6 +48,8 @@ public class LichKingAttack : MonoBehaviour
     bool isLeftWall;
 
     private bool isVoidBall2;
+
+    private bool ishelp;
     
     void Awake()
     {
@@ -95,7 +97,8 @@ public class LichKingAttack : MonoBehaviour
             rb.velocity = Vector2.zero;
             return;
         }
-        
+        if(ishelp)
+            return;
         if (transform.position.x > Target.transform.position.x && !isLeftWall)
         {
             flipx.x = Mathf.Abs(flipx.x); 
@@ -235,6 +238,9 @@ public class LichKingAttack : MonoBehaviour
             sword.transform.GetChild(1).GetComponent<AttackEffectScript>().Damage += 30;
             sword.transform.GetChild(2).GetComponent<AttackEffectScript>().Damage += 30;
         }
+        sword.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = true;
+        sword.GetChild(1).gameObject.GetComponent<Collider2D>().enabled = true;
+        sword.GetChild(2).gameObject.GetComponent<Collider2D>().enabled = true;
         for (int i = 0; i < 3; i++)
         {
 
@@ -251,6 +257,7 @@ public class LichKingAttack : MonoBehaviour
                     ranDelay = Random.Range(0, 0.2f);
                     
                     sword.localRotation = Quaternion.Euler(0, 0, 0);
+                    sword.transform.GetChild(0).gameObject.SetActive(true);
                     sword.transform.GetChild(0).gameObject.SetActive(true);
                     sword.transform.GetChild(1).gameObject.SetActive(false);
                     sword.transform.GetChild(2).gameObject.SetActive(false);
@@ -335,13 +342,15 @@ public class LichKingAttack : MonoBehaviour
                     {
                         anim.SetTrigger("Attack1Right");
                     }
+
+                    ishelp = true;
                         if (transform.transform.position.x > Target.transform.position.x)
                     {
-                        StartCoroutine(Left());
+                        rb.velocity = new Vector2(Vector2.left.x * 40, rb.velocity.y);
                     }
                         else 
                         {
-                            StartCoroutine(Right());
+                            rb.velocity = new Vector2(Vector2.right.x * 40, rb.velocity.y);
                     }
 
                     while (Quaternion.Angle(sword.localRotation, targetRot) > 0.1f)
@@ -360,9 +369,9 @@ public class LichKingAttack : MonoBehaviour
                             isDelay = false;
                         }
                     }
-
+                    
                     yield return new WaitForSeconds(1f);
-
+                    ishelp = false;
                     while (Quaternion.Angle(sword.localRotation, startRot) > 0.1f)
                     {
                         sword.localRotation = Quaternion.RotateTowards(
@@ -373,6 +382,10 @@ public class LichKingAttack : MonoBehaviour
                         yield return null;
                     }
                     isSkill = false;
+                    if (Mathf.Abs(Target.transform.position.x - transform.position.x) <= 2)
+                    {
+                        yield return Coroutine_Creck();
+                    }
                     break;
             }
 
@@ -383,12 +396,11 @@ public class LichKingAttack : MonoBehaviour
 
    IEnumerator Coroutine_Creck()
    {
+       isCrecked = true;
+       rb.velocity = Vector2.zero;
        sword.transform.localPosition = new Vector2(-0.556f, -0.164f);
        sword.GetChild(3).transform.localPosition = new Vector2(0.58f, 0.49f);
     sword.localRotation = Quaternion.Euler(0, 0, 0);
-    isCrecked = true;
-    rb.velocity = Vector2.zero;
-    yield return null;
     int ran = Random.Range(0, 3);
     sr.sprite = Attack[1];
     crack.gameObject.SetActive(true);
@@ -694,33 +706,5 @@ void OnTriggerExit2D(Collider2D collision)
     {
         isLeftWall = false;
     }
-}
-
-IEnumerator Left()
-{
-    Vector2 originalVelocity = rb.velocity;       
-    float originalAngular = rb.angularVelocity; 
-    float t = 3;
-    while (t > 0)
-    {
-        t -= Time.deltaTime;
-        rb.AddForce(Vector2.left * (Time.deltaTime * 50000)); 
-        yield return null;    
-    }
-    rb.velocity = originalVelocity;
-    rb.angularVelocity = originalAngular;
-}IEnumerator Right()
-{
-    Vector2 originalVelocity = rb.velocity;       
-    float originalAngular = rb.angularVelocity; 
-    float t = 3;
-    while (t > 0)
-    {
-        t -= Time.deltaTime;
-        rb.AddForce(Vector2.right * (Time.deltaTime * 50000)); 
-        yield return null;    
-    }
-    rb.velocity = originalVelocity;
-    rb.angularVelocity = originalAngular;
 }
 }
